@@ -1,0 +1,17 @@
+.venv/
+.local/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.codex-runs/
+.vercel/
+node_modules/
+web/dist/
+test-results/
+playwright-report/
+/data/out/
+*.log
