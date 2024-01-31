@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-16.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-037@backroom.example>
+Date: Mon, 03 Aug 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0124 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Salt Crate Seasonings Trading L.L.C.
+Supplier TRN: 100000000001603
+Supplier address: Warehouse 46, Industrial Lane 16, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0124
+Issued: 2026-08-03
+Due: 2026-09-02
+Currency: AED
+Deliver to: Central Kitchen, Al Quoz
+Net: 2,415.62
+VAT: 120.78
+Total: 2,536.40
+Items:
+Basmati Rice; quantity 10 BX; unit price 73.14; VAT 5%; line net 731.40
+Red Lentils; quantity 4 BX; unit price 71.39; VAT 5%; line net 285.56
+Olive Oil; quantity 8 BX; unit price 62.87; VAT 5%; line net 502.96
+Black Pepper; quantity 13 BX; unit price 68.90; VAT 5%; line net 895.70
+
+Regards, Supplier accounts desk

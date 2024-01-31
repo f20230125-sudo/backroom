@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-04.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-043@backroom.example>
+Date: Mon, 14 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0130 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Pearl Meadow Dairy
+Supplier TRN: 100000000000403
+Supplier address: Warehouse 34, Industrial Lane 4, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0130
+Issued: 2026-09-14
+Due: 2026-10-14
+Currency: AED
+Deliver to: Central Kitchen
+Net: 593.20
+VAT: 29.66
+Total: 622.86
+Items:
+Butter Portions; quantity 12 LTR; unit price 15.05; VAT 5%; line net 180.60
+Cooking Cream; quantity 17 LTR; unit price 16.73; VAT 5%; line net 284.41
+Halloumi; quantity 6 LTR; unit price 8.33; VAT 5%; line net 49.98
+Feta; quantity 11 LTR; unit price 7.11; VAT 5%; line net 78.21
+
+Regards, Supplier accounts desk

@@ -1,0 +1,10 @@
+From: Accounts desk <accounts@supplier.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-058@backroom.example>
+Date: Tue, 29 Sep 2026 10:30:00 +0400
+Subject: Delivery delay notice
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Our produce van is delayed; delivery will reach the kitchen at 11:30.

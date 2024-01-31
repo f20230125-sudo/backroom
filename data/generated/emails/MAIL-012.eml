@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-09.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-012@backroom.example>
+Date: Wed, 12 Aug 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0099 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Amber Grain Provisions Trading L.L.C.
+Supplier TRN: 100000000000903
+Supplier address: Warehouse 39, Industrial Lane 9, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0099
+Issued: 2026-08-12
+Due: 2026-08-26
+Currency: AED
+Deliver to: Al Quoz
+Net: 1,810.82
+VAT: 90.54
+Total: 1,901.36
+Items:
+Cumin; quantity 10 BX; unit price 70.65; VAT 5%; line net 706.50
+Basmati Rice; quantity 14 BX; unit price 37.12; VAT 5%; line net 519.68
+Sea Salt; quantity 6 BX; unit price 52.47; VAT 5%; line net 314.82
+Olive Oil; quantity 3 BX; unit price 89.94; VAT 5%; line net 269.82
+
+Regards, Supplier accounts desk
