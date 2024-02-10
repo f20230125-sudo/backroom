@@ -1,8 +1,8 @@
-From: Accounts desk <accounts@sup-11.example>
+From: Accounts desk <accounts@dune-springs-packaging.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-014@backroom.example>
 Date: Wed, 26 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0101 - details below
+Subject: Tax Invoice DSP/INV-61111 - details below
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 MIME-Version: 1.0
@@ -10,23 +10,25 @@ MIME-Version: 1.0
 Dear accounts team,
 Tax Invoice
 Supplier: Dune Springs Packaging Trading L.L.C.
-Supplier TRN: 100000000001103
-Supplier address: Warehouse 41, Industrial Lane 11, Dubai
+Supplier TRN: 191458664872103
+Supplier address: Warehouse 76, Umm Ramool, Dubai, PO Box 619360
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0101
+Buyer TRN: 105219675843603
+Invoice: DSP/INV-61111
 Issued: 2026-08-26
 Due: 2026-10-10
 Currency: AED
 Deliver to: JBR
-Net: 1,654.31
-VAT: 82.72
-Total: 1,737.03
+Net: 2,799.72
+VAT: 139.99
+Total: 2,939.71
 Items:
-Paper Cup; quantity 16 BX; unit price 55.13; VAT 5%; line net 882.08
-Foil Tray; quantity 3 BX; unit price 32.24; VAT 5%; line net 96.72
-Kraft Bowl; quantity 7 BX; unit price 46.53; VAT 5%; line net 325.71
-Kraft Bowl Lid; quantity 10 BX; unit price 34.98; VAT 5%; line net 349.80
+Napkin; quantity 19 BX; unit price 39.89; VAT 5%; line net 757.91
+Paper Bag; quantity 11 BX; unit price 33.54; VAT 5%; line net 368.94
+Kraft Bowl; quantity 7 BX; unit price 82.20; VAT 5%; line net 575.40
+Kraft Bowl Lid; quantity 11 BX; unit price 99.77; VAT 5%; line net 1,097.47
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 5288 | Email: accounts@dune-springs-packaging.example
+Bank: Pearl Quay Bank | IBAN: AE328545693331865312701
