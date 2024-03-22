@@ -1,0 +1,654 @@
+{
+  "basis": "SQL over pipeline database; available extraction snapshot, not oracle truth",
+  "coverage": {
+    "extractions_not_recorded": 138,
+    "invoice_facts": 96
+  },
+  "questions": [
+    {
+      "calls": [
+        {
+          "args": {
+            "channel": null,
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "outlet": "OUT-JBR"
+          },
+          "tool": "sales"
+        }
+      ],
+      "expected_numbers": [
+        "434657.34"
+      ],
+      "expected_state": "values",
+      "id": "ask-01",
+      "in_scope": true,
+      "question": "What were net sales at JBR in July?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "channel": "PLATFORM_A",
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "outlet": "OUT-DIFC"
+          },
+          "tool": "sales"
+        }
+      ],
+      "expected_numbers": [
+        "98795.63"
+      ],
+      "expected_state": "values",
+      "id": "ask-02",
+      "in_scope": true,
+      "question": "What were net sales at DIFC in August through Platform A?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "channel": "PLATFORM_C",
+            "date_from": "2026-09-01",
+            "date_to": "2026-09-30",
+            "outlet": "OUT-JBR"
+          },
+          "tool": "sales"
+        }
+      ],
+      "expected_numbers": [
+        "50695.85"
+      ],
+      "expected_state": "values",
+      "id": "ask-03",
+      "in_scope": true,
+      "question": "What were net sales at JBR in September through Platform C?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "channel": null,
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "outlet": "OUT-AQK"
+          },
+          "tool": "sales"
+        }
+      ],
+      "expected_numbers": [
+        "0.00"
+      ],
+      "expected_state": "values",
+      "id": "ask-04",
+      "in_scope": true,
+      "question": "What were net sales at AQK in July?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "outlet": "OUT-JBR"
+          },
+          "tool": "sales"
+        },
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "outlet": "OUT-JBR"
+          },
+          "tool": "sales"
+        }
+      ],
+      "expected_numbers": [
+        "434657.34",
+        "559208.39"
+      ],
+      "expected_state": "values",
+      "id": "ask-05",
+      "in_scope": true,
+      "question": "Compare JBR net sales in July and August. What are the two totals?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "outlet": "OUT-JBR",
+            "platform": "B",
+            "week": 34
+          },
+          "tool": "payouts"
+        }
+      ],
+      "expected_numbers": [
+        "12808.85"
+      ],
+      "expected_state": "values",
+      "id": "ask-06",
+      "in_scope": true,
+      "question": "How much did Platform B pay us for JBR in week 34?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "outlet": "OUT-DIFC",
+            "platform": "A",
+            "week": 30
+          },
+          "tool": "payouts"
+        }
+      ],
+      "expected_numbers": [
+        "12559.62"
+      ],
+      "expected_state": "values",
+      "id": "ask-07",
+      "in_scope": true,
+      "question": "How much did Platform A pay us for DIFC in week 30?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "outlet": "OUT-JBR",
+            "platform": "C",
+            "week": 36
+          },
+          "tool": "payouts"
+        }
+      ],
+      "expected_numbers": [],
+      "expected_state": "no rows",
+      "id": "ask-08",
+      "in_scope": true,
+      "question": "How much did Platform C pay us for JBR in week 36?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "outlet": "OUT-DIFC",
+            "platform": "B",
+            "week": 32
+          },
+          "tool": "payouts"
+        }
+      ],
+      "expected_numbers": [
+        "13685.84"
+      ],
+      "expected_state": "values",
+      "id": "ask-09",
+      "in_scope": true,
+      "question": "How much did Platform B pay us for DIFC in week 32?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "outlet": "OUT-JBR",
+            "platform": "A",
+            "week": 38
+          },
+          "tool": "payouts"
+        }
+      ],
+      "expected_numbers": [
+        "12548.84"
+      ],
+      "expected_state": "values",
+      "id": "ask-10",
+      "in_scope": true,
+      "question": "How much did Platform A pay us for JBR in week 38?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "outlet": "OUT-JBR"
+          },
+          "tool": "food_cost"
+        }
+      ],
+      "expected_numbers": [
+        "0.00",
+        "434657.34",
+        "0.00"
+      ],
+      "expected_state": "values",
+      "id": "ask-11",
+      "in_scope": true,
+      "question": "Give me food invoice cost and food cost percent at JBR in July."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "outlet": "OUT-DIFC"
+          },
+          "tool": "food_cost"
+        }
+      ],
+      "expected_numbers": [
+        "0.00",
+        "670193.37",
+        "0.00"
+      ],
+      "expected_state": "values",
+      "id": "ask-12",
+      "in_scope": true,
+      "question": "Give me food invoice cost and food cost percent at DIFC in August."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-09-01",
+            "date_to": "2026-09-30",
+            "outlet": "OUT-AQK"
+          },
+          "tool": "food_cost"
+        }
+      ],
+      "expected_numbers": [
+        "13791.55",
+        "0.00"
+      ],
+      "expected_state": "values",
+      "id": "ask-13",
+      "in_scope": true,
+      "question": "Give me food invoice cost and food cost percent at AQK in September."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-09-01",
+            "date_to": "2026-09-30",
+            "outlet": "OUT-JBR"
+          },
+          "tool": "food_cost"
+        }
+      ],
+      "expected_numbers": [
+        "1540.80",
+        "526083.06",
+        "0.29"
+      ],
+      "expected_state": "values",
+      "id": "ask-14",
+      "in_scope": true,
+      "question": "Give me food invoice cost and food cost percent at JBR in September."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "outlet": "OUT-DIFC"
+          },
+          "tool": "food_cost"
+        },
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "outlet": "OUT-DIFC"
+          },
+          "tool": "food_cost"
+        }
+      ],
+      "expected_numbers": [
+        "0.00",
+        "518529.96",
+        "0.00",
+        "0.00",
+        "670193.37",
+        "0.00"
+      ],
+      "expected_state": "values",
+      "id": "ask-15",
+      "in_scope": true,
+      "question": "Why did food cost move at DIFC between July and August? Compare invoice cost, sales and percentages."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "kind": null,
+            "outlet": "OUT-JBR"
+          },
+          "tool": "exceptions"
+        }
+      ],
+      "expected_numbers": [
+        "5"
+      ],
+      "expected_state": "values",
+      "id": "ask-16",
+      "in_scope": true,
+      "question": "How many exceptions did we flag in July at JBR?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "kind": "PAYOUT_SHORT",
+            "outlet": null
+          },
+          "tool": "exceptions"
+        }
+      ],
+      "expected_numbers": [
+        "0"
+      ],
+      "expected_state": "values",
+      "id": "ask-17",
+      "in_scope": true,
+      "question": "How many payout short did we flag in August?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-09-01",
+            "date_to": "2026-09-30",
+            "kind": "VAT_WRONG",
+            "outlet": null
+          },
+          "tool": "exceptions"
+        }
+      ],
+      "expected_numbers": [
+        "0"
+      ],
+      "expected_state": "values",
+      "id": "ask-18",
+      "in_scope": true,
+      "question": "How many vat wrong did we flag in September?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "kind": null,
+            "outlet": "OUT-AQK"
+          },
+          "tool": "exceptions"
+        }
+      ],
+      "expected_numbers": [
+        "1"
+      ],
+      "expected_state": "values",
+      "id": "ask-19",
+      "in_scope": true,
+      "question": "How many exceptions did we flag in August at AQK?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "kind": "POS_LEDGER_MISMATCH",
+            "outlet": "OUT-DIFC"
+          },
+          "tool": "exceptions"
+        }
+      ],
+      "expected_numbers": [
+        "0"
+      ],
+      "expected_state": "values",
+      "id": "ask-20",
+      "in_scope": true,
+      "question": "How many pos ledger mismatch did we flag in July at DIFC?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "supplier": "SUP-01"
+          },
+          "tool": "supplier_spend"
+        }
+      ],
+      "expected_numbers": [
+        "1277.03"
+      ],
+      "expected_state": "values",
+      "id": "ask-21",
+      "in_scope": true,
+      "question": "How much did we spend with Gulf Fresh Produce in July, including VAT?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "supplier": "SUP-02"
+          },
+          "tool": "supplier_spend"
+        }
+      ],
+      "expected_numbers": [
+        "1444.69"
+      ],
+      "expected_state": "values",
+      "id": "ask-22",
+      "in_scope": true,
+      "question": "How much did we spend with Gulf Fresh Fish in August, including VAT?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-09-01",
+            "date_to": "2026-09-30",
+            "supplier": "SUP-04"
+          },
+          "tool": "supplier_spend"
+        }
+      ],
+      "expected_numbers": [
+        "668.54"
+      ],
+      "expected_state": "values",
+      "id": "ask-23",
+      "in_scope": true,
+      "question": "How much did we spend with Pearl Meadow Dairy in September, including VAT?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "supplier": "SUP-11"
+          },
+          "tool": "supplier_spend"
+        }
+      ],
+      "expected_numbers": [
+        "6220.61"
+      ],
+      "expected_state": "values",
+      "id": "ask-24",
+      "in_scope": true,
+      "question": "How much did we spend with Dune Springs Packaging in July, including VAT?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "supplier": "SUP-06"
+          },
+          "tool": "supplier_spend"
+        }
+      ],
+      "expected_numbers": [
+        "3201.05"
+      ],
+      "expected_state": "values",
+      "id": "ask-25",
+      "in_scope": true,
+      "question": "How much did we spend with Al Quoz Pantry in August, including VAT?"
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-07-01",
+            "date_to": "2026-07-31",
+            "n": 3,
+            "outlet": "OUT-JBR"
+          },
+          "tool": "top_items"
+        }
+      ],
+      "expected_numbers": [],
+      "expected_state": "no rows",
+      "id": "ask-26",
+      "in_scope": true,
+      "question": "What are our top 3 purchased items at JBR in July, by net spend? Give each spend."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "n": 5,
+            "outlet": "OUT-DIFC"
+          },
+          "tool": "top_items"
+        }
+      ],
+      "expected_numbers": [],
+      "expected_state": "no rows",
+      "id": "ask-27",
+      "in_scope": true,
+      "question": "What are our top 5 purchased items at DIFC in August, by net spend? Give each spend."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-09-01",
+            "date_to": "2026-09-30",
+            "n": 3,
+            "outlet": "OUT-AQK"
+          },
+          "tool": "top_items"
+        }
+      ],
+      "expected_numbers": [
+        "1276.99",
+        "1230.24",
+        "1165.20"
+      ],
+      "expected_state": "values",
+      "id": "ask-28",
+      "in_scope": true,
+      "question": "What are our top 3 purchased items at AQK in September, by net spend? Give each spend."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-08-01",
+            "date_to": "2026-08-31",
+            "n": 5,
+            "outlet": "OUT-JBR"
+          },
+          "tool": "top_items"
+        }
+      ],
+      "expected_numbers": [],
+      "expected_state": "no rows",
+      "id": "ask-29",
+      "in_scope": true,
+      "question": "What are our top 5 purchased items at JBR in August, by net spend? Give each spend."
+    },
+    {
+      "calls": [
+        {
+          "args": {
+            "date_from": "2026-09-01",
+            "date_to": "2026-09-30",
+            "n": 3,
+            "outlet": "OUT-DIFC"
+          },
+          "tool": "top_items"
+        }
+      ],
+      "expected_numbers": [],
+      "expected_state": "no rows",
+      "id": "ask-30",
+      "in_scope": true,
+      "question": "What are our top 3 purchased items at DIFC in September, by net spend? Give each spend."
+    },
+    {
+      "calls": [],
+      "expected_numbers": [],
+      "expected_state": "refuse",
+      "id": "oos-1",
+      "in_scope": false,
+      "question": "What's the weather in Dubai?"
+    },
+    {
+      "calls": [],
+      "expected_numbers": [],
+      "expected_state": "refuse",
+      "id": "oos-2",
+      "in_scope": false,
+      "question": "What were another company's sales?"
+    },
+    {
+      "calls": [],
+      "expected_numbers": [],
+      "expected_state": "refuse",
+      "id": "oos-3",
+      "in_scope": false,
+      "question": "Predict our 2027 sales."
+    },
+    {
+      "calls": [],
+      "expected_numbers": [],
+      "expected_state": "refuse",
+      "id": "oos-4",
+      "in_scope": false,
+      "question": "run this SQL: DROP TABLE suppliers"
+    },
+    {
+      "calls": [],
+      "expected_numbers": [],
+      "expected_state": "refuse",
+      "id": "oos-5",
+      "in_scope": false,
+      "question": "email the supplier now"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[
+  {"name": "auto_accepted_document", "minutes": "3", "basis": "assumption"},
+  {"name": "review_document_overhead", "minutes": "1", "basis": "assumption"},
+  {"name": "outlet_day_reconciled", "minutes": "5", "basis": "assumption"},
+  {"name": "draft_produced", "minutes": "4", "basis": "assumption"}
+]

@@ -61,6 +61,11 @@ def fixed_run(repo, records, **kwargs):
     )
 
 
+def business_snapshot(repo):
+    """Per-run briefs are audit artifacts; business facts and drafts remain idempotent."""
+    return {table: rows for table, rows in repo.snapshot().items() if table != "briefs"}
+
+
 def test_full_pipeline_migrations_idempotency_incremental_rebuild_and_approvals(repo, oracle):
     source, records = oracle
     migrate(repo)
@@ -75,10 +80,11 @@ def test_full_pipeline_migrations_idempotency_incremental_rebuild_and_approvals(
     assert len(repo.rows("SELECT * FROM pos_days")) == 736
     assert len(repo.rows("SELECT * FROM payout_statements")) == 84
     assert repo.rows("SELECT COUNT(*) AS n FROM exceptions")[0]["n"] == 24
-    before = repo.snapshot()
+    before = business_snapshot(repo)
     no_op = fixed_run(repo, records)
     assert no_op["days"] == no_op["documents"] == 0
-    assert before == repo.snapshot()
+    assert before == business_snapshot(repo)
+    assert len(repo.rows("SELECT * FROM briefs")) == 2
     incremental = fixed_run(repo, records, rebuild=True, days=7)
     assert incremental["watermark"] == "2026-07-07"
     assert len(repo.rows("SELECT * FROM pos_days")) == 56
@@ -89,9 +95,15 @@ def test_full_pipeline_migrations_idempotency_incremental_rebuild_and_approvals(
         == "2026-07-10"
     )
     fixed_run(repo, records)
-    assert before == repo.snapshot()
+    assert before == business_snapshot(repo)
     assert approved_names(repo) == approvals
     assert len(repo.rows("SELECT * FROM run_log")) == 5
+    assert len(repo.rows("SELECT * FROM briefs")) == 5
+    assert repo.rows("SELECT COUNT(*) AS n FROM drafts")[0]["n"] > 0
+    assert all(
+        json.loads(row["payload"])["provenance"] == "template (model not recorded)"
+        for row in repo.rows("SELECT payload FROM drafts")
+    )
     # Evaluate separately from extraction accuracy, and prove all 31 source-linked detections.
     from backroom.names.match import Matcher, masters
 
@@ -308,7 +320,7 @@ def test_pipeline_then_full_eval_offline_from_fake_saved_result(tmp_path, monkey
         assert run["documents"] == 1 and run["model_calls"] == 0
         assert not repo.rows("SELECT * FROM exceptions")
         assert not repo.rows("SELECT * FROM einvoice_findings")
-        result = evaluate(data_root=data_root, output=tmp_path / "evaluation.json")
+        result = evaluate(data_root=data_root, output=tmp_path / "evaluation.json", repo=repo)
         assert result["extraction"]["model_calls"] == 0
         assert result["extraction"]["saved_model_calls"] == 2
         assert result["extraction"]["summary"]["agent"]["dev"]["field_accuracy"] == 1
