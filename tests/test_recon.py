@@ -3,6 +3,7 @@
 from datetime import date
 from decimal import Decimal as D
 
+from backroom.extract.types import ExtractionResult
 from backroom.models import (
     InvoiceLine,
     InvoiceRecord,
@@ -12,6 +13,7 @@ from backroom.models import (
     POSRow,
 )
 from backroom.names.match import Entity, Matcher
+from backroom.pipeline import invoice_inputs
 from backroom.recon.engine import check_documents
 from backroom.recon.ledger import check_ledger
 from backroom.recon.payouts import check_payouts
@@ -184,3 +186,79 @@ def test_money_and_week_format():
     assert aed(D("1234.565")) == "AED 1,234.57"
     assert week_label(date(2026, 8, 17), date(2026, 8, 23)) == "week 34 (17-23 Aug)"
     assert week_label(date(2026, 8, 31), date(2026, 9, 6)) == "week 36 (31 Aug-6 Sep)"
+
+
+def test_pr021_shape_uses_tax_identity_across_legal_and_printed_trade_names():
+    matcher = Matcher(
+        [
+            Entity("supplier", "S", ("Harbour Orchard Produce Trading LLC",), "123456789012303"),
+        ]
+    )
+    base = invoice(
+        supplier_name="Harbour Orchard Produce Trading LLC", supplier_trn="123456789012303"
+    ).record
+    results = {
+        "DOC-003": ExtractionResult(record=base, prompt_version="fake"),
+        "MAIL-003": ExtractionResult(
+            record=base.model_copy(update={"supplier_name": "Harbour Orchard Foods"}),
+            prompt_version="fake",
+        ),
+    }
+    invoices = invoice_inputs(results, matcher)
+    assert [i.supplier_id for i in invoices] == ["S", "S"]
+    duplicate = check_documents(invoices)
+    assert len(duplicate) == 1 and duplicate[0].kind == "DUPLICATE_INVOICE"
+    assert duplicate[0].refs == {"original": "DOC-003", "duplicate": "MAIL-003"}
+    bill = bank(
+        "105", source="BILL", contact="Harbour Orchard Produce Trading LLC", reference="INV"
+    )
+    assert check_ledger([], [bill], invoices, matcher) == []
+
+
+def test_shared_trn_never_groups_distinct_suppliers_or_ledger_bills():
+    matcher = Matcher(
+        [
+            Entity("supplier", "P", ("Harbour Produce",), "123456789012303"),
+            Entity("supplier", "F", ("Harbour Fish",), "123456789012303"),
+        ]
+    )
+    results = {
+        name: ExtractionResult(
+            record=invoice(supplier_name=name, supplier_trn="123456789012303").record,
+            prompt_version="fake",
+        )
+        for name in ("Harbour Produce", "Harbour Fish")
+    }
+    invoices = invoice_inputs(results, matcher)
+    assert {i.supplier_id for i in invoices} == {"P", "F"}
+    assert not check_documents(invoices)
+    bills = [bank("105", source="BILL", contact=n, reference="INV") for n in results]
+    assert not check_ledger([], bills, invoices, matcher)
+    assert len(check_ledger([], bills[:1], invoices, matcher)) == 1
+
+
+def test_unresolved_supplier_uses_printed_name_consistently_without_a_master_id():
+    matcher = Matcher([])
+    first = invoice(supplier_name="Unknown, Orchard").record
+    invoices = invoice_inputs(
+        {
+            "A": ExtractionResult(record=first, prompt_version="fake"),
+            "B": ExtractionResult(
+                record=first.model_copy(update={"supplier_name": "UNKNOWN ORCHARD"}),
+                prompt_version="fake",
+            ),
+        },
+        matcher,
+    )
+    assert all(i.supplier_id is None for i in invoices)
+    assert len(check_documents(invoices)) == 1
+    bill = bank("105", source="BILL", contact="Unknown Orchard", reference="INV")
+    assert not check_ledger([], [bill], invoices, matcher)
+
+
+def test_missing_bill_message_has_supplier_and_amount_without_an_invented_zero_bill():
+    matcher = Matcher([Entity("supplier", "S", ("Supplier",))])
+    finding = check_ledger([], [], [invoice()], matcher)[0]
+    assert finding.message == (
+        "Invoice INV from Supplier for AED 105.00 has no matching bill in the ledger."
+    )

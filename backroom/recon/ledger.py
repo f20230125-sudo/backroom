@@ -31,10 +31,10 @@ def check_ledger(pos, ledger, invoices, matcher):
             if outlet:
                 journals[(outlet, row.date)] += row.credit - row.debit
         if row.source == "BILL":
-            supplier = matcher.resolve("supplier", row.contact)
+            supplier = matcher.supplier_identity(row.contact)
             if supplier:
                 bills[(supplier, row.reference)] += row.debit - row.credit
-            else:
+            if not supplier or supplier.startswith("printed:"):
                 unresolved_bills.add(row.reference)
     for (outlet, day), net in sorted(sales.items()):
         booked = journals[(outlet, day)]
@@ -46,14 +46,14 @@ def check_ledger(pos, ledger, invoices, matcher):
                     date_or_week=day.isoformat(),
                     refs={"pos": f"{outlet}|{day}", "journal": f"SALES-{outlet}-{day}"},
                     amount=money(booked - net),
-                    message=f"{outlet} on {day} has POS net {aed(net)} "
-                    f"against ledger sales {aed(booked)}.",
+                    message=f"{outlet} on {day} has POS net sales of {aed(net)}, "
+                    f"compared with ledger sales of {aed(booked)}.",
                 )
             )
     seen = set()
     for invoice in sorted(invoices, key=lambda i: i.doc_id):
         record = invoice.record
-        key = (invoice.supplier_id, record.invoice_number)
+        key = (invoice.supplier_key, record.invoice_number)
         if not all(key) or key in seen or record.total is None:
             continue
         seen.add(key)
@@ -71,8 +71,16 @@ def check_ledger(pos, ledger, invoices, matcher):
                     date_or_week=record.issue_date.isoformat() if record.issue_date else None,
                     refs={"invoice": invoice.doc_id},
                     amount=money(record.total - value),
-                    message=f"Invoice {record.invoice_number} totals {aed(record.total)} against "
-                    f"{'no ledger bill' if booked is None else 'a ledger bill'} of {aed(value)}.",
+                    message=(
+                        f"Invoice {record.invoice_number} from "
+                        f"{record.supplier_name or invoice.supplier_id} for {aed(record.total)} "
+                        "has no matching bill in the ledger."
+                        if booked is None
+                        else f"Invoice {record.invoice_number} from "
+                        f"{record.supplier_name or invoice.supplier_id} "
+                        f"totals {aed(record.total)}, "
+                        f"but the ledger bill is {aed(booked)}."
+                    ),
                 )
             )
     return out
