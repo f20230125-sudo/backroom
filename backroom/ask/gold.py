@@ -184,9 +184,8 @@ def sql_expected(repo, call):
         )[0]
         cost = amount(r["value"])
         sale = sql_expected(repo, {"tool": "sales", "args": a})[0]
-        return [cost, sale] + (
-            [str(money(Decimal(cost) / Decimal(sale) * 100))] if Decimal(sale) else []
-        )
+        # The question asks for the cost and the percentage; sales are only the denominator.
+        return [cost] + ([str(money(Decimal(cost) / Decimal(sale) * 100))] if Decimal(sale) else [])
     if tool == "exceptions":
         r = repo.rows(
             "SELECT COUNT(*) AS value FROM exceptions WHERE (? IS NULL OR kind = ?) "

@@ -3,12 +3,10 @@
 import argparse
 from pathlib import Path
 
-from backroom.ask.agent import ask
+from backroom.ask.agent import ask, ask_llm
 from backroom.ask.gold import build_gold
 from backroom.db import connect, migrate
 from backroom.db.repo import dumps
-from backroom.inputs import offline_llm
-from backroom.settings import build_llm
 
 
 def main():
@@ -18,7 +16,7 @@ def main():
     mode.add_argument("--record", action="store_true")
     mode.add_argument("--offline", action="store_true")
     args = parser.parse_args()
-    llm = build_llm(offline=False) if args.record else offline_llm()
+    llm = ask_llm(record=args.record)
     try:
         with connect(args.database) as repo:
             migrate(repo)

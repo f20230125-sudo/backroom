@@ -195,7 +195,9 @@ def test_tools_totals_and_independent_sql(repo):
         result = tools.call(tool, args)
         assert expected.items() <= result["totals"].items()
         assert set(result) == {"tool_call_id", "tool", "args", "rows", "totals"}
-    assert sql_expected(repo, call("food_cost")) == ["10.00", "100.00", "10.00"]
+    # Food-cost questions request cost and percentage; sales are the denominator only.
+    assert sql_expected(repo, call("food_cost")) == ["10.00", "10.00"]
+    assert sql_expected(repo, call("sales")) == ["100.00"]
     assert tools.call("exceptions", {"date_from": "2026-08-01"})["rows"] == []
 
 
@@ -460,3 +462,81 @@ def test_gold_and_eval_do_not_score_missing_recordings(repo, tmp_path):
     assert score_ask(scoped[0], result) == "correct"
     result["answer"] = "No number"
     assert score_ask(scoped[0], result) == "wrong"
+
+
+def test_flat_reply_parses_into_call_or_answer():
+    from backroom.ask.agent import Answer, Call, parse_action
+
+    c = parse_action('{"action":"call","tool":"sales","args":{"outlet":"OUT-JBR"},"answer":""}')
+    assert isinstance(c, Call) and c.tool == "sales"
+    a = parse_action('{"action":"answer","answer":"x","numbers_used":[],"refused":false}')
+    assert isinstance(a, Answer) and a.reason == ""
+
+
+def test_flat_reply_rejects_unknown_action_and_tool():
+    import pytest
+    from pydantic import ValidationError
+
+    from backroom.ask.agent import parse_action
+
+    for bad in (
+        '{"action":"call_tool","tool":"sales","args":{}}',
+        '{"answer":"no action"}',
+        '{"action":"call","tool":"drop_tables","args":{}}',
+        "[1, 2]",
+    ):
+        with pytest.raises((ValueError, ValidationError)):
+            parse_action(bad)
+
+
+def test_model_sees_trimmed_rows_but_totals_intact():
+    from backroom.ask.agent import MAX_ROWS_TO_MODEL, model_view
+
+    result = {"tool_call_id": "call_1", "rows": [{"n": i} for i in range(40)], "totals": {"n": 1}}
+    view = model_view(result)
+    assert len(view["rows"]) == MAX_ROWS_TO_MODEL and view["rows_total"] == 40
+    assert view["totals"] == {"n": 1} and len(result["rows"]) == 40
+
+
+def test_restated_question_numbers_and_year_need_no_citation_but_invented_ones_do():
+    from backroom.ask.agent import Citation
+    from backroom.ask.numbers import check_answer
+
+    result = {"tool_call_id": "call_1", "rows": [], "totals": {"net_sales": "434657.34"}}
+    cite = [Citation(tool_call_id="call_1", value="434657.34")]
+    q = "What did Platform B pay JBR in week 34?"
+    assert check_answer("In week 34 of 2026 it was 434657.34.", cite, [result], q)
+    assert not check_answer("In week 35 it was 434657.34.", cite, [result], q)
+    assert not check_answer("It was 434657.34, up 12%.", cite, [result], q)
+
+
+def test_inline_markers_codes_and_list_numbers_are_not_claims():
+    from backroom.ask.agent import Citation
+    from backroom.ask.numbers import check_answer
+
+    result = {"tool_call_id": "call_1", "rows": [], "totals": {"spend": "2095.15", "count": 3}}
+    cites = [
+        Citation(tool_call_id="call_1", value="2095.15"),
+        Citation(tool_call_id="call_1", value="3"),
+        Citation(tool_call_id="call_1", value="OUT-AQK"),
+    ]
+    assert check_answer(
+        "Spend was 2095.15 {call_1,2095.15} across 3 {call_1,3} invoices.", cites, [result], ""
+    )
+    assert check_answer("Top items: 1. Rice 2095.15 2. Oil 3", cites, [result], "")
+    assert not check_answer("Spend was 2095.15 across 4 invoices.", cites, [result], "")
+    assert not check_answer("Spend was 2195.15 {call_1,2095.15}.", cites, [result], "")
+
+
+def test_digits_inside_cited_item_names_are_labels_not_claims():
+    from backroom.ask.agent import Citation
+    from backroom.ask.numbers import check_answer
+
+    result = {
+        "tool_call_id": "call_1",
+        "rows": [{"item": "Basmati Rice 5kg", "net_spend": "972.75"}],
+        "totals": {"net_spend": "972.75"},
+    }
+    cite = [Citation(tool_call_id="call_1", value="972.75")]
+    assert check_answer("Top item: Basmati Rice 5kg at 972.75.", cite, [result], "")
+    assert not check_answer("Top item: Basmati Rice 7kg at 972.75.", cite, [result], "")

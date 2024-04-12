@@ -90,7 +90,7 @@ def grounded(text, facts):
     return all(matches(value, allowed) for value in numbers(text))
 
 
-def check_answer(answer, citations, results):
+def check_answer(answer, citations, results, question: str = ""):
     # Free-text names/descriptions cannot launder an injected number into quantitative
     # evidence. IDs/dates still contribute their displayed components when cited.
     index = {
@@ -114,10 +114,45 @@ def check_answer(answer, citations, results):
         try:
             value = Decimal(citation.value.replace(",", ""))
         except InvalidOperation:
-            return False
+            # A cited code such as "OUT-AQK" is not a number; it neither supports nor
+            # invalidates numeric claims, so it is skipped rather than failing the answer.
+            continue
         if not matches(value, index.get(citation.tool_call_id, [])):
             return False
         # Compare answer text to the original values. Reapplying tolerance to a
         # rounded citation would otherwise allow twice the permitted error.
         allowed.extend(n for n in index[citation.tool_call_id] if matches(value, [n]))
-    return all(matches(value, allowed) for value in numbers(answer))
+    # Restating the question's own numbers ("in week 34") or the data year is not a claim
+    # that needs evidence; every other number must come from a cited tool result.
+    restated = [*numbers(question), Decimal(2026)]
+    # Digits inside a cited row's own names ("Basmati Rice 5kg", "week 34 (17-23 Aug)") are
+    # part of a label, not claims: remove those exact strings before reading numbers.
+    text = strip_markers(answer)
+    cited = {c.tool_call_id for c in citations}
+    labels = sorted(
+        {
+            str(v)
+            for r in results
+            if r["tool_call_id"] in cited
+            for row in r["rows"]
+            for k, v in row.items()
+            if k in {"item", "description", "supplier_name", "date_or_week"} and v
+        },
+        key=len,
+        reverse=True,
+    )
+    for label in labels:
+        text = text.replace(label, " ")
+    return all(matches(value, allowed) or value in restated for value in numbers(text))
+
+
+CITATION_MARKER = re.compile(r"\{[^{}]*call_\d+[^{}]*\}|\[[^\[\]]*call_\d+[^\[\]]*\]")
+# "1. Basmati Rice" or "(2) Olive Oil": a rank followed by words, at a line start or after a
+# space; "1.5 kg" and "AED 2.50" are untouched because a digit, not a space, follows the dot.
+LIST_MARKER = re.compile(r"(?:^|(?<=\s))\(?\d{1,2}[.)](?=\s+[A-Za-z])", re.MULTILINE)
+
+
+def strip_markers(answer: str) -> str:
+    """Remove inline citation markers ("{call_1,2095.15}") and list numbering ("1. "): the
+    model sometimes writes them into the text, and their digits are not claims."""
+    return LIST_MARKER.sub("", CITATION_MARKER.sub("", answer))
