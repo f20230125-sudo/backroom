@@ -24,7 +24,15 @@ def normalise(value: str, entity_type: str | None = None) -> str:
         value = re.sub(
             r"\b(?:\d+\s*[x×]\s*)?\d+(?:\.\d+)?\s*"
             r"(?:kg|kgm|g|gm|ml|ltr|litres?|liters?|l|pcs?|pieces?)\b"
-            r"(?:\s+(?:crate|pack|box|bag|case))?",
+            r"(?:\s+(?:crate|pack|box|bag|case|can|tin|tub|bottle|jar))?",
+            " ",
+            value,
+        )
+        # Case packs and counts are how an item is bought, not what it is: "1L X 12",
+        # "100 tea bags", "catering pack". A bare "bag" stays, since Paper Bag is a product.
+        value = re.sub(
+            r"\b\d+(?:\.\d+)?\s*(?:l|ltr|ml|kg|g)\s*[x×]\s*\d+\b|\b\d+\s+(?:tea\s+)?bags?\b"
+            r"|\bcatering\s+pack\b|(?:^|\s)[x×]\s*\d+\b|\(\s*(?:box|can|tin|tub|case)\s*\)",
             " ",
             value,
         )

@@ -9,12 +9,11 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from backroom.ask.agent import block
+from backroom.ask.agent import ask_llm, block
 from backroom.ask.numbers import grounded
 from backroom.db import connect, migrate
 from backroom.db.repo import dumps
-from backroom.inputs import offline_llm
-from backroom.settings import CacheMiss, build_llm
+from backroom.settings import CacheMiss
 
 TEMPLATE = "template (model not recorded)"
 INVOICE_KINDS = frozenset(
@@ -195,7 +194,7 @@ def make_draft(facts, *, llm):
 
 def generate_drafts(repo, *, llm=None):
     owned = llm is None
-    llm = llm if llm is not None else offline_llm()
+    llm = llm if llm is not None else ask_llm()
     output = []
     try:
         current = set()
@@ -223,7 +222,7 @@ def main():
     args = parser.parse_args()
     from backroom.brief import generate_brief
 
-    llm = build_llm(offline=False) if args.record else offline_llm()
+    llm = ask_llm(record=args.record)
     try:
         with connect(args.database) as repo:
             migrate(repo)
