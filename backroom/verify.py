@@ -59,11 +59,14 @@ def pdf_content(data: bytes) -> bytes:
     """
 
     def decoded(match):
-        try:
-            body = zlib.decompress(a85decode(match.group(2).strip(), adobe=True))
-        except ValueError:
-            return match.group(0)
-        return match.group(1) + body + match.group(3)
+        # Page streams are ASCII85 + Flate; embedded font streams are Flate only.
+        for unwrap in (lambda raw: a85decode(raw.strip(), adobe=True), lambda raw: raw):
+            try:
+                body = zlib.decompressobj().decompress(unwrap(match.group(2)))
+            except (ValueError, zlib.error):
+                continue
+            return match.group(1) + body + match.group(3)
+        return match.group(0)
 
     data = re.sub(rb"(stream\r?\n)(.*?)((?:\r?\n)?endstream)", decoded, data, flags=re.S)
     data = re.sub(rb"/Length \d+", b"/Length", data)
