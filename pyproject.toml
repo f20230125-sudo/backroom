@@ -1,0 +1,28 @@
+[project]
+name = "backroom"
+version = "0.1.0"
+description = "A back-office agent for a restaurant group: LLM document extraction, name matching, reconciliation and questions over the numbers (synthetic data)."
+requires-python = ">=3.12"
+dependencies = [
+    "flask>=3.1,<4",
+    "httpx>=0.28,<1",
+    "pdfplumber>=0.11.7,<0.12",
+    "psycopg[binary]>=3.2.10,<4",
+    "pydantic>=2.12,<3",
+    "rapidfuzz>=3.14,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.4,<10", "ruff>=0.13,<1", "reportlab>=4.4,<5", "python-dotenv>=1.1,<2"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
