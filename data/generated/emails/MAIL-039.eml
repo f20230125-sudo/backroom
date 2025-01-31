@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-18.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-039@backroom.example>
+Date: Mon, 17 Aug 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0126 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Mirage Cap Supplies Trading L.L.C.
+Supplier TRN: 100000000001703
+Supplier address: Warehouse 48, Industrial Lane 18, Sharjah
+Supplier emirate: SH
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0126
+Issued: 2026-08-17
+Due: 2026-08-31
+Currency: AED
+Deliver to: DIFC
+Net: 4,406.38
+VAT: 220.32
+Total: 4,626.70
+Items:
+Kraft Bowl Lid; quantity 18 BX; unit price 81.35; VAT 5%; line net 1,464.30
+Paper Bag; quantity 6 BX; unit price 86.39; VAT 5%; line net 518.34
+Delivery Seal; quantity 18 BX; unit price 40.23; VAT 5%; line net 724.14
+Cutlery Set; quantity 20 BX; unit price 84.98; VAT 5%; line net 1,699.60
+
+Regards, Supplier accounts desk

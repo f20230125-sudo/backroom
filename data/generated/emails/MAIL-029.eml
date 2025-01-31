@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-08.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-029@backroom.example>
+Date: Tue, 08 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0116 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Coral Basket Seafood Trading L.L.C.
+Supplier TRN: 100000000000803
+Supplier address: Warehouse 38, Industrial Lane 8, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0116
+Issued: 2026-09-08
+Due: 2026-10-23
+Currency: AED
+Deliver to: Outlet 3
+Net: 1,585.17
+VAT: 79.26
+Total: 1,664.43
+Items:
+Lamb Mince; quantity 3 KGM; unit price 31.67; VAT 5%; line net 95.01
+Chicken Breast; quantity 14 KGM; unit price 28.98; VAT 5%; line net 405.72
+Lamb Shoulder; quantity 6 KGM; unit price 29.84; VAT 5%; line net 179.04
+Beef Mince; quantity 20 KGM; unit price 45.27; VAT 5%; line net 905.40
+
+Regards, Supplier accounts desk

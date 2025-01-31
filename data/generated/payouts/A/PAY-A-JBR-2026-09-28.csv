@@ -1,0 +1,5 @@
+statement_id,outlet_code,merchant,week_start,week_end,paid_on,fee_rate,row_id,sale_date,gross_sales,commission,commission_vat,refunds,promo_share,adjustments,net_payout
+PAY-A-JBR-2026-09-28,OUT-JBR,"Saffron & Salt, JBR Walk",28/09/2026,04/10/2026,07/10/2026,0.25,PAY-A-JBR-2026-09-28-1,28/09/2026,2700.10,675.03,33.75,0.00,12.00,-81.00,
+PAY-A-JBR-2026-09-28,OUT-JBR,"Saffron & Salt, JBR Walk",28/09/2026,04/10/2026,07/10/2026,0.25,PAY-A-JBR-2026-09-28-2,29/09/2026,2594.59,648.65,32.43,0.00,12.00,-25.95,
+PAY-A-JBR-2026-09-28,OUT-JBR,"Saffron & Salt, JBR Walk",28/09/2026,04/10/2026,07/10/2026,0.25,PAY-A-JBR-2026-09-28-3,30/09/2026,2163.84,540.96,27.05,0.00,12.00,-43.28,
+PAY-A-JBR-2026-09-28,OUT-JBR,"Saffron & Salt, JBR Walk",28/09/2026,04/10/2026,07/10/2026,0.25,TOTAL,,,,,,,,5386.43

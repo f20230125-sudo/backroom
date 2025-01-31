@@ -1,0 +1,30 @@
+From: Accounts desk <accounts@sup-12.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-015@backroom.example>
+Date: Wed, 02 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0102 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Palm Loom Linen Trading L.L.C.
+Supplier TRN: 100000000001203
+Supplier address: Warehouse 42, Industrial Lane 12, Sharjah
+Supplier emirate: SH
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0102
+Issued: 2026-09-02
+Due: 2026-09-16
+Currency: AED
+Deliver to: Central Kitchen, Al Quoz
+Net: 236.45
+VAT: 11.82
+Total: 248.27
+Items:
+Table Linen; quantity 6 H87; unit price 12.26; VAT 5%; line net 73.56
+Service Cloth; quantity 7 H87; unit price 23.27; VAT 5%; line net 162.89
+
+Regards, Supplier accounts desk

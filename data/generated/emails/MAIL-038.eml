@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-17.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-038@backroom.example>
+Date: Mon, 10 Aug 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0125 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Mirage Cup Beverages Trading L.L.C.
+Supplier TRN: 100000000001703
+Supplier address: Warehouse 47, Industrial Lane 17, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0125
+Issued: 2026-08-10
+Due: 2026-09-24
+Currency: AED
+Deliver to: Al Quoz
+Net: 2,914.64
+VAT: 145.73
+Total: 3,060.37
+Items:
+Mango Juice; quantity 10 CS; unit price 75.28; VAT 5%; line net 752.80
+Apple Juice; quantity 16 CS; unit price 45.94; VAT 5%; line net 735.04
+Orange Juice; quantity 18 CS; unit price 68.20; VAT 5%; line net 1,227.60
+Sparkling Water; quantity 5 CS; unit price 39.84; VAT 5%; line net 199.20
+
+Regards, Supplier accounts desk

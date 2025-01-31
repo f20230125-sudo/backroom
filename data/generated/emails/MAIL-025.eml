@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-04.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-025@backroom.example>
+Date: Tue, 11 Aug 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0112 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Pearl Meadow
+Supplier TRN: 100000000000403
+Supplier address: Warehouse 34, Industrial Lane 4, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0112
+Issued: 2026-08-11
+Due: 2026-09-10
+Currency: AED
+Deliver to: Central Kitchen
+Net: 571.37
+VAT: 28.57
+Total: 599.94
+Items:
+Whole Milk; quantity 11 LTR; unit price 12.52; VAT 5%; line net 137.72
+Soft Cheese; quantity 20 LTR; unit price 14.39; VAT 5%; line net 287.80
+Laban; quantity 7 LTR; unit price 15.89; VAT 5%; line net 111.23
+Feta; quantity 3 LTR; unit price 11.54; VAT 5%; line net 34.62
+
+Regards, Supplier accounts desk

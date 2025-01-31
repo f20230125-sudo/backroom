@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-07.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-028@backroom.example>
+Date: Tue, 01 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0115 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Crescent Pasture Meats Trading L.L.C.
+Supplier TRN: 100000000000703
+Supplier address: Warehouse 37, Industrial Lane 7, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0115
+Issued: 2026-09-01
+Due: 2026-10-01
+Currency: AED
+Deliver to: Central Kitchen
+Net: 1,967.36
+VAT: 98.37
+Total: 2,065.73
+Items:
+White Fish Fillet; quantity 14 KGM; unit price 38.00; VAT 5%; line net 532.00
+Chicken Breast; quantity 14 KGM; unit price 63.13; VAT 5%; line net 883.82
+Chicken Thigh; quantity 13 KGM; unit price 30.50; VAT 5%; line net 396.50
+Lamb Shoulder; quantity 4 KGM; unit price 38.76; VAT 5%; line net 155.04
+
+Regards, Supplier accounts desk
