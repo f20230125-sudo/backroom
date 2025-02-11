@@ -83,147 +83,147 @@ date,account,contact,reference,description,debit,credit,source
 2026-10-07,100,Platform B,PAY-B-DIFC-2026-09-28,Weekly payout S&S DIFC,6064.04,0,BANK
 2026-10-07,100,Platform C,PAY-C-JBR-2026-09-28,Weekly payout JBR Walk,3364.56,0,BANK
 2026-10-07,100,Platform C,PAY-C-DIFC-2026-09-28,Weekly payout Outlet 3,4315.84,0,BANK
-2026-07-01,510,Gulf Fresh,INV-0001,Supplier bill DOC-001,591.60,0,BILL
-2026-07-08,510,Gulf Fresh Fish Trading,INV-0002,Supplier bill DOC-002,2457.32,0,BILL
-2026-07-15,510,DUNE ORCHARD TRDG,INV-0003,Supplier bill DOC-003,598.69,0,BILL
-2026-07-22,510,PEARL MEADOW DAIRY LLC,INV-0004,Supplier bill DOC-004,898.33,0,BILL
-2026-07-29,510,COPPER DHOW TRDG,INV-0005,Supplier bill DOC-005,1634.15,0,BILL
-2026-08-05,510,Al Quoz Pantry LLC,INV-0006,Supplier bill DOC-006,1906.64,0,BILL
-2026-08-12,510,Crescent Pasture Meats Trading L.L.C.,INV-0007,Supplier bill DOC-007,1364.77,0,BILL
-2026-08-19,510,Coral Basket Seafood Trading L.L.C.,INV-0008,Supplier bill DOC-008,2638.51,0,BILL
-2026-08-26,510,Amber Grain Provisions Trading L.L.C.,INV-0009,Supplier bill DOC-009,3303.62,0,BILL
-2026-09-02,510,Dune Spring Beverages Trading L.L.C.,INV-0010,Supplier bill DOC-010,2021.44,0,BILL
-2026-09-09,520,Dune Springs Packaging Trading L.L.C.,INV-0011,Supplier bill DOC-011,3571.77,0,BILL
-2026-09-16,530,Palm Loom Linen Trading L.L.C.,INV-0012,Supplier bill DOC-012,399.17,0,BILL
-2026-07-14,510,Salt Crate Seasonings Trading L.L.C.,INV-0016,Supplier bill DOC-016,2750.99,0,BILL
-2026-07-21,510,Mirage Cup Beverages Trading L.L.C.,INV-0017,Supplier bill DOC-017,3202.74,0,BILL
-2026-07-28,520,Mirage Cap Supplies Trading L.L.C.,INV-0018,Supplier bill DOC-018,2085.15,0,BILL
-2026-08-04,510,Gulf Fresh Produce,INV-0019,Supplier bill DOC-019,555.40,0,BILL
-2026-08-11,510,Gulf Fresh Fish,INV-0020,Supplier bill DOC-020,2899.66,0,BILL
-2026-08-18,510,Dune Orchard,INV-0021,Supplier bill DOC-021,496.47,0,BILL
-2026-08-25,510,Pearl Meadow,INV-0022,Supplier bill DOC-022,760.76,0,BILL
-2026-09-01,510,Copper Dhow,INV-0023,Supplier bill DOC-023,2676.85,0,BILL
-2026-09-08,510,Al Quoz Pantry,INV-0024,Supplier bill DOC-024,1324.56,0,BILL
-2026-09-15,510,Crescent Pasture Meats Trading L.L.C.,INV-0025,Supplier bill DOC-025,1576.91,0,BILL
-2026-09-22,510,Coral Basket Seafood Trading L.L.C.,INV-0026,Supplier bill DOC-026,1356.22,0,BILL
-2026-09-29,510,Amber Grain Provisions Trading L.L.C.,INV-0027,Supplier bill DOC-027,1112.62,0,BILL
-2026-07-06,510,Dune Spring Beverages Trading L.L.C.,INV-0028,Supplier bill DOC-028,2429.57,0,BILL
-2026-07-13,520,Dune Springs Packaging Trading L.L.C.,INV-0029,Supplier bill DOC-029,3761.04,0,BILL
-2026-07-20,530,Palm Loom Linen Trading L.L.C.,INV-0030,Supplier bill DOC-030,679.91,0,BILL
-2026-07-27,530,Palm Bloom Cleaning Trading L.L.C.,INV-0031,Supplier bill DOC-031,700.62,0,BILL
-2026-08-03,520,Silver Ladle Packaging Trading L.L.C.,INV-0032,Supplier bill DOC-032,3195.89,0,BILL
-2026-08-10,510,Saffron Crate Spices Trading L.L.C.,INV-0033,Supplier bill DOC-033,3596.43,0,BILL
-2026-08-17,510,Salt Crate Seasonings Trading L.L.C.,INV-0034,Supplier bill DOC-034,2549.86,0,BILL
-2026-08-24,510,Mirage Cup Beverages Trading L.L.C.,INV-0035,Supplier bill DOC-035,2475.13,0,BILL
-2026-08-31,520,Mirage Cap Supplies Trading L.L.C.,INV-0036,Supplier bill DOC-036,2759.70,0,BILL
-2026-09-07,510,GULF FRESH PRODUCE TRDG LLC,INV-0037,Supplier bill DOC-037,597.58,0,BILL
-2026-09-14,510,GULF FRESH FISH TRDG LLC,INV-0038,Supplier bill DOC-038,3367.06,0,BILL
-2026-09-21,510,Dune Orchard Produce,INV-0039,Supplier bill DOC-039,809.30,0,BILL
-2026-09-28,510,Pearl Meadow Dairy,INV-0040,Supplier bill DOC-040,418.87,0,BILL
-2026-07-05,510,Copper Dhow Dry Goods,INV-0041,Supplier bill DOC-041,2460.86,0,BILL
-2026-07-12,510,AL QUOZ PANTRY TRDG,INV-0042,Supplier bill DOC-042,3911.90,0,BILL
-2026-07-19,510,Crescent Pasture Meats Trading L.L.C.,INV-0043,Supplier bill DOC-043,2667.20,0,BILL
-2026-07-26,510,Coral Basket Seafood Trading L.L.C.,INV-0044,Supplier bill DOC-044,2593.90,0,BILL
-2026-08-02,510,Amber Grain Provisions Trading L.L.C.,INV-0045,Supplier bill DOC-045,3711.27,0,BILL
-2026-08-09,510,Dune Spring Beverages Trading L.L.C.,INV-0046,Supplier bill DOC-046,1558.31,0,BILL
-2026-08-16,520,Dune Springs Packaging Trading L.L.C.,INV-0047,Supplier bill DOC-047,2617.08,0,BILL
-2026-08-23,530,Palm Loom Linen Trading L.L.C.,INV-0048,Supplier bill DOC-048,346.31,0,BILL
-2026-08-30,530,Palm Bloom Cleaning Trading L.L.C.,INV-0049,Supplier bill DOC-049,1468.61,0,BILL
-2026-09-06,520,Silver Ladle Packaging Trading L.L.C.,INV-0050,Supplier bill DOC-050,3832.38,0,BILL
-2026-09-13,510,Saffron Crate Spices Trading L.L.C.,INV-0051,Supplier bill DOC-051,1070.15,0,BILL
-2026-09-20,510,Salt Crate Seasonings Trading L.L.C.,INV-0052,Supplier bill DOC-052,3419.43,0,BILL
-2026-09-27,510,Mirage Cup Beverages Trading L.L.C.,INV-0053,Supplier bill DOC-053,2173.99,0,BILL
-2026-07-04,520,Mirage Cap Supplies Trading L.L.C.,INV-0054,Supplier bill DOC-054,1869.55,0,BILL
-2026-07-11,510,Gulf Fresh,INV-0055,Supplier bill DOC-055,449.90,0,BILL
-2026-07-18,510,Gulf Fresh Fish Trading,INV-0056,Supplier bill DOC-056,2224.57,0,BILL
-2026-07-25,510,DUNE ORCHARD TRDG,INV-0057,Supplier bill DOC-057,795.44,0,BILL
-2026-08-01,510,PEARL MEADOW DAIRY LLC,INV-0058,Supplier bill DOC-058,376.59,0,BILL
-2026-08-08,510,COPPER DHOW TRDG,INV-0059,Supplier bill DOC-059,1170.80,0,BILL
-2026-08-15,510,Al Quoz Pantry LLC,INV-0060,Supplier bill DOC-060,1862.56,0,BILL
-2026-08-22,510,Crescent Pasture Meats Trading L.L.C.,INV-0061,Supplier bill DOC-061,1903.30,0,BILL
-2026-08-29,510,Coral Basket Seafood Trading L.L.C.,INV-0062,Supplier bill DOC-062,1357.97,0,BILL
-2026-09-05,510,Amber Grain Provisions Trading L.L.C.,INV-0063,Supplier bill DOC-063,2953.43,0,BILL
-2026-09-12,510,Dune Spring Beverages Trading L.L.C.,INV-0064,Supplier bill DOC-064,2148.47,0,BILL
-2026-09-19,520,Dune Springs Packaging Trading L.L.C.,INV-0065,Supplier bill DOC-065,3960.30,0,BILL
-2026-09-26,530,Palm Loom Linen Trading L.L.C.,INV-0066,Supplier bill DOC-066,227.09,0,BILL
-2026-07-03,530,Palm Bloom Cleaning Trading L.L.C.,INV-0067,Supplier bill DOC-067,1083.12,0,BILL
-2026-07-10,520,Silver Ladle Packaging Trading L.L.C.,INV-0068,Supplier bill DOC-068,2616.27,0,BILL
-2026-07-17,510,Saffron Crate Spices Trading L.L.C.,INV-0069,Supplier bill DOC-069,1998.09,0,BILL
-2026-07-24,510,Salt Crate Seasonings Trading L.L.C.,INV-0070,Supplier bill DOC-070,1508.97,0,BILL
-2026-07-31,510,Mirage Cup Beverages Trading L.L.C.,INV-0071,Supplier bill DOC-071,1820.83,0,BILL
-2026-08-07,520,Mirage Cap Supplies Trading L.L.C.,INV-0072,Supplier bill DOC-072,3896.27,0,BILL
-2026-08-14,510,Gulf Fresh Produce,INV-0073,Supplier bill DOC-073,897.12,0,BILL
-2026-08-21,510,Gulf Fresh Fish,INV-0074,Supplier bill DOC-074,1923.45,0,BILL
-2026-08-28,510,Dune Orchard,INV-0075,Supplier bill DOC-075,694.19,0,BILL
-2026-09-04,510,Pearl Meadow,INV-0076,Supplier bill DOC-076,850.71,0,BILL
-2026-09-11,510,Copper Dhow,INV-0077,Supplier bill DOC-077,2351.88,0,BILL
-2026-09-18,510,Al Quoz Pantry,INV-0078,Supplier bill DOC-078,2566.34,0,BILL
-2026-09-25,510,Crescent Pasture Meats Trading L.L.C.,INV-0079,Supplier bill DOC-079,1972.70,0,BILL
-2026-07-02,510,Coral Basket Seafood Trading L.L.C.,INV-0080,Supplier bill DOC-080,3010.06,0,BILL
-2026-07-09,510,Amber Grain Provisions Trading L.L.C.,INV-0081,Supplier bill DOC-081,3918.54,0,BILL
-2026-07-16,510,Dune Spring Beverages Trading L.L.C.,INV-0082,Supplier bill DOC-082,3689.83,0,BILL
-2026-07-23,520,Dune Springs Packaging Trading L.L.C.,INV-0083,Supplier bill DOC-083,1472.09,0,BILL
-2026-07-30,530,Palm Loom Linen Trading L.L.C.,INV-0084,Supplier bill DOC-084,153.51,0,BILL
-2026-08-06,530,Palm Bloom Cleaning Trading L.L.C.,INV-0085,Supplier bill DOC-085,1261.20,0,BILL
-2026-08-13,520,Silver Ladle Packaging Trading L.L.C.,INV-0086,Supplier bill DOC-086,2243.00,0,BILL
-2026-08-20,510,Saffron Crate Spices Trading L.L.C.,INV-0087,Supplier bill DOC-087,4057.97,0,BILL
-2026-09-25,510,Salt Crate Seasonings Trading L.L.C.,CN-0088,Supplier bill DOC-088,0,1905.47,BILL
-2026-09-26,510,Mirage Cup Beverages Trading L.L.C.,CN-0089,Supplier bill DOC-089,0,2810.98,BILL
-2026-09-27,520,Mirage Cap Supplies Trading L.L.C.,CN-0090,Supplier bill DOC-090,0,2710.70,BILL
-2026-09-17,510,GULF FRESH PRODUCE TRDG LLC,INV-0091,Supplier bill MAIL-004,872.99,0,BILL
-2026-09-24,510,GULF FRESH FISH TRDG LLC,INV-0092,Supplier bill MAIL-005,1388.09,0,BILL
-2026-07-01,510,Dune Orchard Produce,INV-0093,Supplier bill MAIL-006,578.61,0,BILL
-2026-07-08,510,Pearl Meadow Dairy,INV-0094,Supplier bill MAIL-007,657.83,0,BILL
-2026-07-15,510,Copper Dhow Dry Goods,INV-0095,Supplier bill MAIL-008,2326.18,0,BILL
-2026-07-22,510,AL QUOZ PANTRY TRDG,INV-0096,Supplier bill MAIL-009,2623.20,0,BILL
-2026-07-29,510,Crescent Pasture Meats Trading L.L.C.,INV-0097,Supplier bill MAIL-010,1166.81,0,BILL
-2026-08-05,510,Coral Basket Seafood Trading L.L.C.,INV-0098,Supplier bill MAIL-011,2021.54,0,BILL
-2026-08-12,510,Amber Grain Provisions Trading L.L.C.,INV-0099,Supplier bill MAIL-012,1901.36,0,BILL
-2026-08-19,510,Dune Spring Beverages Trading L.L.C.,INV-0100,Supplier bill MAIL-013,2558.54,0,BILL
-2026-08-26,520,Dune Springs Packaging Trading L.L.C.,INV-0101,Supplier bill MAIL-014,1737.03,0,BILL
-2026-09-02,530,Palm Loom Linen Trading L.L.C.,INV-0102,Supplier bill MAIL-015,248.27,0,BILL
-2026-09-09,530,Palm Bloom Cleaning Trading L.L.C.,INV-0103,Supplier bill MAIL-016,1614.76,0,BILL
-2026-09-16,520,Silver Ladle Packaging Trading L.L.C.,INV-0104,Supplier bill MAIL-017,3155.30,0,BILL
-2026-09-23,510,Saffron Crate Spices Trading L.L.C.,INV-0105,Supplier bill MAIL-018,2503.88,0,BILL
-2026-09-30,510,Salt Crate Seasonings Trading L.L.C.,INV-0106,Supplier bill MAIL-019,3550.81,0,BILL
-2026-07-07,510,Mirage Cup Beverages Trading L.L.C.,INV-0107,Supplier bill MAIL-020,1817.00,0,BILL
-2026-07-14,520,Mirage Cap Supplies Trading L.L.C.,INV-0108,Supplier bill MAIL-021,2347.23,0,BILL
-2026-07-21,510,Gulf Fresh,INV-0109,Supplier bill MAIL-022,585.94,0,BILL
-2026-07-28,510,Gulf Fresh Fish Trading,INV-0110,Supplier bill MAIL-023,1357.73,0,BILL
-2026-08-04,510,DUNE ORCHARD TRDG,INV-0111,Supplier bill MAIL-024,814.10,0,BILL
-2026-08-11,510,PEARL MEADOW DAIRY LLC,INV-0112,Supplier bill MAIL-025,599.94,0,BILL
-2026-08-18,510,COPPER DHOW TRDG,INV-0113,Supplier bill MAIL-026,2048.19,0,BILL
-2026-08-25,510,Al Quoz Pantry LLC,INV-0114,Supplier bill MAIL-027,3848.39,0,BILL
-2026-09-01,510,Crescent Pasture Meats Trading L.L.C.,INV-0115,Supplier bill MAIL-028,2065.73,0,BILL
-2026-09-08,510,Coral Basket Seafood Trading L.L.C.,INV-0116,Supplier bill MAIL-029,1664.43,0,BILL
-2026-09-15,510,Amber Grain Provisions Trading L.L.C.,INV-0117,Supplier bill MAIL-030,2407.95,0,BILL
-2026-09-22,510,Dune Spring Beverages Trading L.L.C.,INV-0118,Supplier bill MAIL-031,3128.20,0,BILL
-2026-09-29,520,Dune Springs Packaging Trading L.L.C.,INV-0119,Supplier bill MAIL-032,5322.07,0,BILL
-2026-07-06,530,Palm Loom Linen Trading L.L.C.,INV-0120,Supplier bill MAIL-033,240.52,0,BILL
-2026-07-13,530,Palm Bloom Cleaning Trading L.L.C.,INV-0121,Supplier bill MAIL-034,610.97,0,BILL
-2026-07-20,520,Silver Ladle Packaging Trading L.L.C.,INV-0122,Supplier bill MAIL-035,3425.60,0,BILL
-2026-07-27,510,Saffron Crate Spices Trading L.L.C.,INV-0123,Supplier bill MAIL-036,2871.05,0,BILL
-2026-08-03,510,Salt Crate Seasonings Trading L.L.C.,INV-0124,Supplier bill MAIL-037,2536.40,0,BILL
-2026-08-10,510,Mirage Cup Beverages Trading L.L.C.,INV-0125,Supplier bill MAIL-038,3060.37,0,BILL
-2026-08-17,520,Mirage Cap Supplies Trading L.L.C.,INV-0126,Supplier bill MAIL-039,4626.70,0,BILL
-2026-08-24,510,Gulf Fresh Produce,INV-0127,Supplier bill MAIL-040,717.71,0,BILL
-2026-08-31,510,Gulf Fresh Fish,INV-0128,Supplier bill MAIL-041,841.04,0,BILL
-2026-09-07,510,Dune Orchard,INV-0129,Supplier bill MAIL-042,871.71,0,BILL
-2026-09-14,510,Pearl Meadow,INV-0130,Supplier bill MAIL-043,622.86,0,BILL
-2026-09-21,510,Copper Dhow,INV-0131,Supplier bill MAIL-044,3412.66,0,BILL
-2026-09-28,510,Al Quoz Pantry,INV-0132,Supplier bill MAIL-045,2624.87,0,BILL
-2026-07-05,510,Crescent Pasture Meats Trading L.L.C.,INV-0133,Supplier bill MAIL-046,2386.37,0,BILL
-2026-07-12,510,Coral Basket Seafood Trading L.L.C.,INV-0134,Supplier bill MAIL-047,3094.94,0,BILL
-2026-07-19,510,Amber Grain Provisions Trading L.L.C.,INV-0135,Supplier bill MAIL-048,2491.23,0,BILL
-2026-07-26,510,Dune Spring Beverages Trading L.L.C.,INV-0136,Supplier bill MAIL-049,2829.28,0,BILL
-2026-08-02,520,Dune Springs Packaging Trading L.L.C.,INV-0137,Supplier bill MAIL-050,4050.15,0,BILL
-2026-08-09,530,Palm Loom Linen Trading L.L.C.,INV-0138,Supplier bill MAIL-051,692.80,0,BILL
-2026-08-16,530,Palm Bloom Cleaning Trading L.L.C.,INV-0139,Supplier bill MAIL-052,712.78,0,BILL
-2026-08-23,520,Silver Ladle Packaging Trading L.L.C.,INV-0140,Supplier bill MAIL-053,2731.81,0,BILL
-2026-08-30,510,Saffron Crate Spices Trading L.L.C.,INV-0141,Supplier bill MAIL-054,2908.12,0,BILL
-2026-09-06,510,Salt Crate Seasonings Trading L.L.C.,INV-0142,Supplier bill MAIL-055,2448.23,0,BILL
-2026-09-13,510,Mirage Cup Beverages Trading L.L.C.,INV-0143,Supplier bill MAIL-056,3681.70,0,BILL
-2026-09-20,520,Mirage Cap Supplies Trading L.L.C.,INV-0144,Supplier bill MAIL-057,3058.82,0,BILL
+2026-07-01,510,Gulf Fresh,GFP/26/26367,Supplier bill DOC-001,707.63,0,BILL
+2026-07-08,510,Gulf Fresh Fish Trading,GFF-2026-50504,Supplier bill DOC-002,1630.17,0,BILL
+2026-07-15,510,DUNE ORCHARD TRDG,TI 24843,Supplier bill DOC-003,748.82,0,BILL
+2026-07-22,510,PEARL MEADOW DAIRY LLC,PMD-2607-0639,Supplier bill DOC-004,781.53,0,BILL
+2026-07-29,510,COPPER DHOW TRDG,CD-2607-6955,Supplier bill DOC-005,2317.48,0,BILL
+2026-08-05,510,Al Quoz Pantry LLC,AQP/INV/022258,Supplier bill DOC-006,1544.51,0,BILL
+2026-08-12,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13261,Supplier bill DOC-007,1338.05,0,BILL
+2026-08-19,510,Coral Basket Seafood Trading L.L.C.,CBS-023584,Supplier bill DOC-008,1148.19,0,BILL
+2026-08-26,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3060,Supplier bill DOC-009,2656.52,0,BILL
+2026-09-02,510,Dune Spring Beverages Trading L.L.C.,DSB-10731/26,Supplier bill DOC-010,2302.24,0,BILL
+2026-09-09,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61112,Supplier bill DOC-011,3846.40,0,BILL
+2026-09-16,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2220,Supplier bill DOC-012,109.59,0,BILL
+2026-07-14,510,Salt Crate Seasonings Trading L.L.C.,SCT-028838,Supplier bill DOC-016,2559.41,0,BILL
+2026-07-21,510,Mirage Cup Beverages Trading L.L.C.,MCB/2607/0315,Supplier bill DOC-017,2078.94,0,BILL
+2026-07-28,520,Mirage Cap Supplies Trading L.L.C.,MCS-INV-24188,Supplier bill DOC-018,2572.50,0,BILL
+2026-08-04,510,Gulf Fresh Produce,GFP/26/26370,Supplier bill DOC-019,837.75,0,BILL
+2026-08-11,510,Gulf Fresh Fish,GFF-2026-50507,Supplier bill DOC-020,864.80,0,BILL
+2026-08-18,510,Dune Orchard,TI 24846,Supplier bill DOC-021,518.77,0,BILL
+2026-08-25,510,Pearl Meadow,PMD-2608-0642,Supplier bill DOC-022,377.64,0,BILL
+2026-09-01,510,Copper Dhow,CD-2609-6958,Supplier bill DOC-023,2194.84,0,BILL
+2026-09-08,510,Al Quoz Pantry,AQP/INV/022261,Supplier bill DOC-024,1188.33,0,BILL
+2026-09-15,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13264,Supplier bill DOC-025,1976.94,0,BILL
+2026-09-22,510,Coral Basket Seafood Trading L.L.C.,CBS-023587,Supplier bill DOC-026,880.06,0,BILL
+2026-09-29,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3063,Supplier bill DOC-027,3863.86,0,BILL
+2026-07-06,510,Dune Spring Beverages Trading L.L.C.,DSB-10726/26,Supplier bill DOC-028,2384.69,0,BILL
+2026-07-13,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61107,Supplier bill DOC-029,3546.87,0,BILL
+2026-07-20,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2215,Supplier bill DOC-030,536.56,0,BILL
+2026-07-27,530,Palm Bloom Cleaning Trading L.L.C.,PBC 044745,Supplier bill DOC-031,1566.34,0,BILL
+2026-08-03,520,Silver Ladle Packaging Trading L.L.C.,SLP-26-70427,Supplier bill DOC-032,3125.72,0,BILL
+2026-08-10,510,Saffron Crate Spices Trading L.L.C.,SCS/02062/26,Supplier bill DOC-033,3948.26,0,BILL
+2026-08-17,510,Salt Crate Seasonings Trading L.L.C.,SCT-028841,Supplier bill DOC-034,2152.84,0,BILL
+2026-08-24,510,Mirage Cup Beverages Trading L.L.C.,MCB/2608/0318,Supplier bill DOC-035,1876.83,0,BILL
+2026-08-31,520,Mirage Cap Supplies Trading L.L.C.,MCS-INV-24191,Supplier bill DOC-036,4928.03,0,BILL
+2026-09-07,510,GULF FRESH PRODUCE TRDG LLC,GFP/26/26373,Supplier bill DOC-037,697.19,0,BILL
+2026-09-14,510,GULF FRESH FISH TRDG LLC,GFF-2026-50510,Supplier bill DOC-038,1232.74,0,BILL
+2026-09-21,510,Dune Orchard Produce,TI 24849,Supplier bill DOC-039,994.21,0,BILL
+2026-09-28,510,Pearl Meadow Dairy,PMD-2609-0645,Supplier bill DOC-040,664.92,0,BILL
+2026-07-05,510,Copper Dhow Dry Goods,CD-2607-6953,Supplier bill DOC-041,2608.63,0,BILL
+2026-07-12,510,AL QUOZ PANTRY TRDG,AQP/INV/022256,Supplier bill DOC-042,3393.21,0,BILL
+2026-07-19,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13259,Supplier bill DOC-043,2961.15,0,BILL
+2026-07-26,510,Coral Basket Seafood Trading L.L.C.,CBS-023582,Supplier bill DOC-044,824.05,0,BILL
+2026-08-02,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3058,Supplier bill DOC-045,3010.46,0,BILL
+2026-08-09,510,Dune Spring Beverages Trading L.L.C.,DSB-10729/26,Supplier bill DOC-046,3303.39,0,BILL
+2026-08-16,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61110,Supplier bill DOC-047,3068.60,0,BILL
+2026-08-23,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2218,Supplier bill DOC-048,355.53,0,BILL
+2026-08-30,530,Palm Bloom Cleaning Trading L.L.C.,PBC 044748,Supplier bill DOC-049,1371.80,0,BILL
+2026-09-06,520,Silver Ladle Packaging Trading L.L.C.,SLP-26-70430,Supplier bill DOC-050,2054.37,0,BILL
+2026-09-13,510,Saffron Crate Spices Trading L.L.C.,SCS/02065/26,Supplier bill DOC-051,1617.84,0,BILL
+2026-09-20,510,Salt Crate Seasonings Trading L.L.C.,SCT-028843,Supplier bill DOC-052,719.25,0,BILL
+2026-09-27,510,Mirage Cup Beverages Trading L.L.C.,MCB/2609/0320,Supplier bill DOC-053,2455.99,0,BILL
+2026-07-04,520,Mirage Cap Supplies Trading L.L.C.,MCS-INV-24186,Supplier bill DOC-054,2302.27,0,BILL
+2026-07-11,510,Gulf Fresh,GFP/26/26368,Supplier bill DOC-055,569.40,0,BILL
+2026-07-18,510,Gulf Fresh Fish Trading,GFF-2026-50505,Supplier bill DOC-056,1617.69,0,BILL
+2026-07-25,510,DUNE ORCHARD TRDG,TI 24844,Supplier bill DOC-057,580.57,0,BILL
+2026-08-01,510,PEARL MEADOW DAIRY LLC,PMD-2608-0640,Supplier bill DOC-058,882.19,0,BILL
+2026-08-08,510,COPPER DHOW TRDG,CD-2608-6956,Supplier bill DOC-059,1703.14,0,BILL
+2026-08-15,510,Al Quoz Pantry LLC,AQP/INV/022259,Supplier bill DOC-060,1656.54,0,BILL
+2026-08-22,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13262,Supplier bill DOC-061,1387.62,0,BILL
+2026-08-29,510,Coral Basket Seafood Trading L.L.C.,CBS-023585,Supplier bill DOC-062,337.42,0,BILL
+2026-09-05,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3061,Supplier bill DOC-063,4070.93,0,BILL
+2026-09-12,510,Dune Spring Beverages Trading L.L.C.,DSB-10732/26,Supplier bill DOC-064,3043.87,0,BILL
+2026-09-19,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61113,Supplier bill DOC-065,3460.86,0,BILL
+2026-09-26,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2221,Supplier bill DOC-066,204.99,0,BILL
+2026-07-03,530,Palm Bloom Cleaning Trading L.L.C.,PBC 044743,Supplier bill DOC-067,1315.56,0,BILL
+2026-07-10,520,Silver Ladle Packaging Trading L.L.C.,SLP-26-70425,Supplier bill DOC-068,3433.63,0,BILL
+2026-07-17,510,Saffron Crate Spices Trading L.L.C.,SCS/02060/26,Supplier bill DOC-069,1935.94,0,BILL
+2026-07-24,510,Salt Crate Seasonings Trading L.L.C.,SCT-028839,Supplier bill DOC-070,2923.64,0,BILL
+2026-07-31,510,Mirage Cup Beverages Trading L.L.C.,MCB/2607/0316,Supplier bill DOC-071,2422.41,0,BILL
+2026-08-07,520,Mirage Cap Supplies Trading L.L.C.,MCS-INV-24189,Supplier bill DOC-072,3065.15,0,BILL
+2026-08-14,510,Gulf Fresh Produce,GFP/26/26371,Supplier bill DOC-073,600.71,0,BILL
+2026-08-21,510,Gulf Fresh Fish,GFF-2026-50508,Supplier bill DOC-074,579.89,0,BILL
+2026-08-28,510,Dune Orchard,TI 24847,Supplier bill DOC-075,735.24,0,BILL
+2026-09-04,510,Pearl Meadow,PMD-2609-0643,Supplier bill DOC-076,668.54,0,BILL
+2026-09-11,510,Copper Dhow,CD-2609-6959,Supplier bill DOC-077,1905.47,0,BILL
+2026-09-18,510,Al Quoz Pantry,AQP/INV/022262,Supplier bill DOC-078,3332.37,0,BILL
+2026-09-25,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13265,Supplier bill DOC-079,1689.83,0,BILL
+2026-07-02,510,Coral Basket Seafood Trading L.L.C.,CBS-023580,Supplier bill DOC-080,801.00,0,BILL
+2026-07-09,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3056,Supplier bill DOC-081,2965.57,0,BILL
+2026-07-16,510,Dune Spring Beverages Trading L.L.C.,DSB-10727/26,Supplier bill DOC-082,2334.42,0,BILL
+2026-07-23,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61108,Supplier bill DOC-083,2673.74,0,BILL
+2026-07-30,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2216,Supplier bill DOC-084,291.77,0,BILL
+2026-08-06,530,Palm Bloom Cleaning Trading L.L.C.,PBC 044746,Supplier bill DOC-085,1136.31,0,BILL
+2026-08-13,520,Silver Ladle Packaging Trading L.L.C.,SLP-26-70428,Supplier bill DOC-086,1664.33,0,BILL
+2026-08-20,510,Saffron Crate Spices Trading L.L.C.,SCS/02063/26,Supplier bill DOC-087,2710.17,0,BILL
+2026-09-25,510,Salt Crate Seasonings Trading L.L.C.,CN-SCS/26/0099,Supplier bill DOC-088,0,1901.36,BILL
+2026-09-26,510,Mirage Cup Beverages Trading L.L.C.,CN-MCB/26/0173,Supplier bill DOC-089,0,2439.01,BILL
+2026-09-27,520,Mirage Cap Supplies Trading L.L.C.,CN-MCS/26/0596,Supplier bill DOC-090,0,1737.03,BILL
+2026-09-17,510,GULF FRESH PRODUCE TRDG LLC,GFP/26/26374,Supplier bill MAIL-004,882.46,0,BILL
+2026-09-24,510,GULF FRESH FISH TRDG LLC,GFF-2026-50511,Supplier bill MAIL-005,1822.50,0,BILL
+2026-07-01,510,Dune Orchard Produce,TI 24842,Supplier bill MAIL-006,722.61,0,BILL
+2026-07-08,510,Pearl Meadow Dairy,PMD-2607-0638,Supplier bill MAIL-007,715.27,0,BILL
+2026-07-15,510,Copper Dhow Dry Goods,CD-2607-6954,Supplier bill MAIL-008,1711.92,0,BILL
+2026-07-22,510,AL QUOZ PANTRY TRDG,AQP/INV/022257,Supplier bill MAIL-009,3686.20,0,BILL
+2026-07-29,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13260,Supplier bill MAIL-010,1967.29,0,BILL
+2026-08-05,510,Coral Basket Seafood Trading L.L.C.,CBS-023583,Supplier bill MAIL-011,1369.88,0,BILL
+2026-08-12,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3059,Supplier bill MAIL-012,1873.62,0,BILL
+2026-08-19,510,Dune Spring Beverages Trading L.L.C.,DSB-10730/26,Supplier bill MAIL-013,2278.88,0,BILL
+2026-08-26,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61111,Supplier bill MAIL-014,2939.71,0,BILL
+2026-09-02,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2219,Supplier bill MAIL-015,405.93,0,BILL
+2026-09-09,530,Palm Bloom Cleaning Trading L.L.C.,PBC 044749,Supplier bill MAIL-016,1388.01,0,BILL
+2026-09-16,520,Silver Ladle Packaging Trading L.L.C.,SLP-26-70431,Supplier bill MAIL-017,2269.34,0,BILL
+2026-09-23,510,Saffron Crate Spices Trading L.L.C.,SCS/02066/26,Supplier bill MAIL-018,2235.70,0,BILL
+2026-09-30,510,Salt Crate Seasonings Trading L.L.C.,SCT-028844,Supplier bill MAIL-019,3680.28,0,BILL
+2026-07-07,510,Mirage Cup Beverages Trading L.L.C.,MCB/2607/0314,Supplier bill MAIL-020,1527.31,0,BILL
+2026-07-14,520,Mirage Cap Supplies Trading L.L.C.,MCS-INV-24187,Supplier bill MAIL-021,1872.02,0,BILL
+2026-07-21,510,Gulf Fresh,GFP/26/26369,Supplier bill MAIL-022,818.12,0,BILL
+2026-07-28,510,Gulf Fresh Fish Trading,GFF-2026-50506,Supplier bill MAIL-023,879.76,0,BILL
+2026-08-04,510,DUNE ORCHARD TRDG,TI 24845,Supplier bill MAIL-024,749.95,0,BILL
+2026-08-11,510,PEARL MEADOW DAIRY LLC,PMD-2608-0641,Supplier bill MAIL-025,479.64,0,BILL
+2026-08-18,510,COPPER DHOW TRDG,CD-2608-6957,Supplier bill MAIL-026,1777.07,0,BILL
+2026-08-25,510,Al Quoz Pantry LLC,AQP/INV/022260,Supplier bill MAIL-027,2925.93,0,BILL
+2026-09-01,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13263,Supplier bill MAIL-028,1550.40,0,BILL
+2026-09-08,510,Coral Basket Seafood Trading L.L.C.,CBS-023586,Supplier bill MAIL-029,1512.27,0,BILL
+2026-09-15,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3062,Supplier bill MAIL-030,1808.73,0,BILL
+2026-09-22,510,Dune Spring Beverages Trading L.L.C.,DSB-10733/26,Supplier bill MAIL-031,3515.34,0,BILL
+2026-09-29,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61114,Supplier bill MAIL-032,2466.92,0,BILL
+2026-07-06,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2214,Supplier bill MAIL-033,413.50,0,BILL
+2026-07-13,530,Palm Bloom Cleaning Trading L.L.C.,PBC 044744,Supplier bill MAIL-034,1657.20,0,BILL
+2026-07-20,520,Silver Ladle Packaging Trading L.L.C.,SLP-26-70426,Supplier bill MAIL-035,3711.76,0,BILL
+2026-07-27,510,Saffron Crate Spices Trading L.L.C.,SCS/02061/26,Supplier bill MAIL-036,3195.37,0,BILL
+2026-08-03,510,Salt Crate Seasonings Trading L.L.C.,SCT-028840,Supplier bill MAIL-037,1402.05,0,BILL
+2026-08-10,510,Mirage Cup Beverages Trading L.L.C.,MCB/2608/0317,Supplier bill MAIL-038,2704.74,0,BILL
+2026-08-17,520,Mirage Cap Supplies Trading L.L.C.,MCS-INV-24190,Supplier bill MAIL-039,3725.37,0,BILL
+2026-08-24,510,Gulf Fresh Produce,GFP/26/26372,Supplier bill MAIL-040,891.28,0,BILL
+2026-08-31,510,Gulf Fresh Fish,GFF-2026-50509,Supplier bill MAIL-041,1009.34,0,BILL
+2026-09-07,510,Dune Orchard,TI 24848,Supplier bill MAIL-042,647.92,0,BILL
+2026-09-14,510,Pearl Meadow,PMD-2609-0644,Supplier bill MAIL-043,691.02,0,BILL
+2026-09-21,510,Copper Dhow,CD-2609-6960,Supplier bill MAIL-044,4024.37,0,BILL
+2026-09-28,510,Al Quoz Pantry,AQP/INV/022263,Supplier bill MAIL-045,3247.60,0,BILL
+2026-07-05,510,Crescent Pasture Meats Trading L.L.C.,CPM 26/13258,Supplier bill MAIL-046,1622.54,0,BILL
+2026-07-12,510,Coral Basket Seafood Trading L.L.C.,CBS-023581,Supplier bill MAIL-047,1779.68,0,BILL
+2026-07-19,510,Amber Grain Provisions Trading L.L.C.,AGP/2026/3057,Supplier bill MAIL-048,2183.80,0,BILL
+2026-07-26,510,Dune Spring Beverages Trading L.L.C.,DSB-10728/26,Supplier bill MAIL-049,2323.77,0,BILL
+2026-08-02,520,Dune Springs Packaging Trading L.L.C.,DSP/INV-61109,Supplier bill MAIL-050,3102.60,0,BILL
+2026-08-09,530,Palm Loom Linen Trading L.L.C.,PLL-2026/2217,Supplier bill MAIL-051,179.28,0,BILL
+2026-08-16,530,Palm Bloom Cleaning Trading L.L.C.,PBC 044747,Supplier bill MAIL-052,1254.11,0,BILL
+2026-08-23,520,Silver Ladle Packaging Trading L.L.C.,SLP-26-70429,Supplier bill MAIL-053,4326.47,0,BILL
+2026-08-30,510,Saffron Crate Spices Trading L.L.C.,SCS/02064/26,Supplier bill MAIL-054,1801.54,0,BILL
+2026-09-06,510,Salt Crate Seasonings Trading L.L.C.,SCT-028842,Supplier bill MAIL-055,1544.24,0,BILL
+2026-09-13,510,Mirage Cup Beverages Trading L.L.C.,MCB/2609/0319,Supplier bill MAIL-056,2719.31,0,BILL
+2026-09-20,520,Mirage Cap Supplies Trading L.L.C.,MCS-INV-24192,Supplier bill MAIL-057,3090.62,0,BILL
 2026-07-01,400,JBR Walk,SALES-OUT-JBR-2026-07-01-400,Daily sales OUT-JBR,0,9150.94,SALES
 2026-07-01,410,S&S JBR,SALES-OUT-JBR-2026-07-01-410,Daily sales OUT-JBR,0,4464.30,SALES
 2026-07-01,400,Outlet 3,SALES-OUT-DIFC-2026-07-01-400,Daily sales OUT-DIFC,0,9137.15,SALES

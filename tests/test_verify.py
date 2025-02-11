@@ -13,6 +13,8 @@ from backroom.synth.scenario import build
 from backroom.verify import (
     held_out_and_emails,
     invoice_arithmetic,
+    invoice_categories,
+    invoice_numbering,
     m1,
     names,
     payout_arithmetic,
@@ -53,6 +55,66 @@ def test_unplanted_bad_trn_fails():
     next(doc for doc in truth.documents if doc.doc_id == "DOC-001").truth.supplier_trn = "BAD"
     with pytest.raises(ValueError, match="TRNs do not match"):
         tax_identifiers(truth)
+
+
+def test_valid_but_wrong_supplier_trn_fails():
+    truth = build().truth
+    next(
+        doc for doc in truth.documents if doc.doc_id == "DOC-001"
+    ).truth.supplier_trn = truth.suppliers[1].trn
+    with pytest.raises(ValueError, match="differs from supplier master"):
+        tax_identifiers(truth)
+
+
+def test_buyer_cannot_share_supplier_trn():
+    truth = build().truth
+    for doc in truth.documents:
+        if doc.supplier_id and doc.truth.buyer_trn:
+            doc.truth.buyer_trn = truth.suppliers[0].trn
+    with pytest.raises(ValueError, match="distinct legal-entity TRN"):
+        tax_identifiers(truth)
+
+
+def test_unplanted_duplicate_invoice_number_fails():
+    truth = build().truth
+    docs = {doc.doc_id: doc for doc in truth.documents}
+    assert docs["DOC-019"].supplier_id == docs["DOC-001"].supplier_id
+    docs["DOC-019"].truth.invoice_number = docs["DOC-001"].truth.invoice_number
+    with pytest.raises(ValueError, match="Duplicate plants"):
+        invoice_numbering(truth)
+
+
+def test_renumbered_planted_duplicate_fails():
+    truth = build().truth
+    next(doc for doc in truth.documents if doc.doc_id == "MAIL-001").truth.invoice_number = "NEW-1"
+    with pytest.raises(ValueError, match="Duplicate plants"):
+        invoice_numbering(truth)
+
+
+def test_unique_but_out_of_sequence_number_fails():
+    truth = build().truth
+    next(
+        doc for doc in truth.documents if doc.doc_id == "DOC-019"
+    ).truth.invoice_number = "GFP/26/99999"
+    with pytest.raises(ValueError, match="sequence/format"):
+        invoice_numbering(truth)
+
+
+@pytest.mark.parametrize("corruption", ["category", "missing_id", "description"])
+def test_line_catalogue_corruption_fails(corruption):
+    truth = build().truth
+    doc = next(doc for doc in truth.documents if doc.doc_id == "DOC-001")
+    if corruption == "category":
+        doc.line_item_ids[0] = next(item.id for item in truth.items if item.category == "seafood")
+        message = "category differs"
+    elif corruption == "missing_id":
+        doc.line_item_ids.pop()
+        message = "Missing line item provenance"
+    else:
+        doc.truth.lines[0].description = "Chicken Breast"
+        message = "description/unit differs"
+    with pytest.raises(ValueError, match=message):
+        invoice_categories(truth)
 
 
 def test_missing_heldout_flag_fails():

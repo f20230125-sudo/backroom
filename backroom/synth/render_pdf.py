@@ -12,8 +12,8 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen.canvas import Canvas
 
-from backroom.models import Document, InvoiceRecord, PayoutStatement
-from backroom.synth.catalogue import SUPPLIERS
+from backroom.models import Document, InvoiceRecord, PayoutStatement, Supplier
+from backroom.synth.catalogue import item_code
 
 LABELS = {
     "L1": (
@@ -265,7 +265,26 @@ class Paper:
         return self.buffer.getvalue()
 
 
-def invoice_pdf(doc: Document) -> bytes:
+def contact_line(supplier: Supplier) -> str:
+    return f"Tel: {supplier.stationery.phone} | Email: {supplier.stationery.email}"
+
+
+def bank_line(supplier: Supplier) -> str:
+    return f"Bank: {supplier.stationery.bank_name} | IBAN: {supplier.stationery.iban}"
+
+
+def text_lines(value: str, width: int, size: int = 8) -> list[str]:
+    """Wrap to the actual column width so longer trade descriptions never collide with amounts."""
+    lines: list[str] = []
+    for word in value.split():
+        if lines and pdfmetrics.stringWidth(f"{lines[-1]} {word}", "Helvetica", size) <= width:
+            lines[-1] += " " + word
+        else:
+            lines.append(word)
+    return lines
+
+
+def invoice_pdf(doc: Document, supplier: Supplier) -> bytes:
     record = doc.truth
     if not isinstance(record, InvoiceRecord):
         raise TypeError("Invoice rendering requires InvoiceRecord")
@@ -285,8 +304,9 @@ def invoice_pdf(doc: Document) -> bytes:
         paper.text(32, 66 + 20 * i, f"{label}: {value}", size=8)
         if doc.layout == "L3":
             paper.arabic(565, 66 + 20 * i, ARABIC_LABELS[key])
-    supplier = next(s for s in SUPPLIERS if s.id == doc.supplier_id)
     paper.text(32, 312, f"Registered legal name: {supplier.legal_name}", size=8)
+    if supplier.stationery.show_contact:
+        paper.text(32, 329, contact_line(supplier), size=8)
     if doc.layout == "L4":
         for i, (_, label, value) in enumerate(totals):
             paper.text(545, 75 + 25 * i, f"{label}: AED {value}", bold=True)
@@ -327,9 +347,13 @@ def invoice_pdf(doc: Document) -> bytes:
             (420, "VAT %"),
             (485, "Line net"),
         ]
+    codes = supplier.stationery.show_item_codes and doc.layout in ("L1", "L2")
+    if codes:
+        columns = [(32, "Item code"), (105, columns[0][1]), *columns[1:]]
     for x, label in columns:
         paper.text(x, top, label, size=8, bold=True)
     paper.rule(top + 8)
+    row_top = top + 28
     for i, line in enumerate(record.lines):
         values = [
             line.description,
@@ -341,9 +365,24 @@ def invoice_pdf(doc: Document) -> bytes:
         ]
         if doc.layout == "L4":
             values = [values[1], values[2], values[0], *values[3:]]
-        for (x, _), value in zip(columns, values, strict=True):
-            paper.text(x, top + 28 + 24 * i, value, size=8)
-    bottom = top + 38 + 24 * len(record.lines)
+        elif codes:
+            values.insert(0, item_code(supplier, doc.line_item_ids[i]))
+        description_column = 2 if doc.layout == "L4" else 1 if codes else 0
+        description_lines = text_lines(
+            values[description_column],
+            columns[description_column + 1][0] - columns[description_column][0] - 8,
+        )
+        row_height = max(24, len(description_lines) * 10 + 8)
+        for column, ((x, _), value) in enumerate(zip(columns, values, strict=True)):
+            wrapped = description_lines if column == description_column else [value]
+            # Amounts align with the last description baseline, preserving its reading order.
+            baseline = row_top + (
+                (len(description_lines) - 1) * 10 if column > description_column else 0
+            )
+            for offset, part in enumerate(wrapped):
+                paper.text(x, baseline + offset * 10, part, size=8)
+        row_top += row_height
+    bottom = row_top + 10
     paper.rule(bottom)
     if doc.layout != "L4":
         for i, (key, label, value) in enumerate(totals):
@@ -353,6 +392,8 @@ def invoice_pdf(doc: Document) -> bytes:
     if record.notes:
         for i, text in enumerate(wrap(record.notes, 100 if doc.layout == "L4" else 90)):
             paper.text(32, bottom + 115 + 14 * i, text, size=8)
+    if supplier.stationery.show_bank:
+        paper.text(32, int(paper.height) - 45, bank_line(supplier), size=8)
     paper.text(32, int(paper.height) - 24, "Synthetic document | UAE | Amounts in AED", size=8)
     return paper.finish()
 

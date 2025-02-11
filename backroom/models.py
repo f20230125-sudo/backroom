@@ -30,6 +30,24 @@ class Outlet(Record):
     trading: bool
 
 
+class SupplierStationery(Record):
+    """Synthetic source clutter stays outside the invoice extraction schema."""
+
+    invoice_format: str
+    credit_note_format: str
+    invoice_sequence_start: int
+    credit_note_sequence_start: int
+    description_style: Literal["sku", "plain", "pack"]
+    item_code_prefix: str
+    show_item_codes: bool
+    phone: str
+    email: str
+    bank_name: str
+    iban: str
+    show_contact: bool
+    show_bank: bool
+
+
 class Supplier(Record):
     id: str
     legal_name: str
@@ -38,6 +56,7 @@ class Supplier(Record):
     trn: str
     payment_terms_days: int
     category: str
+    stationery: SupplierStationery
 
 
 class Item(Record):
@@ -193,6 +212,7 @@ class Document(Record):
     held_out: bool
     supplier_id: str | None = None
     attachment_doc_id: str | None = None
+    line_item_ids: list[str] = Field(default_factory=list)
     truth: InvoiceRecord | PayoutStatement | dict[str, str]
 
 

@@ -1,32 +1,37 @@
-From: Accounts desk <accounts@sup-07.example>
+From: Accounts desk <accounts@crescent-pasture-meats.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-046@backroom.example>
 Date: Sun, 05 Jul 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0133 - details below
+Subject: Tax Invoice CPM 26/13258 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Crescent Pasture Meats Trading L.L.C.
-Supplier TRN: 100000000000703
-Supplier address: Warehouse 37, Industrial Lane 7, Dubai
-Supplier emirate: DU
+Supplier TRN: 109566344465803
+Supplier address: Shed 43, Sharjah Industrial Area 10, Sharjah, PO Box 681713
+Supplier emirate: SH
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0133
+Buyer TRN: 105219675843603
+Invoice: CPM 26/13258
 Issued: 2026-07-05
 Due: 2026-08-04
 Currency: AED
 Deliver to: Al Quoz
-Net: 2,272.73
-VAT: 113.64
-Total: 2,386.37
+Net: 1,545.28
+VAT: 77.26
+Total: 1,622.54
 Items:
-Chicken Breast; quantity 13 KGM; unit price 18.12; VAT 5%; line net 235.56
-Lamb Shoulder; quantity 14 KGM; unit price 23.39; VAT 5%; line net 327.46
-Prawns; quantity 19 KGM; unit price 52.88; VAT 5%; line net 1,004.72
-Lamb Mince; quantity 17 KGM; unit price 41.47; VAT 5%; line net 704.99
+CHICKEN BREAST - CHILLED / KG; quantity 12.5 KGM; unit price 20.91; VAT 5%; l=
+ine net 261.38
+LAMB MINCE - CHILLED / KG; quantity 7 KGM; unit price 63.60; VAT 5%; line net=
+ 445.20
+BEEF STRIPLOIN - CHILLED / KG; quantity 7.5 KGM; unit price 40.88; VAT 5%; li=
+ne net 306.60
+LAMB SHOULDER - CHILLED / KG; quantity 9.5 KGM; unit price 56.01; VAT 5%; lin=
+e net 532.10
 
 Regards, Supplier accounts desk
+Tel: +971 6 555 7906 | Email: accounts@crescent-pasture-meats.example
