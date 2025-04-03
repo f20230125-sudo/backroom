@@ -19,9 +19,9 @@ def project_invoices(repo, invoices, matcher):
         record = invoice.record
         if not record.issue_date or not record.invoice_number:
             continue
-        key = (invoice.supplier_id, record.invoice_number)
-        duplicate = seen.get(key) if invoice.supplier_id else None
-        if invoice.supplier_id:
+        key = (invoice.supplier_key, record.invoice_number)
+        duplicate = seen.get(key) if invoice.supplier_key else None
+        if invoice.supplier_key:
             seen.setdefault(key, invoice.doc_id)
         repo.upsert(
             "invoice_facts",

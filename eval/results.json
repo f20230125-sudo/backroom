@@ -218,9 +218,9 @@
       },
       {
         "expected_numbers": [
-          "0.00",
+          "3146.09",
           "670193.37",
-          "0.00"
+          "0.47"
         ],
         "id": "ask-12",
         "in_scope": true,
@@ -238,7 +238,7 @@
       },
       {
         "expected_numbers": [
-          "20233.21",
+          "23326.16",
           "0.00"
         ],
         "id": "ask-13",
@@ -257,9 +257,9 @@
       },
       {
         "expected_numbers": [
-          "5373.53",
+          "6213.97",
           "526083.06",
-          "1.02"
+          "1.18"
         ],
         "id": "ask-14",
         "in_scope": true,
@@ -277,12 +277,12 @@
       },
       {
         "expected_numbers": [
-          "0.00",
+          "4650.64",
           "518529.96",
-          "0.00",
-          "0.00",
+          "0.90",
+          "3146.09",
           "670193.37",
-          "0.00"
+          "0.47"
         ],
         "id": "ask-15",
         "in_scope": true,
@@ -426,7 +426,7 @@
       },
       {
         "expected_numbers": [
-          "1359.56"
+          "2024.48"
         ],
         "id": "ask-23",
         "in_scope": true,
@@ -495,7 +495,12 @@
         "state": "not run"
       },
       {
-        "expected_numbers": [],
+        "expected_numbers": [
+          "972.75",
+          "962.10",
+          "687.20",
+          "524.04"
+        ],
         "id": "ask-27",
         "in_scope": true,
         "question": "What are our top 5 purchased items at DIFC in August, by net spend? Give each spend.",
@@ -512,8 +517,8 @@
       },
       {
         "expected_numbers": [
+          "3052.44",
           "1969.46",
-          "1946.76",
           "1600.38"
         ],
         "id": "ask-28",
@@ -547,7 +552,11 @@
         "state": "not run"
       },
       {
-        "expected_numbers": [],
+        "expected_numbers": [
+          "1438.24",
+          "864.90",
+          "809.25"
+        ],
         "id": "ask-30",
         "in_scope": true,
         "question": "What are our top 3 purchased items at DIFC in September, by net spend? Give each spend.",
@@ -10781,7 +10790,7 @@
       }
     }
   },
-  "generated_at": "2026-10-27T10:52:52.565677+00:00",
+  "generated_at": "2026-10-27T11:21:34.358132+00:00",
   "hours_saved": {
     "assumptions": [
       {
@@ -10807,20 +10816,20 @@
     ],
     "counts": {
       "auto_accepted_document": 224,
-      "draft_produced": 107,
+      "draft_produced": 76,
       "outlet_day_reconciled": 184,
       "review_document_overhead": 3
     },
     "duration_run_id": 1,
     "duration_state": "measured",
-    "estimated_hours_saved": "33.62",
+    "estimated_hours_saved": "31.55",
     "formula": "(auto_accepted_document*minutes - review_document_overhead*minutes + outlet_day_reconciled*minutes + draft_produced*minutes - duration_ms/60000)/60",
-    "full_pipeline_duration_ms": 826,
+    "full_pipeline_duration_ms": 1626,
     "label": "estimate using assumptions, not a measured labour study",
-    "manual_minutes_saved": "2017",
+    "manual_minutes_saved": "1893",
     "run_coverage": {
       "briefs": 1,
-      "drafts": 107,
+      "drafts": 76,
       "extractions": 234,
       "input_mode": "saved_results",
       "not_run": 0,
@@ -10832,248 +10841,448 @@
   "names": {
     "documents": [
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "OUT-JBR",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "OUT-JBR",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "OUT-JBR",
+        "suggestion_correct": null,
         "variant": "JBR"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "OUT-JBR",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "OUT-JBR",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "OUT-JBR",
+        "suggestion_correct": null,
         "variant": "JBR Walk"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "OUT-JBR",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "OUT-JBR",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "OUT-JBR",
+        "suggestion_correct": null,
         "variant": "S&S JBR"
       },
       {
         "decision": "auto_match",
         "expected": "OUT-JBR",
+        "model_check_reason": null,
         "predicted": "OUT-JBR",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Saffron & Salt, JBR Walk"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "OUT-DIFC",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "OUT-DIFC",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "OUT-DIFC",
+        "suggestion_correct": null,
         "variant": "DIFC"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "OUT-DIFC",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "OUT-DIFC",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "S&S DIFC"
       },
       {
         "decision": "new",
         "expected": "OUT-DIFC",
+        "model_check_reason": null,
         "predicted": null,
+        "same_entity": null,
+        "score": 58.333333333333336,
+        "suggested_id": "OUT-DIFC",
+        "suggestion_correct": null,
         "variant": "Outlet 3"
       },
       {
         "decision": "review",
         "expected": "OUT-AQK",
+        "model_check_reason": "No recorded name check; human review required",
         "predicted": null,
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "OUT-AQK",
+        "suggestion_correct": true,
         "variant": "Al Quoz"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "OUT-AQK",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "OUT-AQK",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "OUT-AQK",
+        "suggestion_correct": null,
         "variant": "Central Kitchen"
       },
       {
         "decision": "auto_match",
         "expected": "OUT-AQK",
+        "model_check_reason": null,
         "predicted": "OUT-AQK",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Central Kitchen, Al Quoz"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-01",
+        "model_check_reason": null,
         "predicted": "SUP-01",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Gulf Fresh Produce"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-01",
+        "model_check_reason": null,
         "predicted": "SUP-01",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "GULF FRESH PRODUCE TRDG LLC"
       },
       {
         "decision": "review",
         "expected": "SUP-01",
+        "model_check_reason": "No recorded name check; human review required",
         "predicted": null,
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-02",
+        "suggestion_correct": false,
         "variant": "Gulf Fresh"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-02",
+        "model_check_reason": null,
         "predicted": "SUP-02",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Gulf Fresh Fish"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-02",
+        "model_check_reason": null,
         "predicted": "SUP-02",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "GULF FRESH FISH TRDG LLC"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-02",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-02",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-02",
+        "suggestion_correct": null,
         "variant": "Gulf Fresh Fish Trading"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-03",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-03",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-03",
+        "suggestion_correct": null,
         "variant": "Dune Orchard"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-03",
+        "model_check_reason": null,
         "predicted": "SUP-03",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Dune Orchard Produce"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-03",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-03",
+        "same_entity": null,
+        "score": 90.54054054054055,
+        "suggested_id": "SUP-03",
+        "suggestion_correct": null,
         "variant": "DUNE ORCHARD TRDG"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-04",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-04",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-04",
+        "suggestion_correct": null,
         "variant": "Pearl Meadow"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-04",
+        "model_check_reason": null,
         "predicted": "SUP-04",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Pearl Meadow Dairy"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-04",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-04",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-04",
+        "suggestion_correct": null,
         "variant": "PEARL MEADOW DAIRY LLC"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-05",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-05",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-05",
+        "suggestion_correct": null,
         "variant": "Copper Dhow"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-05",
+        "model_check_reason": null,
         "predicted": "SUP-05",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Copper Dhow Dry Goods"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-05",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-05",
+        "same_entity": null,
+        "score": 90.625,
+        "suggested_id": "SUP-05",
+        "suggestion_correct": null,
         "variant": "COPPER DHOW TRDG"
       },
       {
         "decision": "auto_match",
         "expected": "SUP-06",
+        "model_check_reason": null,
         "predicted": "SUP-06",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Al Quoz Pantry"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-06",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-06",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-06",
+        "suggestion_correct": null,
         "variant": "AL QUOZ PANTRY TRDG"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "SUP-06",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "SUP-06",
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "SUP-06",
+        "suggestion_correct": null,
         "variant": "Al Quoz Pantry LLC"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "ITM-001",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "ITM-001",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Roma Tomatoes"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "ITM-001",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "ITM-001",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "TOMATO-ROMA 5KG"
       },
       {
         "decision": "auto_match",
         "expected": "ITM-002",
+        "model_check_reason": null,
         "predicted": "ITM-002",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "CUCUMBER"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "ITM-002",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "ITM-002",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Cucumber fresh"
       },
       {
         "decision": "auto_match",
         "expected": "ITM-003",
+        "model_check_reason": null,
         "predicted": "ITM-003",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Onion red"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "ITM-003",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "ITM-003",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "RED ONIONS"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "ITM-004",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "ITM-004",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Lemons"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "ITM-004",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "ITM-004",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "LEMON FRESH"
       },
       {
         "decision": "auto_match",
         "expected": "ITM-005",
+        "model_check_reason": null,
         "predicted": "ITM-005",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "Spinach baby"
       },
       {
         "decision": "review",
         "expected": "ITM-005",
+        "model_check_reason": "No recorded name check; human review required",
         "predicted": null,
+        "same_entity": null,
+        "score": 100.0,
+        "suggested_id": "ITM-005",
+        "suggestion_correct": true,
         "variant": "BABY SPINACH LEAF"
       },
       {
         "decision": "new",
         "expected": "ITM-006",
+        "model_check_reason": null,
         "predicted": null,
+        "same_entity": null,
+        "score": 56.41025641025641,
+        "suggested_id": "ITM-022",
+        "suggestion_correct": null,
         "variant": "Eggplant"
       },
       {
-        "decision": "review",
+        "decision": "auto_match",
         "expected": "ITM-006",
-        "predicted": null,
+        "model_check_reason": null,
+        "predicted": "ITM-006",
+        "same_entity": null,
+        "score": null,
+        "suggested_id": null,
+        "suggestion_correct": null,
         "variant": "AUBERGINE FRESH"
       }
     ],
-    "f1": 0.4905660377358491,
-    "false_negatives": 27,
+    "f1": 0.9333333333333333,
+    "false_negatives": 5,
     "false_positives": 0,
     "hard_negatives": [
       {
@@ -11123,10 +11332,291 @@
       }
     ],
     "precision": 1.0,
-    "recall": 0.325,
-    "review_share": 0.625,
-    "true_positives": 13,
+    "recall": 0.875,
+    "review_items": 3,
+    "review_share": 0.075,
+    "review_suggestion_accuracy": 0.6666666666666666,
+    "review_suggestion_correct": 2,
+    "review_with_yes": 0,
+    "true_positives": 35,
     "variants": 40
+  },
+  "names_holdout": {
+    "auto_matched_correctly": 19,
+    "left_for_review": 5,
+    "review_suggestion_correct": 5,
+    "rows": [
+      {
+        "decision": "auto_match",
+        "expected": "OUT-JBR",
+        "outcome": "correct",
+        "predicted": "OUT-JBR",
+        "suggested": "OUT-JBR",
+        "type": "outlet",
+        "variant": "Saffron and Salt JBR"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "OUT-JBR",
+        "outcome": "correct",
+        "predicted": "OUT-JBR",
+        "suggested": null,
+        "type": "outlet",
+        "variant": "S & S - JBR Walk"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "OUT-DIFC",
+        "outcome": "correct",
+        "predicted": "OUT-DIFC",
+        "suggested": null,
+        "type": "outlet",
+        "variant": "SAFFRON & SALT DIFC"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "OUT-AQK",
+        "outcome": "correct",
+        "predicted": "OUT-AQK",
+        "suggested": null,
+        "type": "outlet",
+        "variant": "Central Kitchen (Al Quoz)"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-01",
+        "outcome": "correct",
+        "predicted": "SUP-01",
+        "suggested": null,
+        "type": "supplier",
+        "variant": "Gulf Fresh Produce Trading LLC"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-02",
+        "outcome": "correct",
+        "predicted": "SUP-02",
+        "suggested": null,
+        "type": "supplier",
+        "variant": "GULF FRESH FISH TRADING L.L.C"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-07",
+        "outcome": "correct",
+        "predicted": "SUP-07",
+        "suggested": "SUP-07",
+        "type": "supplier",
+        "variant": "Crescent Pasture Meats LLC"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-07",
+        "outcome": "correct",
+        "predicted": "SUP-07",
+        "suggested": "SUP-07",
+        "type": "supplier",
+        "variant": "CRESCENT PASTURE MEATS TRDG"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-08",
+        "outcome": "correct",
+        "predicted": "SUP-08",
+        "suggested": "SUP-08",
+        "type": "supplier",
+        "variant": "Coral Basket Seafood Trading"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-09",
+        "outcome": "correct",
+        "predicted": "SUP-09",
+        "suggested": "SUP-09",
+        "type": "supplier",
+        "variant": "Amber Grain Provisions L.L.C."
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-14",
+        "outcome": "correct",
+        "predicted": "SUP-14",
+        "suggested": null,
+        "type": "supplier",
+        "variant": "Silver Ladle Packaging Trading LLC"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-15",
+        "outcome": "correct",
+        "predicted": "SUP-15",
+        "suggested": "SUP-15",
+        "type": "supplier",
+        "variant": "SAFFRON CRATE SPICES TRDG"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-12",
+        "outcome": "correct",
+        "predicted": "SUP-12",
+        "suggested": "SUP-12",
+        "type": "supplier",
+        "variant": "Palm Loom Linen LLC"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-17",
+        "outcome": "correct",
+        "predicted": "SUP-17",
+        "suggested": "SUP-17",
+        "type": "supplier",
+        "variant": "Mirage Cup Beverages L.L.C"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-011",
+        "outcome": "review",
+        "predicted": "ITM-011",
+        "suggested": "ITM-011",
+        "type": "item",
+        "variant": "Chicken Breast Boneless"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-012",
+        "outcome": "correct",
+        "predicted": "ITM-012",
+        "suggested": null,
+        "type": "item",
+        "variant": "LAMB SHOULDER - CHILLED"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-027",
+        "outcome": "correct",
+        "predicted": "ITM-027",
+        "suggested": null,
+        "type": "item",
+        "variant": "Basmati Rice 5kg"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-031",
+        "outcome": "review",
+        "predicted": "ITM-031",
+        "suggested": "ITM-031",
+        "type": "item",
+        "variant": "OLIVE OIL EXTRA VIRGIN 1L"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-018",
+        "outcome": "correct",
+        "predicted": "ITM-018",
+        "suggested": null,
+        "type": "item",
+        "variant": "Prawns (2kg box)"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-019",
+        "outcome": "correct",
+        "predicted": "ITM-019",
+        "suggested": null,
+        "type": "item",
+        "variant": "WHOLE MILK 1L"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-026",
+        "outcome": "review",
+        "predicted": "ITM-026",
+        "suggested": "ITM-026",
+        "type": "item",
+        "variant": "Halloumi Cheese"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-051",
+        "outcome": "correct",
+        "predicted": "ITM-051",
+        "suggested": null,
+        "type": "item",
+        "variant": "Foil Trays"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-052",
+        "outcome": "review",
+        "predicted": "ITM-052",
+        "suggested": "ITM-052",
+        "type": "item",
+        "variant": "Paper Cups 8oz"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-056",
+        "outcome": "review",
+        "predicted": "ITM-056",
+        "suggested": "ITM-056",
+        "type": "item",
+        "variant": "Hand Soap Refill"
+      }
+    ],
+    "trap_rows": [
+      {
+        "decision": "review",
+        "merged_into": null,
+        "type": "supplier",
+        "variant": "Gulf Fresh Bakery"
+      },
+      {
+        "decision": "review",
+        "merged_into": null,
+        "type": "supplier",
+        "variant": "Coral Basket Laundry"
+      },
+      {
+        "decision": "new",
+        "merged_into": null,
+        "type": "supplier",
+        "variant": "Dune Logistics"
+      },
+      {
+        "decision": "review",
+        "merged_into": null,
+        "type": "supplier",
+        "variant": "Mirage Beverages"
+      },
+      {
+        "decision": "review",
+        "merged_into": null,
+        "type": "supplier",
+        "variant": "Palm Linen"
+      },
+      {
+        "decision": "review",
+        "merged_into": null,
+        "type": "outlet",
+        "variant": "Saffron & Salt, Dubai Marina"
+      },
+      {
+        "decision": "review",
+        "merged_into": null,
+        "type": "item",
+        "variant": "Kraft Box"
+      },
+      {
+        "decision": "review",
+        "merged_into": null,
+        "type": "item",
+        "variant": "Lamb Chops"
+      }
+    ],
+    "traps": 8,
+    "traps_merged": 0,
+    "variants": 24,
+    "wrong_merges": 0
   },
   "reconciliation": {
     "by_kind": {
@@ -11144,8 +11634,8 @@
       },
       "DUPLICATE_INVOICE": {
         "false_alarms": 0,
-        "found": 2,
-        "missed": 1,
+        "found": 3,
+        "missed": 0,
         "not_run": 0
       },
       "LEDGER_BILL_MISSING": {
@@ -11206,132 +11696,137 @@
     "detections": [
       {
         "kind": "COMMISSION_OVER_CONTRACT",
-        "message": "Platform A for OUT-DIFC week 29 (13-19 Jul) charges 28.00% and AED 4,413.44 against contract 25.00% and AED 3,940.57.",
+        "message": "Platform A for OUT-DIFC week 29 (13-19 Jul) charges commission of AED 4,413.44 at 28.00%, compared with the contract amount of AED 3,940.57 at 25.00%.",
         "ref": "PAY-A-DIFC-2026-07-13"
       },
       {
         "kind": "COMMISSION_OVER_CONTRACT",
-        "message": "Platform A for OUT-JBR week 28 (6-12 Jul) charges 28.00% and AED 4,105.84 against contract 25.00% and AED 3,665.95.",
+        "message": "Platform A for OUT-JBR week 28 (6-12 Jul) charges commission of AED 4,105.84 at 28.00%, compared with the contract amount of AED 3,665.95 at 25.00%.",
         "ref": "PAY-A-JBR-2026-07-06"
       },
       {
         "kind": "COMMISSION_OVER_CONTRACT",
-        "message": "Platform B for OUT-JBR week 30 (20-26 Jul) charges 25.00% and AED 2,862.22 against contract 22.00% and AED 2,518.77.",
+        "message": "Platform B for OUT-JBR week 30 (20-26 Jul) charges commission of AED 2,862.22 at 25.00%, compared with the contract amount of AED 2,518.77 at 22.00%.",
         "ref": "PAY-B-JBR-2026-07-20"
       },
       {
         "kind": "CREDIT_NOTE_UNLINKED",
-        "message": "Document DOC-088 would block an e-invoice because credit note CN-SCS/26/0099 has no known original invoice (missing).",
+        "message": "Document DOC-088 would block an e-invoice because credit note CN-SCS/26/0099 does not identify an original invoice.",
         "ref": "DOC-088"
       },
       {
         "kind": "CREDIT_NOTE_UNLINKED",
-        "message": "Document DOC-089 would block an e-invoice because credit note CN-MCB/26/0173 has no known original invoice INV-UNKNOWN.",
+        "message": "Document DOC-089 would block an e-invoice because credit note CN-MCB/26/0173 refers to invoice INV-UNKNOWN, which is absent from this supplier's received invoices.",
         "ref": "DOC-089"
       },
       {
         "kind": "DUPLICATE_INVOICE",
-        "message": "Invoice GFP/26/26367 for AED 707.63 repeats DOC-001 as MAIL-001 for AED 707.63.",
+        "message": "Invoice GFP/26/26367 from Gulf Fresh Produce for AED 707.63 appears in both DOC-001 and MAIL-001.",
         "ref": "DOC-001|MAIL-001"
       },
       {
         "kind": "DUPLICATE_INVOICE",
-        "message": "Invoice GFF-2026-50504 for AED 1,630.17 repeats DOC-002 as MAIL-002 for AED 1,630.17.",
+        "message": "Invoice GFF-2026-50504 from Gulf Fresh Fish for AED 1,630.17 appears in both DOC-002 and MAIL-002.",
         "ref": "DOC-002|MAIL-002"
       },
       {
+        "kind": "DUPLICATE_INVOICE",
+        "message": "Invoice TI 24843 from Dune Orchard Produce Trading L.L.C. for AED 748.82 appears in both DOC-003 and MAIL-003.",
+        "ref": "DOC-003|MAIL-003"
+      },
+      {
         "kind": "LEDGER_BILL_MISSING",
-        "message": "Invoice PBC 044750 totals AED 1,256.15 against no ledger bill of AED 0.00.",
+        "message": "Invoice PBC 044750 from Palm Bloom Cleaning Trading L.L.C. for AED 1,256.15 has no matching bill in the ledger.",
         "ref": "DOC-013"
       },
       {
         "kind": "LEDGER_BILL_MISSING",
-        "message": "Invoice SLP-26-70432 totals AED 4,038.75 against no ledger bill of AED 0.00.",
+        "message": "Invoice SLP-26-70432 from Silver Ladle Packaging Trading L.L.C. for AED 4,038.75 has no matching bill in the ledger.",
         "ref": "DOC-014"
       },
       {
         "kind": "LEDGER_BILL_MISSING",
-        "message": "Invoice SCS/02059/26 totals AED 2,655.57 against no ledger bill of AED 0.00.",
+        "message": "Invoice SCS/02059/26 from Saffron Crate Spices Trading L.L.C. for AED 2,655.57 has no matching bill in the ledger.",
         "ref": "DOC-015"
       },
       {
         "kind": "LINES_NOT_SUM",
-        "message": "Invoice CPM 26/13261 has lines not sum with stated AED 1,274.33 against calculated AED 1,249.33.",
+        "message": "Invoice CPM 26/13261 states net AED 1,274.33, but its lines total AED 1,249.33.",
         "ref": "DOC-007"
       },
       {
         "kind": "LINES_NOT_SUM",
-        "message": "Invoice CBS-023584 has lines not sum with stated AED 1,093.51 against calculated AED 1,068.51.",
+        "message": "Invoice CBS-023584 states net AED 1,093.51, but its lines total AED 1,068.51.",
         "ref": "DOC-008"
       },
       {
         "kind": "MISSING_FIELD",
-        "message": "Document DOC-011 would block an e-invoice because mandatory fields are missing: supplier_address_emirate.",
+        "message": "Document DOC-011 would block an e-invoice because mandatory fields are missing: supplier address emirate.",
         "ref": "DOC-011"
       },
       {
         "kind": "MISSING_FIELD",
-        "message": "Document DOC-012 would block an e-invoice because mandatory fields are missing: buyer_trn.",
+        "message": "Document DOC-012 would block an e-invoice because mandatory fields are missing: buyer trn.",
         "ref": "DOC-012"
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform A for OUT-DIFC week 27 (29 Jun-5 Jul) paid AED 10,221.69 against statement net AED 10,512.19 with difference AED 290.50.",
+        "message": "Platform A paid AED 10,221.69 for OUT-DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 10,512.19, leaving AED 290.50 short.",
         "ref": "PAY-A-DIFC-2026-06-29"
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform A for OUT-JBR week 27 (29 Jun-5 Jul) paid AED 7,738.15 against statement net AED 8,028.65 with difference AED 290.50.",
+        "message": "Platform A paid AED 7,738.15 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 8,028.65, leaving AED 290.50 short.",
         "ref": "PAY-A-JBR-2026-06-29"
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform B for OUT-DIFC week 27 (29 Jun-5 Jul) paid AED 9,073.31 against statement net AED 9,363.81 with difference AED 290.50.",
+        "message": "Platform B paid AED 9,073.31 for OUT-DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 9,363.81, leaving AED 290.50 short.",
         "ref": "PAY-B-DIFC-2026-06-29"
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform B for OUT-JBR week 27 (29 Jun-5 Jul) paid AED 6,864.22 against statement net AED 7,154.72 with difference AED 290.50.",
+        "message": "Platform B paid AED 6,864.22 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 7,154.72, leaving AED 290.50 short.",
         "ref": "PAY-B-JBR-2026-06-29"
       },
       {
         "kind": "POS_LEDGER_MISMATCH",
-        "message": "OUT-JBR on 2026-08-10 has POS net AED 17,298.10 against ledger sales AED 17,423.10.",
+        "message": "OUT-JBR on 2026-08-10 has POS net sales of AED 17,298.10, compared with ledger sales of AED 17,423.10.",
         "ref": "OUT-JBR|2026-08-10"
       },
       {
         "kind": "POS_LEDGER_MISMATCH",
-        "message": "OUT-JBR on 2026-08-20 has POS net AED 17,452.54 against ledger sales AED 17,577.54.",
+        "message": "OUT-JBR on 2026-08-20 has POS net sales of AED 17,452.54, compared with ledger sales of AED 17,577.54.",
         "ref": "OUT-JBR|2026-08-20"
       },
       {
         "kind": "POS_LEDGER_MISMATCH",
-        "message": "OUT-JBR on 2026-08-30 has POS net AED 15,580.25 against ledger sales AED 15,705.25.",
+        "message": "OUT-JBR on 2026-08-30 has POS net sales of AED 15,580.25, compared with ledger sales of AED 15,705.25.",
         "ref": "OUT-JBR|2026-08-30"
       },
       {
         "kind": "REFUND_NOT_IN_POS",
-        "message": "Platform A for OUT-DIFC week 32 (3-9 Aug) refunds AED 85.00 on 2026-08-03 against POS refunds AED 0.00.",
+        "message": "Platform A for OUT-DIFC week 32 (3-9 Aug) reports refunds of AED 85.00 on 2026-08-03, compared with POS refunds of AED 0.00.",
         "ref": "PAY-A-DIFC-2026-08-03|OUT-DIFC|2026-08-03|PLATFORM_A"
       },
       {
         "kind": "REFUND_NOT_IN_POS",
-        "message": "Platform A for OUT-JBR week 31 (27 Jul-2 Aug) refunds AED 85.00 on 2026-07-27 against POS refunds AED 0.00.",
+        "message": "Platform A for OUT-JBR week 31 (27 Jul-2 Aug) reports refunds of AED 85.00 on 2026-07-27, compared with POS refunds of AED 0.00.",
         "ref": "PAY-A-JBR-2026-07-27|OUT-JBR|2026-07-27|PLATFORM_A"
       },
       {
         "kind": "REFUND_NOT_IN_POS",
-        "message": "Platform B for OUT-JBR week 33 (10-16 Aug) refunds AED 85.00 on 2026-08-10 against POS refunds AED 0.00.",
+        "message": "Platform B for OUT-JBR week 33 (10-16 Aug) reports refunds of AED 85.00 on 2026-08-10, compared with POS refunds of AED 0.00.",
         "ref": "PAY-B-JBR-2026-08-10|OUT-JBR|2026-08-10|PLATFORM_B"
       },
       {
         "kind": "TRN_INVALID",
-        "message": "Document DOC-009 would block an e-invoice because supplier_trn 200000000000003 must have 15 digits starting with 1 and ending in 03.",
+        "message": "Document DOC-009 would block an e-invoice because supplier TRN 200000000000003 must have 15 digits starting with 1 and ending in 03.",
         "ref": "DOC-009"
       },
       {
         "kind": "TRN_INVALID",
-        "message": "Document DOC-010 would block an e-invoice because supplier_trn 1001234 must have 15 digits starting with 1 and ending in 03.",
+        "message": "Document DOC-010 would block an e-invoice because supplier TRN 1001234 must have 15 digits starting with 1 and ending in 03.",
         "ref": "DOC-010"
       },
       {
@@ -11341,17 +11836,17 @@
       },
       {
         "kind": "VAT_WRONG",
-        "message": "Invoice PMD-2607-0639 has vat wrong with stated AED 53.41 against calculated AED 36.41.",
+        "message": "Invoice PMD-2607-0639 states VAT AED 53.41, but the calculated VAT is AED 36.41.",
         "ref": "DOC-004"
       },
       {
         "kind": "VAT_WRONG",
-        "message": "Invoice CD-2607-6955 has vat wrong with stated AED 126.55 against calculated AED 109.55.",
+        "message": "Invoice CD-2607-6955 states VAT AED 126.55, but the calculated VAT is AED 109.55.",
         "ref": "DOC-005"
       },
       {
         "kind": "VAT_WRONG",
-        "message": "Invoice AQP/INV/022258 has vat wrong with stated AED 89.74 against calculated AED 72.74.",
+        "message": "Invoice AQP/INV/022258 states VAT AED 89.74, but the calculated VAT is AED 72.74.",
         "ref": "DOC-006"
       }
     ],
@@ -11480,7 +11975,7 @@
         "id": "PR-021",
         "kind": "DUPLICATE_INVOICE",
         "ref": "DOC-003|MAIL-003",
-        "state": "missed"
+        "state": "found"
       },
       {
         "id": "PR-022",
@@ -11545,8 +12040,8 @@
     ],
     "totals": {
       "false_alarms": 0,
-      "found": 30,
-      "missed": 1,
+      "found": 31,
+      "missed": 0,
       "not_run": 0
     }
   },

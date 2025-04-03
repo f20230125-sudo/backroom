@@ -10,28 +10,43 @@ from backroom.pipeline import invoice_inputs, payout_inputs
 from backroom.recon.engine import reconcile
 
 
-def name_metrics(source):
+def name_metrics(source, *, llm=None):
     entities = masters(source)
     matcher = Matcher(entities)
     entity_types = {entity.canonical_id: entity.entity_type for entity in entities}
-    tp = fp = review = predicted = 0
+    tp = fp = review = predicted = suggestion_correct = model_yes = 0
     rows = []
     variants = source.get("name_variants", [])
     negatives = source.get("hard_negatives", [])
     for row in variants:
-        proposal = matcher.match(row["entity_type"], row["variant"])
-        merged = proposal.decision == "auto_match" or proposal.recommendation is True
+        proposal = matcher.match(row["entity_type"], row["variant"], llm=llm, model_check=True)
+        merged = proposal.decision == "auto_match" or (
+            proposal.decision == "review" and proposal.recommendation is True
+        )
         correct = merged and proposal.canonical_id == row["canonical_id"]
         tp += int(correct)
         fp += int(merged and not correct)
         predicted += int(merged)
         review += int(proposal.decision == "review")
+        suggestion_correct += int(
+            proposal.decision == "review" and proposal.suggested_id == row["canonical_id"]
+        )
+        model_yes += int(proposal.decision == "review" and proposal.recommendation is True)
         rows.append(
             {
                 "variant": row["variant"],
                 "expected": row["canonical_id"],
                 "predicted": proposal.canonical_id if merged else None,
                 "decision": proposal.decision,
+                "suggested_id": proposal.suggested_id,
+                "score": proposal.score,
+                "same_entity": proposal.recommendation,
+                "model_check_reason": proposal.reason,
+                "suggestion_correct": (
+                    proposal.suggested_id == row["canonical_id"]
+                    if proposal.decision == "review"
+                    else None
+                ),
             }
         )
     negative_rows = []
@@ -43,7 +58,7 @@ def name_metrics(source):
             (row["right"], row["right_id"], row["left"], row["left_id"]),
         ):
             candidate = Matcher([Entity(entity_types[right_id], right_id, (right,))]).match(
-                entity_types[left_id], left
+                entity_types[left_id], left, llm=llm, model_check=True
             )
             auto |= candidate.decision == "auto_match"
             merged |= candidate.decision == "auto_match" or candidate.recommendation is True
@@ -63,6 +78,10 @@ def name_metrics(source):
         "variants": len(variants),
         "hard_negatives": negative_rows,
         "review_share": review / len(variants) if variants else None,
+        "review_items": review,
+        "review_with_yes": model_yes,
+        "review_suggestion_correct": suggestion_correct,
+        "review_suggestion_accuracy": suggestion_correct / review if review else None,
         "documents": rows,
     }
 
@@ -177,6 +196,6 @@ def evaluate_m3(source, data_root, *, results=None, matcher=None, llm=None):
     )
     findings = check_invoices(invoices)
     return {
-        "names": name_metrics(source),
+        "names": name_metrics(source, llm=llm),
         "reconciliation": problem_metrics(source, results, exceptions, findings),
     }

@@ -5,6 +5,7 @@ from datetime import date
 from decimal import Decimal
 
 from backroom.models import InvoiceRecord, Record, money
+from backroom.names.normalise import normalise
 
 
 class ExceptionRecord(Record):
@@ -22,6 +23,14 @@ class Invoice:
     record: InvoiceRecord
     supplier_id: str | None
     outlet: str | None = None
+
+    @property
+    def supplier_key(self) -> str | None:
+        """Unknown printed names can group documents without inventing master IDs."""
+        if self.supplier_id:
+            return self.supplier_id
+        name = normalise(self.record.supplier_name or "")
+        return "printed:" + name if name else None
 
 
 def aed(value: Decimal) -> str:

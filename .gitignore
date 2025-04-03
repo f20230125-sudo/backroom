@@ -15,3 +15,9 @@ test-results/
 playwright-report/
 /data/out/
 *.log
+
+.vercel
+.env*
+.agents/
+.claude/
+skills-lock.json
