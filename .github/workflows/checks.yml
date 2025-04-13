@@ -1,0 +1,59 @@
+name: checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: backroom
+          POSTGRES_PASSWORD: backroom
+          POSTGRES_DB: backroom_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U backroom" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL_TEST: postgresql://backroom:backroom@localhost:5432/backroom_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-lock.txt
+      - run: ruff check . && ruff format --check .
+      - run: pytest -q -p no:cacheprovider --basetemp=/tmp/pytest
+      - name: Gates (no model calls, replay only)
+        run: |
+          python -m backroom.verify m1
+          python -m backroom.verify m2
+          python -m backroom.verify m3
+          python -m backroom.verify m4
+      - name: Evaluation replays from the committed cache with zero model calls
+        run: |
+          python -m backroom.db migrate
+          python -m backroom.pipeline run --offline --rebuild
+          python -m eval.run_eval --offline > /dev/null
+      - name: Dependency audit
+        run: pip install pip-audit && pip-audit -r requirements-lock.txt
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run test
+      - run: npm run build
+      - run: npm audit --audit-level=high --omit=dev

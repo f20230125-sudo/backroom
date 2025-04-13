@@ -243,9 +243,12 @@ def top_items(repo, a: TopItems):
     selected = sorted(groups.values(), key=lambda r: (-r["net_cents"], r["item"], r["unit"] or ""))[
         : a.n
     ]
+    # Show the catalogue name for matched items (not the "ITM-039" code); unmatched lines keep
+    # the printed description.
+    names = {r["id"]: r["name"] for r in repo.rows("SELECT id, name FROM items", ())}
     rows = [
         {
-            "item": r["item"],
+            "item": names.get(r["item"], r["item"]),
             "unit": r["unit"],
             "net_spend": amount(r["net_cents"]),
             "quantity": None if r["quantity_missing"] else str(r["quantity"]),

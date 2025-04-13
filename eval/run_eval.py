@@ -36,6 +36,15 @@ def equal(left, right):
     return left == right
 
 
+def _dec(value):
+    from decimal import Decimal, InvalidOperation
+
+    try:
+        return None if value in (None, "None") else Decimal(str(value))
+    except InvalidOperation:
+        return value
+
+
 def score_record(predicted, truth) -> dict:
     """Annotations are scored separately; each business scalar in truth counts once."""
     fields = [key for key in type(truth).model_fields if key not in ANNOTATIONS | {"lines"}]
@@ -80,7 +89,26 @@ def score_record(predicted, truth) -> dict:
         if candidate is not None:
             used.add(candidate)
             line_correct += 1
+    # The trust metric: an accepted document whose wording is slightly off is a nuisance, one
+    # whose money is wrong is a liability. Amounts = every Decimal field and line amount.
+    money = [k for k, f in type(truth).model_fields.items() if "Decimal" in str(f.annotation)]
+    line_money = [k for k in keys if k not in ("description", "business_date")]
+    amounts_ok = bool(predicted) and all(
+        equal(getattr(predicted, k, None), getattr(truth, k)) for k in money
+    )
+    if amounts_ok:
+        pred_amounts = sorted(
+            tuple(str(getattr(line, k, None)) for k in line_money) for line in actual_lines
+        )
+        true_amounts = sorted(
+            tuple(str(getattr(line, k, None)) for k in line_money) for line in truth.lines
+        )
+        amounts_ok = len(pred_amounts) == len(true_amounts) and all(
+            all(equal(_dec(a), _dec(b)) for a, b in zip(x, y, strict=True))
+            for x, y in zip(pred_amounts, true_amounts, strict=True)
+        )
     return {
+        "amounts_correct": amounts_ok,
         "fields_correct": correct,
         "fields_total": len(fields),
         "lines_correct": line_correct,
@@ -111,6 +139,9 @@ def aggregate(rows: list[dict]) -> dict:
         "line_accuracy": ratio(totals["lines_correct"], totals["lines_total"]),
         "review_share": ratio(sum(row["status"] == "review" for row in ran), len(ran)),
         "accepted_but_wrong": sum(not row["score"]["all_correct"] for row in accepted),
+        "accepted_with_wrong_amount": sum(
+            not row["score"].get("amounts_correct", True) for row in accepted
+        ),
         "accepted": sum(row["status"] == "accepted" for row in ran),
         "accepted_scored": len(accepted),
         "review": sum(row["status"] == "review" for row in ran),
