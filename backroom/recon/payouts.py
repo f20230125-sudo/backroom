@@ -4,7 +4,7 @@ from collections import defaultdict
 
 from backroom.config import COMMISSION_RATES, COMMISSION_VAT_RATE, MONEY_TOLERANCE
 from backroom.models import ZERO, money
-from backroom.recon.types import ExceptionRecord, aed, week_label
+from backroom.recon.types import ExceptionRecord, aed, outlet_name, week_label
 
 
 def check_payouts(statements, pos, ledger, *, through=None):
@@ -16,7 +16,7 @@ def check_payouts(statements, pos, ledger, *, through=None):
             bank[row.reference] += row.debit - row.credit
     for statement in statements:
         label = week_label(statement.week_start, statement.week_end)
-        context = f"Platform {statement.platform} for {statement.outlet_code} {label}"
+        context = f"Platform {statement.platform} for {outlet_name(statement.outlet_code)} {label}"
 
         def add(kind, amount, message, statement=statement, label=label, **refs):
             out.append(
@@ -73,7 +73,7 @@ def check_payouts(statements, pos, ledger, *, through=None):
                     "PAYOUT_SHORT" if difference > ZERO else "PAYOUT_OVER",
                     difference,
                     f"Platform {statement.platform} paid {aed(received)} for "
-                    f"{statement.outlet_code} {label} against a statement net of "
+                    f"{outlet_name(statement.outlet_code)} {label} against a statement net of "
                     f"{aed(statement.net_payout)}, leaving {aed(abs(difference))} "
                     f"{'short' if difference > ZERO else 'overpaid'}.",
                 )
