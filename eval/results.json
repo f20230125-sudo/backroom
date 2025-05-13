@@ -1,8 +1,8 @@
 {
   "ask": {
     "in_scope": {
-      "correct": 29,
-      "not run": 0,
+      "correct": 22,
+      "not run": 7,
       "refused": 1,
       "total": 30,
       "wrong": 0
@@ -3599,20 +3599,11 @@
         "question": "Give me food invoice cost and food cost percent at DIFC in August.",
         "result": {
           "action": "answer",
-          "answer": "In August 2026, the food invoice cost at DIFC was 3146.09 with a food cost percentage of 0.47.",
-          "not_run": false,
-          "numbers_used": [
-            {
-              "tool_call_id": "call_1",
-              "value": "3146.09"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "0.47"
-            }
-          ],
-          "reason": "",
-          "refused": false,
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
           "tool_calls": [
             {
               "args": {
@@ -3627,7 +3618,7 @@
                   "document_id": "DOC-046",
                   "invoice_number": "DSB-10729/26",
                   "issue_date": "2026-08-09",
-                  "item_id": null,
+                  "item_id": "ITM-041",
                   "line_net": "962.10",
                   "quantity": "15",
                   "supplier_name": "Dune Spring Beverages Trading L.L.C.",
@@ -3682,7 +3673,7 @@
             }
           ]
         },
-        "state": "correct"
+        "state": "not run"
       },
       {
         "expected_numbers": [
@@ -3693,20 +3684,11 @@
         "question": "Give me food invoice cost and food cost percent at AQK in September.",
         "result": {
           "action": "answer",
-          "answer": "In September 2026, the total food invoice cost at OUT-AQK was 23326.16. The food cost percentage cannot be calculated as the net sales for this period were 0.00.",
-          "not_run": false,
-          "numbers_used": [
-            {
-              "tool_call_id": "call_1",
-              "value": "23326.16"
-            },
-            {
-              "tool_call_id": "call_2",
-              "value": "0.00"
-            }
-          ],
-          "reason": "",
-          "refused": false,
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
           "tool_calls": [
             {
               "args": {
@@ -3769,7 +3751,7 @@
                   "document_id": "DOC-027",
                   "invoice_number": "AGP/2026/3063",
                   "issue_date": "2026-09-29",
-                  "item_id": null,
+                  "item_id": "ITM-033",
                   "line_net": "890.23",
                   "quantity": "11",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -3781,7 +3763,7 @@
                   "document_id": "DOC-027",
                   "invoice_number": "AGP/2026/3063",
                   "issue_date": "2026-09-29",
-                  "item_id": null,
+                  "item_id": "ITM-030",
                   "line_net": "859.95",
                   "quantity": "15",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -3793,7 +3775,7 @@
                   "document_id": "DOC-027",
                   "invoice_number": "AGP/2026/3063",
                   "issue_date": "2026-09-29",
-                  "item_id": null,
+                  "item_id": "ITM-036",
                   "line_net": "652.70",
                   "quantity": "10",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -3805,7 +3787,7 @@
                   "document_id": "DOC-027",
                   "invoice_number": "AGP/2026/3063",
                   "issue_date": "2026-09-29",
-                  "item_id": null,
+                  "item_id": "ITM-031",
                   "line_net": "1276.99",
                   "quantity": "19",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -3985,7 +3967,7 @@
                   "document_id": "MAIL-018",
                   "invoice_number": "SCS/02066/26",
                   "issue_date": "2026-09-23",
-                  "item_id": null,
+                  "item_id": "ITM-029",
                   "line_net": "882.31",
                   "quantity": "11",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -3997,7 +3979,7 @@
                   "document_id": "MAIL-018",
                   "invoice_number": "SCS/02066/26",
                   "issue_date": "2026-09-23",
-                  "item_id": null,
+                  "item_id": "ITM-032",
                   "line_net": "427.31",
                   "quantity": "4.75",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -4009,7 +3991,7 @@
                   "document_id": "MAIL-018",
                   "invoice_number": "SCS/02066/26",
                   "issue_date": "2026-09-23",
-                  "item_id": null,
+                  "item_id": "ITM-035",
                   "line_net": "481.78",
                   "quantity": "13",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -4021,7 +4003,7 @@
                   "document_id": "MAIL-018",
                   "invoice_number": "SCS/02066/26",
                   "issue_date": "2026-09-23",
-                  "item_id": null,
+                  "item_id": "ITM-028",
                   "line_net": "337.84",
                   "quantity": "8",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -4033,7 +4015,7 @@
                   "document_id": "MAIL-030",
                   "invoice_number": "AGP/2026/3062",
                   "issue_date": "2026-09-15",
-                  "item_id": null,
+                  "item_id": "ITM-028",
                   "line_net": "94.05",
                   "quantity": "3",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -4045,7 +4027,7 @@
                   "document_id": "MAIL-030",
                   "invoice_number": "AGP/2026/3062",
                   "issue_date": "2026-09-15",
-                  "item_id": null,
+                  "item_id": "ITM-035",
                   "line_net": "575.32",
                   "quantity": "19",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -4057,7 +4039,7 @@
                   "document_id": "MAIL-030",
                   "invoice_number": "AGP/2026/3062",
                   "issue_date": "2026-09-15",
-                  "item_id": null,
+                  "item_id": "ITM-027",
                   "line_net": "970.71",
                   "quantity": "13",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -4069,7 +4051,7 @@
                   "document_id": "MAIL-030",
                   "invoice_number": "AGP/2026/3062",
                   "issue_date": "2026-09-15",
-                  "item_id": null,
+                  "item_id": "ITM-031",
                   "line_net": "82.52",
                   "quantity": "3.25",
                   "supplier_name": "Amber Grain Provisions Trading L.L.C.",
@@ -4081,7 +4063,7 @@
                   "document_id": "MAIL-045",
                   "invoice_number": "AQP/INV/022263",
                   "issue_date": "2026-09-28",
-                  "item_id": null,
+                  "item_id": "ITM-035",
                   "line_net": "912.36",
                   "quantity": "12",
                   "supplier_name": "AL QUOZ PANTRY TRDG",
@@ -4093,7 +4075,7 @@
                   "document_id": "MAIL-045",
                   "invoice_number": "AQP/INV/022263",
                   "issue_date": "2026-09-28",
-                  "item_id": null,
+                  "item_id": "ITM-029",
                   "line_net": "621.18",
                   "quantity": "18",
                   "supplier_name": "AL QUOZ PANTRY TRDG",
@@ -4105,7 +4087,7 @@
                   "document_id": "MAIL-045",
                   "invoice_number": "AQP/INV/022263",
                   "issue_date": "2026-09-28",
-                  "item_id": null,
+                  "item_id": "ITM-036",
                   "line_net": "947.68",
                   "quantity": "16",
                   "supplier_name": "AL QUOZ PANTRY TRDG",
@@ -4117,7 +4099,7 @@
                   "document_id": "MAIL-045",
                   "invoice_number": "AQP/INV/022263",
                   "issue_date": "2026-09-28",
-                  "item_id": null,
+                  "item_id": "ITM-027",
                   "line_net": "611.73",
                   "quantity": "7",
                   "supplier_name": "AL QUOZ PANTRY TRDG",
@@ -4181,27 +4163,10 @@
                 "net_sales": "0.00",
                 "unclassified_lines": 0
               }
-            },
-            {
-              "args": {
-                "channel": null,
-                "date_from": "2026-09-01",
-                "date_to": "2026-09-30",
-                "outlet": "OUT-AQK"
-              },
-              "rows": [],
-              "tool": "sales",
-              "tool_call_id": "call_2",
-              "totals": {
-                "gross_sales": "0.00",
-                "net_sales": "0.00",
-                "orders": 0,
-                "row_count": 0
-              }
             }
           ]
         },
-        "state": "correct"
+        "state": "not run"
       },
       {
         "expected_numbers": [
@@ -4213,20 +4178,11 @@
         "question": "Give me food invoice cost and food cost percent at JBR in September.",
         "result": {
           "action": "answer",
-          "answer": "In September 2026, the food invoice cost at JBR was 6213.97, representing a food cost percentage of 1.18%.",
-          "not_run": false,
-          "numbers_used": [
-            {
-              "tool_call_id": "call_1",
-              "value": "6213.97"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "1.18"
-            }
-          ],
-          "reason": "",
-          "refused": false,
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
           "tool_calls": [
             {
               "args": {
@@ -4241,7 +4197,7 @@
                   "document_id": "DOC-051",
                   "invoice_number": "SCS/02065/26",
                   "issue_date": "2026-09-13",
-                  "item_id": null,
+                  "item_id": "ITM-029",
                   "line_net": "523.38",
                   "quantity": "11",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -4253,7 +4209,7 @@
                   "document_id": "DOC-051",
                   "invoice_number": "SCS/02065/26",
                   "issue_date": "2026-09-13",
-                  "item_id": null,
+                  "item_id": "ITM-031",
                   "line_net": "134.32",
                   "quantity": "5.75",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -4265,7 +4221,7 @@
                   "document_id": "DOC-051",
                   "invoice_number": "SCS/02065/26",
                   "issue_date": "2026-09-13",
-                  "item_id": null,
+                  "item_id": "ITM-036",
                   "line_net": "162.92",
                   "quantity": "4",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -4277,7 +4233,7 @@
                   "document_id": "DOC-051",
                   "invoice_number": "SCS/02065/26",
                   "issue_date": "2026-09-13",
-                  "item_id": null,
+                  "item_id": "ITM-033",
                   "line_net": "720.18",
                   "quantity": "9",
                   "supplier_name": "Saffron Crate Spices Trading L.L.C.",
@@ -4416,7 +4372,7 @@
             }
           ]
         },
-        "state": "correct"
+        "state": "not run"
       },
       {
         "expected_numbers": [
@@ -4430,36 +4386,11 @@
         "question": "Why did food cost move at DIFC between July and August? Compare invoice cost, sales and percentages.",
         "result": {
           "action": "answer",
-          "answer": "At OUT-DIFC, the food cost percentage decreased from 0.90% in July to 0.47% in August. This was driven by a rise in net sales from 518529.96 to 670193.37, alongside a reduction in total invoice food costs from 4650.64 to 3146.09.",
-          "not_run": false,
-          "numbers_used": [
-            {
-              "tool_call_id": "call_1",
-              "value": "0.90"
-            },
-            {
-              "tool_call_id": "call_2",
-              "value": "0.47"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "518529.96"
-            },
-            {
-              "tool_call_id": "call_2",
-              "value": "670193.37"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "4650.64"
-            },
-            {
-              "tool_call_id": "call_2",
-              "value": "3146.09"
-            }
-          ],
-          "reason": "",
-          "refused": false,
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
           "tool_calls": [
             {
               "args": {
@@ -4474,7 +4405,7 @@
                   "document_id": "DOC-016",
                   "invoice_number": "SCT-028838",
                   "issue_date": "2026-07-14",
-                  "item_id": null,
+                  "item_id": "ITM-030",
                   "line_net": "560.28",
                   "quantity": "7",
                   "supplier_name": "Salt Crate Seasonings Trading L.L.C.",
@@ -4486,7 +4417,7 @@
                   "document_id": "DOC-016",
                   "invoice_number": "SCT-028838",
                   "issue_date": "2026-07-14",
-                  "item_id": null,
+                  "item_id": "ITM-028",
                   "line_net": "115.89",
                   "quantity": "3",
                   "supplier_name": "Salt Crate Seasonings Trading L.L.C.",
@@ -4498,7 +4429,7 @@
                   "document_id": "DOC-016",
                   "invoice_number": "SCT-028838",
                   "issue_date": "2026-07-14",
-                  "item_id": null,
+                  "item_id": "ITM-027",
                   "line_net": "1079.84",
                   "quantity": "16",
                   "supplier_name": "Salt Crate Seasonings Trading L.L.C.",
@@ -4510,7 +4441,7 @@
                   "document_id": "DOC-016",
                   "invoice_number": "SCT-028838",
                   "issue_date": "2026-07-14",
-                  "item_id": null,
+                  "item_id": "ITM-031",
                   "line_net": "681.52",
                   "quantity": "8",
                   "supplier_name": "Salt Crate Seasonings Trading L.L.C.",
@@ -4522,7 +4453,7 @@
                   "document_id": "MAIL-049",
                   "invoice_number": "DSB-10728/26",
                   "issue_date": "2026-07-26",
-                  "item_id": null,
+                  "item_id": "ITM-041",
                   "line_net": "262.00",
                   "quantity": "8",
                   "supplier_name": "Dune Spring Beverages Trading L.L.C.",
@@ -4574,76 +4505,10 @@
                 "net_sales": "518529.96",
                 "unclassified_lines": 0
               }
-            },
-            {
-              "args": {
-                "date_from": "2026-08-01",
-                "date_to": "2026-08-31",
-                "outlet": "OUT-DIFC"
-              },
-              "rows": [
-                {
-                  "category": "beverages",
-                  "description": "BLACK TEA - 100 TEA BAGS",
-                  "document_id": "DOC-046",
-                  "invoice_number": "DSB-10729/26",
-                  "issue_date": "2026-08-09",
-                  "item_id": null,
-                  "line_net": "962.10",
-                  "quantity": "15",
-                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
-                  "unit": "CS"
-                },
-                {
-                  "category": "beverages",
-                  "description": "SPARKLING WATER - 12 X 1L",
-                  "document_id": "DOC-046",
-                  "invoice_number": "DSB-10729/26",
-                  "issue_date": "2026-08-09",
-                  "item_id": "ITM-038",
-                  "line_net": "972.75",
-                  "quantity": "15",
-                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
-                  "unit": "CS"
-                },
-                {
-                  "category": "beverages",
-                  "description": "STILL WATER - 12 X 1L",
-                  "document_id": "DOC-046",
-                  "invoice_number": "DSB-10729/26",
-                  "issue_date": "2026-08-09",
-                  "item_id": "ITM-037",
-                  "line_net": "687.20",
-                  "quantity": "20",
-                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
-                  "unit": "CS"
-                },
-                {
-                  "category": "beverages",
-                  "description": "LEMON DRINK - 12 X 1L",
-                  "document_id": "DOC-046",
-                  "invoice_number": "DSB-10729/26",
-                  "issue_date": "2026-08-09",
-                  "item_id": "ITM-044",
-                  "line_net": "524.04",
-                  "quantity": "12",
-                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
-                  "unit": "CS"
-                }
-              ],
-              "tool": "food_cost",
-              "tool_call_id": "call_2",
-              "totals": {
-                "food_cost": "3146.09",
-                "food_cost_percent": "0.47",
-                "line_count": 4,
-                "net_sales": "670193.37",
-                "unclassified_lines": 0
-              }
             }
           ]
         },
-        "state": "correct"
+        "state": "not run"
       },
       {
         "expected_numbers": [
@@ -5346,36 +5211,11 @@
         "question": "What are our top 5 purchased items at DIFC in August, by net spend? Give each spend.",
         "result": {
           "action": "answer",
-          "answer": "In August 2026, the top 4 purchased items at DIFC by net spend were Sparkling Water at 972.75, BLACK TEA - 100 TEA BAGS at 962.10, Still Water at 687.20, and Lemon Drink at 524.04.",
-          "not_run": false,
-          "numbers_used": [
-            {
-              "tool_call_id": "call_1",
-              "value": "2026-08"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "4"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "972.75"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "962.10"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "687.20"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "524.04"
-            }
-          ],
-          "reason": "",
-          "refused": false,
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
           "tool_calls": [
             {
               "args": {
@@ -5393,7 +5233,7 @@
                   "unit": "CS"
                 },
                 {
-                  "item": "BLACK TEA - 100 TEA BAGS",
+                  "item": "Black Tea",
                   "line_count": 1,
                   "net_spend": "962.10",
                   "quantity": "15",
@@ -5423,41 +5263,24 @@
             }
           ]
         },
-        "state": "correct"
+        "state": "not run"
       },
       {
         "expected_numbers": [
           "3052.44",
           "1969.46",
-          "1600.38"
+          "1841.40"
         ],
         "id": "ask-28",
         "in_scope": true,
         "question": "What are our top 3 purchased items at AQK in September, by net spend? Give each spend.",
         "result": {
           "action": "answer",
-          "answer": "In September 2026, the top 3 purchased items at AQK by net spend were Orange Juice at 3052.44, Sea Salt (catering pack) at 1969.46, and Sugar (catering pack) at 1600.38.",
-          "not_run": false,
-          "numbers_used": [
-            {
-              "tool_call_id": "call_1",
-              "value": "3"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "3052.44"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "1969.46"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "1600.38"
-            }
-          ],
-          "reason": "",
-          "refused": false,
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
           "tool_calls": [
             {
               "args": {
@@ -5475,17 +5298,17 @@
                   "unit": "CS"
                 },
                 {
-                  "item": "Sea Salt (catering pack)",
+                  "item": "Sea Salt",
                   "line_count": 3,
                   "net_spend": "1969.46",
                   "quantity": "44",
                   "unit": "BX"
                 },
                 {
-                  "item": "Sugar (catering pack)",
-                  "line_count": 2,
-                  "net_spend": "1600.38",
-                  "quantity": "26",
+                  "item": "Basmati Rice",
+                  "line_count": 3,
+                  "net_spend": "1841.40",
+                  "quantity": "24",
                   "unit": "BX"
                 }
               ],
@@ -5493,12 +5316,12 @@
               "tool_call_id": "call_1",
               "totals": {
                 "item_count": 3,
-                "net_spend": "6622.28"
+                "net_spend": "6863.30"
               }
             }
           ]
         },
-        "state": "correct"
+        "state": "not run"
       },
       {
         "expected_numbers": [],
@@ -5548,32 +5371,11 @@
         "question": "What are our top 3 purchased items at DIFC in September, by net spend? Give each spend.",
         "result": {
           "action": "answer",
-          "answer": "The top 3 purchased items at OUT-DIFC in September 2026 by net spend were BASMATI RICE - CATERING PACK at 1438.24, SUNFLOWER OIL - 5L CAN at 864.90, and OLIVE OIL - 5L TIN at 809.25.",
-          "not_run": false,
-          "numbers_used": [
-            {
-              "tool_call_id": "call_1",
-              "value": "3"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "OUT-DIFC"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "1438.24"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "864.90"
-            },
-            {
-              "tool_call_id": "call_1",
-              "value": "809.25"
-            }
-          ],
-          "reason": "",
-          "refused": false,
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
           "tool_calls": [
             {
               "args": {
@@ -5584,21 +5386,21 @@
               },
               "rows": [
                 {
-                  "item": "BASMATI RICE - CATERING PACK",
+                  "item": "Basmati Rice",
                   "line_count": 1,
                   "net_spend": "1438.24",
                   "quantity": "16",
                   "unit": "BX"
                 },
                 {
-                  "item": "SUNFLOWER OIL - 5L CAN",
+                  "item": "Sunflower Oil",
                   "line_count": 1,
                   "net_spend": "864.90",
                   "quantity": "20.5",
                   "unit": "LTR"
                 },
                 {
-                  "item": "OLIVE OIL - 5L TIN",
+                  "item": "Olive Oil",
                   "line_count": 1,
                   "net_spend": "809.25",
                   "quantity": "16.25",
@@ -5614,7 +5416,7 @@
             }
           ]
         },
-        "state": "correct"
+        "state": "not run"
       },
       {
         "expected_numbers": [],
@@ -16303,7 +16105,7 @@
       }
     }
   },
-  "generated_at": "2026-10-27T15:07:02.020140+00:00",
+  "generated_at": "2026-10-27T15:12:58.357115+00:00",
   "hours_saved": {
     "assumptions": [
       {
@@ -16329,20 +16131,20 @@
     ],
     "counts": {
       "auto_accepted_document": 224,
-      "draft_produced": 76,
+      "draft_produced": 35,
       "outlet_day_reconciled": 184,
       "review_document_overhead": 3
     },
     "duration_run_id": 1,
     "duration_state": "measured",
-    "estimated_hours_saved": "31.55",
+    "estimated_hours_saved": "28.82",
     "formula": "(auto_accepted_document*minutes - review_document_overhead*minutes + outlet_day_reconciled*minutes + draft_produced*minutes - duration_ms/60000)/60",
-    "full_pipeline_duration_ms": 1626,
+    "full_pipeline_duration_ms": 3054,
     "label": "estimate using assumptions, not a measured labour study",
-    "manual_minutes_saved": "1893",
+    "manual_minutes_saved": "1729",
     "run_coverage": {
       "briefs": 1,
-      "drafts": 76,
+      "drafts": 35,
       "extractions": 234,
       "input_mode": "saved_results",
       "not_run": 0,
