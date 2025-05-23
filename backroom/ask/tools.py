@@ -107,7 +107,7 @@ def amount(cents):
 
 SALES_SQL = """
 SELECT business_date, channel, gross_cents, net_cents, orders FROM pos_days
-WHERE outlet = ? AND business_date BETWEEN ? AND ? AND (? IS NULL OR channel = ?)
+WHERE outlet = ? AND business_date BETWEEN ? AND ? AND (CAST(? AS TEXT) IS NULL OR channel = ?)
 ORDER BY business_date, channel
 """
 PAYOUTS_SQL = """
@@ -131,8 +131,9 @@ AND duplicate_of IS NULL ORDER BY issue_date, document_id
 """
 # Pipeline projects ISO date spans; week labels are never compared lexically.
 EXCEPTIONS_SQL = """SELECT * FROM exceptions
-WHERE (? IS NULL OR kind = ?) AND (? IS NULL OR outlet = ?)
-AND (? IS NULL OR date_end >= ?) AND (? IS NULL OR date_start <= ?) ORDER BY id"""
+WHERE (CAST(? AS TEXT) IS NULL OR kind = ?) AND (CAST(? AS TEXT) IS NULL OR outlet = ?)
+AND (CAST(? AS TEXT) IS NULL OR date_end >= ?)
+AND (CAST(? AS TEXT) IS NULL OR date_start <= ?) ORDER BY id"""
 
 
 def sales(repo, a: Sales):

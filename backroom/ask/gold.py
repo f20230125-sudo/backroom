@@ -157,7 +157,7 @@ def sql_expected(repo, call):
     if tool == "sales":
         r = repo.rows(
             "SELECT SUM(net_cents) AS value FROM pos_days WHERE outlet = ? "
-            "AND business_date BETWEEN ? AND ? AND (? IS NULL OR channel = ?)",
+            "AND business_date BETWEEN ? AND ? AND (CAST(? AS TEXT) IS NULL OR channel = ?)",
             (*params, a.get("channel"), a.get("channel")),
         )[0]
         return [amount(r["value"])]
@@ -188,8 +188,8 @@ def sql_expected(repo, call):
         return [cost] + ([str(money(Decimal(cost) / Decimal(sale) * 100))] if Decimal(sale) else [])
     if tool == "exceptions":
         r = repo.rows(
-            "SELECT COUNT(*) AS value FROM exceptions WHERE (? IS NULL OR kind = ?) "
-            "AND (? IS NULL OR outlet = ?) AND date_end >= ? AND date_start <= ?",
+            "SELECT COUNT(*) AS value FROM exceptions WHERE (CAST(? AS TEXT) IS NULL OR kind = ?) "
+            "AND (CAST(? AS TEXT) IS NULL OR outlet = ?) AND date_end >= ? AND date_start <= ?",
             (a["kind"], a["kind"], a["outlet"], a["outlet"], a["date_from"], a["date_to"]),
         )[0]
         return [str(r["value"])]
