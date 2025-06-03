@@ -1,8 +1,8 @@
 {
   "ask": {
     "in_scope": {
-      "correct": 22,
-      "not run": 7,
+      "correct": 29,
+      "not run": 0,
       "refused": 1,
       "total": 30,
       "wrong": 0
@@ -3599,11 +3599,24 @@
         "question": "Give me food invoice cost and food cost percent at DIFC in August.",
         "result": {
           "action": "answer",
-          "answer": "I cannot answer that from the available business evidence.",
-          "not_run": true,
-          "numbers_used": [],
-          "reason": "Model response not recorded",
-          "refused": true,
+          "answer": "In August 2026, the food invoice cost at DIFC was 3146.09, resulting in a food cost percentage of 0.47 based on net sales of 670193.37.",
+          "not_run": false,
+          "numbers_used": [
+            {
+              "tool_call_id": "call_1",
+              "value": "3146.09"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "0.47"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "670193.37"
+            }
+          ],
+          "reason": "",
+          "refused": false,
           "tool_calls": [
             {
               "args": {
@@ -3673,7 +3686,7 @@
             }
           ]
         },
-        "state": "not run"
+        "state": "correct"
       },
       {
         "expected_numbers": [
@@ -3684,11 +3697,20 @@
         "question": "Give me food invoice cost and food cost percent at AQK in September.",
         "result": {
           "action": "answer",
-          "answer": "I cannot answer that from the available business evidence.",
-          "not_run": true,
-          "numbers_used": [],
-          "reason": "Model response not recorded",
-          "refused": true,
+          "answer": "In September 2026, the food invoice cost at OUT-AQK was 23326.16. The food cost percentage cannot be calculated as there were 0.00 net sales recorded for this period.",
+          "not_run": false,
+          "numbers_used": [
+            {
+              "tool_call_id": "call_1",
+              "value": "23326.16"
+            },
+            {
+              "tool_call_id": "call_2",
+              "value": "0.00"
+            }
+          ],
+          "reason": "",
+          "refused": false,
           "tool_calls": [
             {
               "args": {
@@ -4163,10 +4185,27 @@
                 "net_sales": "0.00",
                 "unclassified_lines": 0
               }
+            },
+            {
+              "args": {
+                "channel": null,
+                "date_from": "2026-09-01",
+                "date_to": "2026-09-30",
+                "outlet": "OUT-AQK"
+              },
+              "rows": [],
+              "tool": "sales",
+              "tool_call_id": "call_2",
+              "totals": {
+                "gross_sales": "0.00",
+                "net_sales": "0.00",
+                "orders": 0,
+                "row_count": 0
+              }
             }
           ]
         },
-        "state": "not run"
+        "state": "correct"
       },
       {
         "expected_numbers": [
@@ -4178,11 +4217,24 @@
         "question": "Give me food invoice cost and food cost percent at JBR in September.",
         "result": {
           "action": "answer",
-          "answer": "I cannot answer that from the available business evidence.",
-          "not_run": true,
-          "numbers_used": [],
-          "reason": "Model response not recorded",
-          "refused": true,
+          "answer": "In September 2026, the food invoice cost at OUT-JBR was 6213.97, representing a food cost percentage of 1.18% against net sales of 526083.06.",
+          "not_run": false,
+          "numbers_used": [
+            {
+              "tool_call_id": "call_1",
+              "value": "6213.97"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "1.18"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "526083.06"
+            }
+          ],
+          "reason": "",
+          "refused": false,
           "tool_calls": [
             {
               "args": {
@@ -4372,7 +4424,7 @@
             }
           ]
         },
-        "state": "not run"
+        "state": "correct"
       },
       {
         "expected_numbers": [
@@ -4386,11 +4438,36 @@
         "question": "Why did food cost move at DIFC between July and August? Compare invoice cost, sales and percentages.",
         "result": {
           "action": "answer",
-          "answer": "I cannot answer that from the available business evidence.",
-          "not_run": true,
-          "numbers_used": [],
-          "reason": "Model response not recorded",
-          "refused": true,
+          "answer": "At OUT-DIFC, the food cost percentage decreased from 0.90% in July to 0.47% in August. This was driven by a rise in net sales from 518529.96 in July to 670193.37 in August, while total invoice costs fell from 4650.64 to 3146.09 over the same period.",
+          "not_run": false,
+          "numbers_used": [
+            {
+              "tool_call_id": "call_1",
+              "value": "0.90"
+            },
+            {
+              "tool_call_id": "call_2",
+              "value": "0.47"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "518529.96"
+            },
+            {
+              "tool_call_id": "call_2",
+              "value": "670193.37"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "4650.64"
+            },
+            {
+              "tool_call_id": "call_2",
+              "value": "3146.09"
+            }
+          ],
+          "reason": "",
+          "refused": false,
           "tool_calls": [
             {
               "args": {
@@ -4505,10 +4582,76 @@
                 "net_sales": "518529.96",
                 "unclassified_lines": 0
               }
+            },
+            {
+              "args": {
+                "date_from": "2026-08-01",
+                "date_to": "2026-08-31",
+                "outlet": "OUT-DIFC"
+              },
+              "rows": [
+                {
+                  "category": "beverages",
+                  "description": "BLACK TEA - 100 TEA BAGS",
+                  "document_id": "DOC-046",
+                  "invoice_number": "DSB-10729/26",
+                  "issue_date": "2026-08-09",
+                  "item_id": "ITM-041",
+                  "line_net": "962.10",
+                  "quantity": "15",
+                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
+                  "unit": "CS"
+                },
+                {
+                  "category": "beverages",
+                  "description": "SPARKLING WATER - 12 X 1L",
+                  "document_id": "DOC-046",
+                  "invoice_number": "DSB-10729/26",
+                  "issue_date": "2026-08-09",
+                  "item_id": "ITM-038",
+                  "line_net": "972.75",
+                  "quantity": "15",
+                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
+                  "unit": "CS"
+                },
+                {
+                  "category": "beverages",
+                  "description": "STILL WATER - 12 X 1L",
+                  "document_id": "DOC-046",
+                  "invoice_number": "DSB-10729/26",
+                  "issue_date": "2026-08-09",
+                  "item_id": "ITM-037",
+                  "line_net": "687.20",
+                  "quantity": "20",
+                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
+                  "unit": "CS"
+                },
+                {
+                  "category": "beverages",
+                  "description": "LEMON DRINK - 12 X 1L",
+                  "document_id": "DOC-046",
+                  "invoice_number": "DSB-10729/26",
+                  "issue_date": "2026-08-09",
+                  "item_id": "ITM-044",
+                  "line_net": "524.04",
+                  "quantity": "12",
+                  "supplier_name": "Dune Spring Beverages Trading L.L.C.",
+                  "unit": "CS"
+                }
+              ],
+              "tool": "food_cost",
+              "tool_call_id": "call_2",
+              "totals": {
+                "food_cost": "3146.09",
+                "food_cost_percent": "0.47",
+                "line_count": 4,
+                "net_sales": "670193.37",
+                "unclassified_lines": 0
+              }
             }
           ]
         },
-        "state": "not run"
+        "state": "correct"
       },
       {
         "expected_numbers": [
@@ -4545,7 +4688,7 @@
                   "date_start": "2026-07-06",
                   "id": "28e20e591a1f54e72d551fe25382b567a2f0aadd972c4c47cbbabe703e735545",
                   "kind": "COMMISSION_OVER_CONTRACT",
-                  "message": "Platform A for OUT-JBR week 28 (6-12 Jul) charges commission of AED 4,105.84 at 28.00%, compared with the contract amount of AED 3,665.95 at 25.00%.",
+                  "message": "Platform A for JBR Walk week 28 (6-12 Jul) charges commission of AED 4,105.84 at 28.00%, compared with the contract amount of AED 3,665.95 at 25.00%.",
                   "outlet": "OUT-JBR",
                   "refs": {
                     "statement": "PAY-A-JBR-2026-07-06"
@@ -4558,7 +4701,7 @@
                   "date_start": "2026-07-20",
                   "id": "3e061ff85fc351ec3962e04e5b5effc3c969efde7183191736c2959f732f094c",
                   "kind": "COMMISSION_OVER_CONTRACT",
-                  "message": "Platform B for OUT-JBR week 30 (20-26 Jul) charges commission of AED 2,862.22 at 25.00%, compared with the contract amount of AED 2,518.77 at 22.00%.",
+                  "message": "Platform B for JBR Walk week 30 (20-26 Jul) charges commission of AED 2,862.22 at 25.00%, compared with the contract amount of AED 2,518.77 at 22.00%.",
                   "outlet": "OUT-JBR",
                   "refs": {
                     "statement": "PAY-B-JBR-2026-07-20"
@@ -4571,7 +4714,7 @@
                   "date_start": "2026-06-29",
                   "id": "71659c0594211c69407151399b50500aa301b08a5487946709aeb3d75aaf08d4",
                   "kind": "PAYOUT_SHORT",
-                  "message": "Platform A paid AED 7,738.15 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 8,028.65, leaving AED 290.50 short.",
+                  "message": "Platform A paid AED 7,738.15 for JBR Walk week 27 (29 Jun-5 Jul) against a statement net of AED 8,028.65, leaving AED 290.50 short.",
                   "outlet": "OUT-JBR",
                   "refs": {
                     "statement": "PAY-A-JBR-2026-06-29"
@@ -4584,7 +4727,7 @@
                   "date_start": "2026-07-27",
                   "id": "ab03253ec21b4e36d5e8a1c90f9e455783c5e6be7ac758b6aa27b87ac5583976",
                   "kind": "REFUND_NOT_IN_POS",
-                  "message": "Platform A for OUT-JBR week 31 (27 Jul-2 Aug) reports refunds of AED 85.00 on 2026-07-27, compared with POS refunds of AED 0.00.",
+                  "message": "Platform A for JBR Walk week 31 (27 Jul-2 Aug) reports refunds of AED 85.00 on 2026-07-27, compared with POS refunds of AED 0.00.",
                   "outlet": "OUT-JBR",
                   "refs": {
                     "pos": "OUT-JBR|2026-07-27|PLATFORM_A",
@@ -4598,7 +4741,7 @@
                   "date_start": "2026-06-29",
                   "id": "ff40fda4ee0de576b0ee62b341c8415c978f3bddd56c6050ca1de79bb2cfd564",
                   "kind": "PAYOUT_SHORT",
-                  "message": "Platform B paid AED 6,864.22 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 7,154.72, leaving AED 290.50 short.",
+                  "message": "Platform B paid AED 6,864.22 for JBR Walk week 27 (29 Jun-5 Jul) against a statement net of AED 7,154.72, leaving AED 290.50 short.",
                   "outlet": "OUT-JBR",
                   "refs": {
                     "statement": "PAY-B-JBR-2026-06-29"
@@ -4646,7 +4789,7 @@
                   "date_start": "2026-06-29",
                   "id": "0e008948d45e000fdd3ef0f4c49cfd68acea72bdd0867c31784340aa4edd1597",
                   "kind": "PAYOUT_SHORT",
-                  "message": "Platform A paid AED 10,221.69 for OUT-DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 10,512.19, leaving AED 290.50 short.",
+                  "message": "Platform A paid AED 10,221.69 for DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 10,512.19, leaving AED 290.50 short.",
                   "outlet": "OUT-DIFC",
                   "refs": {
                     "statement": "PAY-A-DIFC-2026-06-29"
@@ -4659,7 +4802,7 @@
                   "date_start": "2026-06-29",
                   "id": "71659c0594211c69407151399b50500aa301b08a5487946709aeb3d75aaf08d4",
                   "kind": "PAYOUT_SHORT",
-                  "message": "Platform A paid AED 7,738.15 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 8,028.65, leaving AED 290.50 short.",
+                  "message": "Platform A paid AED 7,738.15 for JBR Walk week 27 (29 Jun-5 Jul) against a statement net of AED 8,028.65, leaving AED 290.50 short.",
                   "outlet": "OUT-JBR",
                   "refs": {
                     "statement": "PAY-A-JBR-2026-06-29"
@@ -4672,7 +4815,7 @@
                   "date_start": "2026-06-29",
                   "id": "ef2ed90aa585e676e6dd4b974a1616bf342c9ca52d77083f6d0ceb22572f6f7e",
                   "kind": "PAYOUT_SHORT",
-                  "message": "Platform B paid AED 9,073.31 for OUT-DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 9,363.81, leaving AED 290.50 short.",
+                  "message": "Platform B paid AED 9,073.31 for DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 9,363.81, leaving AED 290.50 short.",
                   "outlet": "OUT-DIFC",
                   "refs": {
                     "statement": "PAY-B-DIFC-2026-06-29"
@@ -4685,7 +4828,7 @@
                   "date_start": "2026-06-29",
                   "id": "ff40fda4ee0de576b0ee62b341c8415c978f3bddd56c6050ca1de79bb2cfd564",
                   "kind": "PAYOUT_SHORT",
-                  "message": "Platform B paid AED 6,864.22 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 7,154.72, leaving AED 290.50 short.",
+                  "message": "Platform B paid AED 6,864.22 for JBR Walk week 27 (29 Jun-5 Jul) against a statement net of AED 7,154.72, leaving AED 290.50 short.",
                   "outlet": "OUT-JBR",
                   "refs": {
                     "statement": "PAY-B-JBR-2026-06-29"
@@ -5211,11 +5354,36 @@
         "question": "What are our top 5 purchased items at DIFC in August, by net spend? Give each spend.",
         "result": {
           "action": "answer",
-          "answer": "I cannot answer that from the available business evidence.",
-          "not_run": true,
-          "numbers_used": [],
-          "reason": "Model response not recorded",
-          "refused": true,
+          "answer": "In August 2026 at DIFC, the top 4 purchased items by net spend were Sparkling Water at 972.75, Black Tea at 962.10, Still Water at 687.20, and Lemon Drink at 524.04.",
+          "not_run": false,
+          "numbers_used": [
+            {
+              "tool_call_id": "call_1",
+              "value": "2026-08"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "4"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "972.75"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "962.10"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "687.20"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "524.04"
+            }
+          ],
+          "reason": "",
+          "refused": false,
           "tool_calls": [
             {
               "args": {
@@ -5263,7 +5431,7 @@
             }
           ]
         },
-        "state": "not run"
+        "state": "correct"
       },
       {
         "expected_numbers": [
@@ -5276,11 +5444,28 @@
         "question": "What are our top 3 purchased items at AQK in September, by net spend? Give each spend.",
         "result": {
           "action": "answer",
-          "answer": "I cannot answer that from the available business evidence.",
-          "not_run": true,
-          "numbers_used": [],
-          "reason": "Model response not recorded",
-          "refused": true,
+          "answer": "The top 3 purchased items at AQK in September by net spend were Orange Juice at 3052.44, Sea Salt at 1969.46, and Basmati Rice at 1841.40.",
+          "not_run": false,
+          "numbers_used": [
+            {
+              "tool_call_id": "call_1",
+              "value": "3"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "3052.44"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "1969.46"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "1841.40"
+            }
+          ],
+          "reason": "",
+          "refused": false,
           "tool_calls": [
             {
               "args": {
@@ -5321,7 +5506,7 @@
             }
           ]
         },
-        "state": "not run"
+        "state": "correct"
       },
       {
         "expected_numbers": [],
@@ -5371,11 +5556,28 @@
         "question": "What are our top 3 purchased items at DIFC in September, by net spend? Give each spend.",
         "result": {
           "action": "answer",
-          "answer": "I cannot answer that from the available business evidence.",
-          "not_run": true,
-          "numbers_used": [],
-          "reason": "Model response not recorded",
-          "refused": true,
+          "answer": "The top 3 purchased items at DIFC in September 2026 by net spend were Basmati Rice at 1438.24, Sunflower Oil at 864.90, and Olive Oil at 809.25.",
+          "not_run": false,
+          "numbers_used": [
+            {
+              "tool_call_id": "call_1",
+              "value": "3"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "1438.24"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "864.90"
+            },
+            {
+              "tool_call_id": "call_1",
+              "value": "809.25"
+            }
+          ],
+          "reason": "",
+          "refused": false,
           "tool_calls": [
             {
               "args": {
@@ -5416,7 +5618,7 @@
             }
           ]
         },
-        "state": "not run"
+        "state": "correct"
       },
       {
         "expected_numbers": [],
@@ -16105,7 +16307,7 @@
       }
     }
   },
-  "generated_at": "2026-10-27T15:12:58.357115+00:00",
+  "generated_at": "2026-10-27T17:04:19.137833+00:00",
   "hours_saved": {
     "assumptions": [
       {
@@ -16135,11 +16337,11 @@
       "outlet_day_reconciled": 184,
       "review_document_overhead": 3
     },
-    "duration_run_id": 1,
+    "duration_run_id": 2,
     "duration_state": "measured",
     "estimated_hours_saved": "28.82",
     "formula": "(auto_accepted_document*minutes - review_document_overhead*minutes + outlet_day_reconciled*minutes + draft_produced*minutes - duration_ms/60000)/60",
-    "full_pipeline_duration_ms": 3054,
+    "full_pipeline_duration_ms": 3004,
     "label": "estimate using assumptions, not a measured labour study",
     "manual_minutes_saved": "1729",
     "run_coverage": {
@@ -17011,17 +17213,17 @@
     "detections": [
       {
         "kind": "COMMISSION_OVER_CONTRACT",
-        "message": "Platform A for OUT-DIFC week 29 (13-19 Jul) charges commission of AED 4,413.44 at 28.00%, compared with the contract amount of AED 3,940.57 at 25.00%.",
+        "message": "Platform A for DIFC week 29 (13-19 Jul) charges commission of AED 4,413.44 at 28.00%, compared with the contract amount of AED 3,940.57 at 25.00%.",
         "ref": "PAY-A-DIFC-2026-07-13"
       },
       {
         "kind": "COMMISSION_OVER_CONTRACT",
-        "message": "Platform A for OUT-JBR week 28 (6-12 Jul) charges commission of AED 4,105.84 at 28.00%, compared with the contract amount of AED 3,665.95 at 25.00%.",
+        "message": "Platform A for JBR Walk week 28 (6-12 Jul) charges commission of AED 4,105.84 at 28.00%, compared with the contract amount of AED 3,665.95 at 25.00%.",
         "ref": "PAY-A-JBR-2026-07-06"
       },
       {
         "kind": "COMMISSION_OVER_CONTRACT",
-        "message": "Platform B for OUT-JBR week 30 (20-26 Jul) charges commission of AED 2,862.22 at 25.00%, compared with the contract amount of AED 2,518.77 at 22.00%.",
+        "message": "Platform B for JBR Walk week 30 (20-26 Jul) charges commission of AED 2,862.22 at 25.00%, compared with the contract amount of AED 2,518.77 at 22.00%.",
         "ref": "PAY-B-JBR-2026-07-20"
       },
       {
@@ -17086,52 +17288,52 @@
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform A paid AED 10,221.69 for OUT-DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 10,512.19, leaving AED 290.50 short.",
+        "message": "Platform A paid AED 10,221.69 for DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 10,512.19, leaving AED 290.50 short.",
         "ref": "PAY-A-DIFC-2026-06-29"
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform A paid AED 7,738.15 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 8,028.65, leaving AED 290.50 short.",
+        "message": "Platform A paid AED 7,738.15 for JBR Walk week 27 (29 Jun-5 Jul) against a statement net of AED 8,028.65, leaving AED 290.50 short.",
         "ref": "PAY-A-JBR-2026-06-29"
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform B paid AED 9,073.31 for OUT-DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 9,363.81, leaving AED 290.50 short.",
+        "message": "Platform B paid AED 9,073.31 for DIFC week 27 (29 Jun-5 Jul) against a statement net of AED 9,363.81, leaving AED 290.50 short.",
         "ref": "PAY-B-DIFC-2026-06-29"
       },
       {
         "kind": "PAYOUT_SHORT",
-        "message": "Platform B paid AED 6,864.22 for OUT-JBR week 27 (29 Jun-5 Jul) against a statement net of AED 7,154.72, leaving AED 290.50 short.",
+        "message": "Platform B paid AED 6,864.22 for JBR Walk week 27 (29 Jun-5 Jul) against a statement net of AED 7,154.72, leaving AED 290.50 short.",
         "ref": "PAY-B-JBR-2026-06-29"
       },
       {
         "kind": "POS_LEDGER_MISMATCH",
-        "message": "OUT-JBR on 2026-08-10 has POS net sales of AED 17,298.10, compared with ledger sales of AED 17,423.10.",
+        "message": "JBR Walk on 2026-08-10 has POS net sales of AED 17,298.10, compared with ledger sales of AED 17,423.10.",
         "ref": "OUT-JBR|2026-08-10"
       },
       {
         "kind": "POS_LEDGER_MISMATCH",
-        "message": "OUT-JBR on 2026-08-20 has POS net sales of AED 17,452.54, compared with ledger sales of AED 17,577.54.",
+        "message": "JBR Walk on 2026-08-20 has POS net sales of AED 17,452.54, compared with ledger sales of AED 17,577.54.",
         "ref": "OUT-JBR|2026-08-20"
       },
       {
         "kind": "POS_LEDGER_MISMATCH",
-        "message": "OUT-JBR on 2026-08-30 has POS net sales of AED 15,580.25, compared with ledger sales of AED 15,705.25.",
+        "message": "JBR Walk on 2026-08-30 has POS net sales of AED 15,580.25, compared with ledger sales of AED 15,705.25.",
         "ref": "OUT-JBR|2026-08-30"
       },
       {
         "kind": "REFUND_NOT_IN_POS",
-        "message": "Platform A for OUT-DIFC week 32 (3-9 Aug) reports refunds of AED 85.00 on 2026-08-03, compared with POS refunds of AED 0.00.",
+        "message": "Platform A for DIFC week 32 (3-9 Aug) reports refunds of AED 85.00 on 2026-08-03, compared with POS refunds of AED 0.00.",
         "ref": "PAY-A-DIFC-2026-08-03|OUT-DIFC|2026-08-03|PLATFORM_A"
       },
       {
         "kind": "REFUND_NOT_IN_POS",
-        "message": "Platform A for OUT-JBR week 31 (27 Jul-2 Aug) reports refunds of AED 85.00 on 2026-07-27, compared with POS refunds of AED 0.00.",
+        "message": "Platform A for JBR Walk week 31 (27 Jul-2 Aug) reports refunds of AED 85.00 on 2026-07-27, compared with POS refunds of AED 0.00.",
         "ref": "PAY-A-JBR-2026-07-27|OUT-JBR|2026-07-27|PLATFORM_A"
       },
       {
         "kind": "REFUND_NOT_IN_POS",
-        "message": "Platform B for OUT-JBR week 33 (10-16 Aug) reports refunds of AED 85.00 on 2026-08-10, compared with POS refunds of AED 0.00.",
+        "message": "Platform B for JBR Walk week 33 (10-16 Aug) reports refunds of AED 85.00 on 2026-08-10, compared with POS refunds of AED 0.00.",
         "ref": "PAY-B-JBR-2026-08-10|OUT-JBR|2026-08-10|PLATFORM_B"
       },
       {
