@@ -67,7 +67,7 @@ export default function Ask() {
         {q.result ? <>
           {q.result.tool_calls.map((call, i) => <div key={call.tool_call_id} id={`${q.id}-${call.tool_call_id}`} tabIndex={-1} className="space-y-2 rounded-md border p-3">
             <h3 className="mt-0">Tool {i + 1}: {label(call.tool)} · {call.rows.length} rows</h3>
-            <div className="flex flex-wrap gap-2">{Object.entries(call.args).map(([key, value]) => <ArgumentChip key={key} variant="outline" className="h-auto max-w-full whitespace-normal">{label(key)}: {display(value)}</ArgumentChip>)}</div>
+            <div className="flex flex-wrap gap-2">{Object.entries(call.args).map(([key, value]) => <ArgumentChip key={key} variant="outline" className="h-auto max-w-full whitespace-normal">{label(key)}: {value == null ? 'All' : display(value)}</ArgumentChip>)}</div>
             <LazyDetails title="Tool evidence"><DataTable title={`${q.id} ? ${label(call.tool)} totals`} rows={[call.totals]} /><DataTable title={`${q.id} ? ${label(call.tool)} result rows`} rows={call.rows} /></LazyDetails>
           </div>)}
           <CitedAnswer result={q.result} id={q.id} />
