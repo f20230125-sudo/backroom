@@ -1,0 +1,5 @@
+settlement_ref,site_code,site_label,period_from,period_to,transfer_date,service_rate,line_ref,business_day,returned,food_value,promo_credit,other_amount,fee_tax,service_charge,transfer_amount
+PAY-B-JBR-2026-09-28,OUT-JBR,JBR,2026-09-28,2026-10-04,2026-10-07,0.22,PAY-B-JBR-2026-09-28-1,2026-09-28,0.00,2295.08,12.00,-68.85,25.25,504.92,
+PAY-B-JBR-2026-09-28,OUT-JBR,JBR,2026-09-28,2026-10-04,2026-10-07,0.22,PAY-B-JBR-2026-09-28-2,2026-09-29,0.00,2205.40,12.00,-22.05,24.26,485.19,
+PAY-B-JBR-2026-09-28,OUT-JBR,JBR,2026-09-28,2026-10-04,2026-10-07,0.22,PAY-B-JBR-2026-09-28-3,2026-09-30,0.00,1839.26,12.00,-55.18,20.23,404.64,
+PAY-B-JBR-2026-09-28,OUT-JBR,JBR,2026-09-28,2026-10-04,2026-10-07,0.22,TOTAL,,,,,,,,4765.17
