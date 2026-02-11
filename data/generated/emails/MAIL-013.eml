@@ -1,32 +1,38 @@
-From: Accounts desk <accounts@sup-10.example>
+From: Accounts desk <accounts@dune-spring-beverages.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-013@backroom.example>
 Date: Wed, 19 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0100 - details below
+Subject: Tax Invoice DSB-10730/26 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Dune Spring Beverages Trading L.L.C.
-Supplier TRN: 100000000001003
-Supplier address: Warehouse 40, Industrial Lane 10, Dubai
+Supplier TRN: 102768582129903
+Supplier address: Plot 598-1770, Dubai Investments Park 2, Dubai, PO Box 8426=
+49
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0100
+Buyer TRN: 105219675843603
+Invoice: DSB-10730/26
 Issued: 2026-08-19
 Due: 2026-09-18
 Currency: AED
 Deliver to: Central Kitchen
-Net: 2,436.70
-VAT: 121.84
-Total: 2,558.54
+Net: 2,170.36
+VAT: 108.52
+Total: 2,278.88
 Items:
-Coffee Beans; quantity 11 CS; unit price 69.41; VAT 5%; line net 763.51
-Still Water; quantity 18 CS; unit price 32.83; VAT 5%; line net 590.94
-Mango Juice; quantity 12 CS; unit price 60.81; VAT 5%; line net 729.72
-Orange Juice; quantity 9 CS; unit price 39.17; VAT 5%; line net 352.53
+COFFEE BEANS - 1KG BAG; quantity 18 KGM; unit price 46.19; VAT 5%; line net 8=
+31.42
+BLACK TEA - 100 TEA BAGS; quantity 4 CS; unit price 59.23; VAT 5%; line net 2=
+36.92
+APPLE JUICE - 12 X 1L; quantity 11 CS; unit price 29.85; VAT 5%; line net 328=
+.35
+SPARKLING WATER - 12 X 1L; quantity 17 CS; unit price 45.51; VAT 5%; line net=
+ 773.67
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 5930 | Email: accounts@dune-spring-beverages.example

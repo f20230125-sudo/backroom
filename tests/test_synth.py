@@ -1,5 +1,6 @@
 """Exercise source generation and planted facts without opening held-out source outputs."""
 
+import re
 from collections import Counter
 from decimal import Decimal
 from email import policy
@@ -12,6 +13,7 @@ import pytest
 
 from backroom import ROOT
 from backroom.models import GroundTruth, InvoiceRecord, money
+from backroom.synth.catalogue import masters
 from backroom.synth.generate import generate
 from backroom.synth.render_pdf import arabic_label
 from backroom.synth.scenario import PROBLEM_COUNTS, SEED, build
@@ -33,6 +35,11 @@ def test_seed_controls_whole_scenario():
     assert first.truth == second.truth
     assert first.pos == second.pos and first.ledger == second.ledger
     assert first.pos != build(SEED + 1).pos
+    other = build(SEED + 1)
+    assert first.truth.suppliers != other.truth.suppliers
+    first_invoice = next(doc.truth for doc in first.truth.documents if doc.doc_id == "DOC-001")
+    other_invoice = next(doc.truth for doc in other.truth.documents if doc.doc_id == "DOC-001")
+    assert first_invoice.buyer_trn != other_invoice.buyer_trn
     assert Counter(p.kind for p in first.truth.problems) == PROBLEM_COUNTS
 
 
@@ -117,3 +124,72 @@ def test_business_and_security_plants_are_separate(corpus):
         assert doc.truth.suspicious_instruction and doc.truth.total > 0
         assert doc.truth.notes == plant.text
     assert len(truth.name_variants) == 40 and len(truth.hard_negatives) == 5
+
+
+def test_seeded_master_stationery_is_varied_and_well_formed():
+    suppliers, buyer_trn = masters()
+    assert (suppliers, buyer_trn) == masters()
+    assert len({s.trn for s in suppliers} | {buyer_trn}) == 19
+    assert all(re.fullmatch(r"1\d{12}03", trn) for trn in [buyer_trn, *[s.trn for s in suppliers]])
+    # Reject the old counter-shaped registrations without a probabilistic randomness test.
+    assert all(not s.trn.startswith("1000000") for s in suppliers)
+    assert len({s.address.street for s in suppliers}) == 18
+    assert Counter(s.address.emirate for s in suppliers) == {"DU": 15, "SH": 3}
+    assert any("PO Box" in s.address.street for s in suppliers)
+    assert any("PO Box" not in s.address.street for s in suppliers)
+    assert all(("Sharjah" in s.address.street) == (s.address.emirate == "SH") for s in suppliers)
+    assert all("Industrial Lane" not in s.address.street for s in suppliers)
+    assert len({s.stationery.invoice_format for s in suppliers}) == 18
+    assert len({s.stationery.description_style for s in suppliers}) == 3
+    assert {s.stationery.show_bank for s in suppliers} == {False, True}
+    assert {s.stationery.show_contact for s in suppliers} == {False, True}
+    assert all(re.fullmatch(r"AE\d{21}", s.stationery.iban) for s in suppliers)
+    assert all(s.stationery.email.endswith(".example") for s in suppliers)
+
+
+def test_seafood_and_meat_are_separate_and_decimal_quantities_are_measured(corpus):
+    _, truth = corpus
+    categories = {s.trade_name: s.category for s in truth.suppliers}
+    assert categories["Gulf Fresh Fish"] == categories["Coral Basket Seafood"] == "seafood"
+    assert categories["Crescent Pasture Meats"] == "meat"
+    assert {i.name for i in truth.items if i.category == "seafood"} == {
+        "White Fish Fillet",
+        "Prawns",
+    }
+    assert {i.name for i in truth.items if i.category == "meat"} == {
+        "Chicken Breast",
+        "Lamb Shoulder",
+        "Beef Mince",
+        "Chicken Thigh",
+        "Lamb Mince",
+        "Beef Striploin",
+    }
+    lines = [
+        line
+        for doc in truth.documents
+        if not doc.held_out and isinstance(doc.truth, InvoiceRecord)
+        for line in doc.truth.lines
+    ]
+    fractional = [line for line in lines if line.quantity != line.quantity.to_integral_value()]
+    assert {line.unit for line in fractional} == {"KGM", "LTR"}
+    assert all(
+        line.quantity < 0
+        for doc in truth.documents
+        if doc.kind == "credit_note"
+        for line in doc.truth.lines
+    )
+
+
+def test_development_invoice_pages_keep_text_inside_the_paper(corpus):
+    root, truth = corpus
+    for doc in truth.documents:
+        if doc.held_out or doc.kind not in ("invoice", "credit_note"):
+            continue
+        with pdfplumber.open(root / doc.path) as pdf:
+            assert len(pdf.pages) == 1, doc.doc_id
+            page = pdf.pages[0]
+            assert all(
+                24 <= word["x0"] < word["x1"] <= page.width - 24
+                and 0 <= word["top"] < word["bottom"] <= page.height - 14
+                for word in page.extract_words()
+            ), doc.doc_id

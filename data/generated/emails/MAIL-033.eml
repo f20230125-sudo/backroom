@@ -1,30 +1,32 @@
-From: Accounts desk <accounts@sup-12.example>
+From: Accounts desk <accounts@palm-loom-linen.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-033@backroom.example>
 Date: Mon, 06 Jul 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0120 - details below
+Subject: Tax Invoice PLL-2026/2214 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Palm Loom Linen Trading L.L.C.
-Supplier TRN: 100000000001203
-Supplier address: Warehouse 42, Industrial Lane 12, Sharjah
-Supplier emirate: SH
+Supplier TRN: 103700286899603
+Supplier address: Warehouse 3, Al Quoz Industrial Area 3, Dubai
+Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0120
+Buyer TRN: 105219675843603
+Invoice: PLL-2026/2214
 Issued: 2026-07-06
 Due: 2026-07-20
 Currency: AED
 Deliver to: Central Kitchen, Al Quoz
-Net: 229.07
-VAT: 11.45
-Total: 240.52
+Net: 393.81
+VAT: 19.69
+Total: 413.50
 Items:
-Table Linen; quantity 7 H87; unit price 18.13; VAT 5%; line net 126.91
-Service Cloth; quantity 4 H87; unit price 25.54; VAT 5%; line net 102.16
+Service Cloth (1 pc); quantity 14 H87; unit price 12.84; VAT 5%; line net 179=
+.76
+Table Linen (1 pc); quantity 15 H87; unit price 14.27; VAT 5%; line net 214.05
 
 Regards, Supplier accounts desk
+Bank: Copper Palm Bank | IBAN: AE390358690611177849867

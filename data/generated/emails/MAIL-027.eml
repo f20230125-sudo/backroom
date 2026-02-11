@@ -1,32 +1,39 @@
-From: Accounts desk <accounts@sup-06.example>
+From: Accounts desk <accounts@al-quoz-pantry.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-027@backroom.example>
 Date: Tue, 25 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0114 - details below
+Subject: Tax Invoice AQP/INV/022260 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Al Quoz Pantry
-Supplier TRN: 100000000000603
-Supplier address: Warehouse 36, Industrial Lane 6, Sharjah
-Supplier emirate: SH
+Supplier TRN: 150532894254103
+Supplier address: Store 37, Al Aweer Fruit and Vegetable Market, Dubai, PO Bo=
+x 206497
+Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0114
+Buyer TRN: 105219675843603
+Invoice: AQP/INV/022260
 Issued: 2026-08-25
 Due: 2026-09-08
 Currency: AED
 Deliver to: Al Quoz
-Net: 3,665.13
-VAT: 183.26
-Total: 3,848.39
+Net: 2,786.60
+VAT: 139.33
+Total: 2,925.93
 Items:
-Olive Oil; quantity 11 BX; unit price 46.55; VAT 5%; line net 512.05
-Plain Flour; quantity 14 BX; unit price 24.26; VAT 5%; line net 339.64
-Chickpeas; quantity 18 BX; unit price 78.88; VAT 5%; line net 1,419.84
-Sunflower Oil; quantity 16 BX; unit price 87.10; VAT 5%; line net 1,393.60
+Chickpeas (catering pack); quantity 15 BX; unit price 63.68; VAT 5%; line net=
+ 955.20
+Basmati Rice (catering pack); quantity 17 BX; unit price 63.66; VAT 5%; line =
+net 1,082.22
+Olive Oil (5l tin); quantity 10.25 LTR; unit price 33.71; VAT 5%; line net 34=
+5.53
+Plain Flour (catering pack); quantity 9 BX; unit price 44.85; VAT 5%; line ne=
+t 403.65
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 2019 | Email: accounts@al-quoz-pantry.example
+Bank: Pearl Quay Bank | IBAN: AE482722692226221674101

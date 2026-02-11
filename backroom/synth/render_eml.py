@@ -5,14 +5,20 @@ from email import policy
 from email.message import EmailMessage
 from email.utils import format_datetime
 
-from backroom.models import Document, InvoiceRecord
-from backroom.synth.render_pdf import invoice_fields, invoice_pdf
+from backroom.models import Document, InvoiceRecord, Supplier
+from backroom.synth.render_pdf import bank_line, contact_line, invoice_fields, invoice_pdf
 
 
-def email_bytes(doc: Document) -> bytes:
+def email_bytes(doc: Document, supplier: Supplier | None = None) -> bytes:
+    if doc.kind != "email_other" and supplier is None:
+        raise TypeError("Invoice emails require supplier stationery")
     record = doc.truth
     msg = EmailMessage(policy=policy.SMTP)
-    msg["From"] = f"Accounts desk <accounts@{(doc.supplier_id or 'supplier').lower()}.example>"
+    msg["From"] = (
+        f"Accounts desk <{supplier.stationery.email}>"
+        if supplier
+        else "Accounts desk <accounts@supplier.example>"
+    )
     msg["To"] = "payables@saffron-salt.example"
     msg["Message-ID"] = f"<{doc.doc_id.lower()}@backroom.example>"
     day = record.issue_date if isinstance(record, InvoiceRecord) else datetime(2026, 9, 29).date()
@@ -27,7 +33,7 @@ def email_bytes(doc: Document) -> bytes:
             "Regards,\nSupplier accounts desk\n"
         )
         msg.add_attachment(
-            invoice_pdf(doc),
+            invoice_pdf(doc, supplier),
             maintype="application",
             subtype="pdf",
             filename=f"{record.invoice_number}.pdf",
@@ -63,5 +69,9 @@ def email_bytes(doc: Document) -> bytes:
                 + ". Also, ".join(lines)
                 + ". Please arrange settlement when convenient. Many thanks, the accounts desk."
             )
+        if supplier.stationery.show_contact:
+            body += "\n" + contact_line(supplier)
+        if supplier.stationery.show_bank:
+            body += "\n" + bank_line(supplier)
         msg.set_content(body)
     return msg.as_bytes()
