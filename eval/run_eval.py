@@ -6,7 +6,7 @@ from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
 
-from backroom import DATA, ROOT, settings
+from backroom import DATA, ROOT
 from backroom.extract import rules
 from backroom.extract.agent import extract
 from backroom.extract.classify import classify_rules
@@ -21,7 +21,9 @@ from backroom.extract.validate import (
     scalar_fields,
     validate,
 )
+from backroom.inputs import offline_llm, recorded_results
 from backroom.models import InvoiceRecord, PayoutStatement
+from eval.m3 import evaluate_m3
 
 
 def equal(left, right):
@@ -152,12 +154,15 @@ def evaluate(
     llm=None,
     include_held_out: bool = True,
 ) -> dict:
-    llm = llm if llm is not None else settings.build_llm(offline=True)
+    owned = llm is None
+    llm = llm if llm is not None else offline_llm()
     manifest = json.loads((data_root / "ground_truth.json").read_text(encoding="utf-8"))
     plants = {plant["doc_id"]: plant for plant in manifest["security_plants"]}
     rows = {"agent": [], "rules": []}
     classifier = []
     security = []
+    snapshot = recorded_results(data_root)
+    extracted = {}
     for doc in documents(data_root):
         split = (
             "held_out"
@@ -170,9 +175,14 @@ def evaluate(
         if doc.held_out and not include_held_out:
             reason = "Held-out source excluded by operator"
         else:
+            if snapshot is not None:
+                from backroom.inputs import missing_result
+
+                results["agent"] = snapshot.get(doc.doc_id, missing_result())
             try:
                 source = read_document(data_root / doc.path)
-                results["agent"] = extract(source, llm=llm)
+                if snapshot is None:
+                    results["agent"] = extract(source, llm=llm)
                 results["rules"] = baseline_result(source)
             except (DocumentError, OSError, ValueError) as exc:
                 reason = f"Cannot read or score source ({type(exc).__name__})"
@@ -196,6 +206,8 @@ def evaluate(
                 row["reason"] = reason
             rows[system].append(row)
         result = results.get("agent")
+        if result is not None:
+            extracted[doc.doc_id] = result
         predicted = result.classification if result else None
         classifier.append(
             {
@@ -251,8 +263,16 @@ def evaluate(
     results = {
         "generated_at": datetime.now(UTC).isoformat(),
         "extraction": {
-            "model_calls": sum(row.get("model_calls", 0) for row in rows["agent"]),
-            "cache_hits": sum(row.get("cache_hits", 0) for row in rows["agent"]),
+            "model_calls": sum(row.get("model_calls", 0) for row in rows["agent"])
+            if snapshot is None
+            else 0,
+            "cache_hits": sum(row.get("cache_hits", 0) for row in rows["agent"])
+            if snapshot is None
+            else 0,
+            "input_mode": "offline_replay" if snapshot is None else "saved_extractions",
+            "saved_model_calls": sum(row.get("model_calls", 0) for row in rows["agent"])
+            if snapshot is not None
+            else 0,
             "summary": extraction,
             "documents": rows,
             "classifier": {
@@ -265,12 +285,15 @@ def evaluate(
             },
         },
         "security": security,
+        **evaluate_m3(manifest, data_root, results=extracted, llm=llm),
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(results, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print(json.dumps(extraction, sort_keys=True))
+    if owned:
+        llm.store.close()
     return results
 
 
