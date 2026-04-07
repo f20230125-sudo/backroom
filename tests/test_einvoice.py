@@ -79,7 +79,7 @@ def test_master_checks_are_separate_from_document_detection():
     duplicate.legal_name = ""
     duplicate.address.street = " "
     missing = next(f for f in check_masters([duplicate]) if f.rule == "MISSING_FIELD")
-    assert "legal_name" in missing.message and "address.street" in missing.message
+    assert "legal name" in missing.message and "address street" in missing.message
 
 
 def test_unapproved_original_identity_defers_link_assertion():

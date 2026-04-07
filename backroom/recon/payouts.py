@@ -41,8 +41,8 @@ def check_payouts(statements, pos, ledger, *, through=None):
             add(
                 "PAYOUT_NET_MISMATCH",
                 statement.net_payout - expected,
-                f"{context} states {aed(statement.net_payout)} "
-                f"against calculated net {aed(expected)}.",
+                f"{context} shows a net payout of {aed(statement.net_payout)}, "
+                f"but its lines calculate to {aed(expected)}.",
             )
         rate = COMMISSION_RATES[statement.platform]
         # Per-line rounding is part of the feed contract, not a monetary tolerance increase.
@@ -51,8 +51,9 @@ def check_payouts(statements, pos, ledger, *, through=None):
             add(
                 "COMMISSION_OVER_CONTRACT",
                 commission - contract,
-                f"{context} charges {statement.commission_rate * 100}% and {aed(commission)} "
-                f"against contract {rate * 100}% and {aed(contract)}.",
+                f"{context} charges commission of {aed(commission)} at "
+                f"{statement.commission_rate * 100}%, compared with the contract amount "
+                f"of {aed(contract)} at {rate * 100}%.",
             )
         expected_tax = sum(
             (money(line.commission * COMMISSION_VAT_RATE) for line in statement.lines), ZERO
@@ -61,8 +62,8 @@ def check_payouts(statements, pos, ledger, *, through=None):
             add(
                 "COMMISSION_VAT_MISMATCH",
                 tax - expected_tax,
-                f"{context} charges commission VAT {aed(tax)} "
-                f"against expected {aed(expected_tax)}.",
+                f"{context} charges VAT of {aed(tax)} on commission, "
+                f"but the calculated VAT is {aed(expected_tax)}.",
             )
         if through is None or statement.paid_date <= through:
             received = bank[statement.id]
@@ -71,9 +72,10 @@ def check_payouts(statements, pos, ledger, *, through=None):
                 add(
                     "PAYOUT_SHORT" if difference > ZERO else "PAYOUT_OVER",
                     difference,
-                    f"{context} paid {aed(received)} "
-                    f"against statement net {aed(statement.net_payout)} "
-                    f"with difference {aed(difference)}.",
+                    f"Platform {statement.platform} paid {aed(received)} for "
+                    f"{statement.outlet_code} {label} against a statement net of "
+                    f"{aed(statement.net_payout)}, leaving {aed(abs(difference))} "
+                    f"{'short' if difference > ZERO else 'overpaid'}.",
                 )
         daily = defaultdict(lambda: [ZERO, ZERO])
         for line in statement.lines:
@@ -90,7 +92,8 @@ def check_payouts(statements, pos, ledger, *, through=None):
                 add(
                     "POS_DAY_MISSING",
                     daily_gross,
-                    f"{context} has {aed(daily_gross)} on {day} with no POS row.",
+                    f"{context} reports gross sales of {aed(daily_gross)} on {day}, "
+                    "but the POS export has no entry for that day.",
                 )
                 continue
             ref = f"{statement.outlet_code}|{day}|{channel}"
@@ -98,16 +101,16 @@ def check_payouts(statements, pos, ledger, *, through=None):
                 add(
                     "PAYOUT_POS_GROSS_MISMATCH",
                     daily_gross - row.gross_sales,
-                    f"{context} reports gross {aed(daily_gross)} on {day} "
-                    f"against POS {aed(row.gross_sales)}.",
+                    f"{context} reports gross sales of {aed(daily_gross)} on {day}, "
+                    f"compared with POS gross sales of {aed(row.gross_sales)}.",
                     pos=ref,
                 )
             if abs(daily_refunds - row.refunds) > MONEY_TOLERANCE:
                 add(
                     "REFUND_NOT_IN_POS" if daily_refunds > row.refunds else "REFUND_MISMATCH",
                     daily_refunds - row.refunds,
-                    f"{context} refunds {aed(daily_refunds)} on {day} "
-                    f"against POS refunds {aed(row.refunds)}.",
+                    f"{context} reports refunds of {aed(daily_refunds)} on {day}, "
+                    f"compared with POS refunds of {aed(row.refunds)}.",
                     pos=ref,
                 )
     return out

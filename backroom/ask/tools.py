@@ -15,7 +15,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from backroom.models import money
-from backroom.names.match import Matcher, approved_names, masters
+from backroom.names.match import Matcher, approved_names, automatic_names, masters, rejected_names
 
 FIRST, LAST = date(2026, 7, 1), date(2026, 9, 30)
 KINDS = frozenset(
@@ -299,7 +299,12 @@ class Tools:
                 ("items", "SELECT payload FROM items"),
             )
         }
-        self.matcher = Matcher(masters(source), approved_names(repo))
+        self.matcher = Matcher(
+            masters(source),
+            approved_names(repo),
+            automatic=automatic_names(repo),
+            rejected=rejected_names(repo),
+        )
         self.sequence = 0
 
     def call(self, tool: str, args: dict):
@@ -310,8 +315,12 @@ class Tools:
         for kind in ("outlet", "supplier"):
             value = getattr(a, kind, None)
             if value is not None:
-                canonical = self.matcher.resolve(kind, value)
-                if not canonical:
+                canonical = (
+                    self.matcher.supplier_identity(value)
+                    if kind == "supplier"
+                    else self.matcher.resolve(kind, value)
+                )
+                if not canonical or canonical.startswith("printed:"):
                     raise ValueError("Unknown or unapproved " + kind)
                 setattr(a, kind, canonical)
         if isinstance(a, Payouts):
