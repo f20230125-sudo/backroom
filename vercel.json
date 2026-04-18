@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm --prefix web run build",
+  "rewrites": [
+    { "source": "/((?!api(?:/|$)|assets/).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+      ]
+    }
+  ],
+  "functions": {
+    "app.py": {
+      "maxDuration": 30,
+      "includeFiles": "{backroom/**,eval/results.json,eval/ask_gold.json,backroom/db/migrations/**}",
+      "excludeFiles": "{web/**,data/generated/**,data/out/**,data/ground_truth.json,cache/**,synth/**,tests/**,docs/**,.codex-runs/**,.local/**,.venv/**,.agents/**,.git/**}"
+    }
+  }
+}

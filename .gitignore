@@ -11,6 +11,7 @@ __pycache__/
 .vercel/
 node_modules/
 web/dist/
+public/
 test-results/
 playwright-report/
 /data/out/
