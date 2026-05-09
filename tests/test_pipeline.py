@@ -100,8 +100,15 @@ def test_full_pipeline_migrations_idempotency_incremental_rebuild_and_approvals(
     assert len(repo.rows("SELECT * FROM run_log")) == 5
     assert len(repo.rows("SELECT * FROM briefs")) == 5
     assert repo.rows("SELECT COUNT(*) AS n FROM drafts")[0]["n"] > 0
+    # Offline: each draft is either recorded model wording that passed the fact check or a
+    # template; never unchecked text.
+    allowed = {
+        "model",
+        "template (model not recorded)",
+        "template (model wording failed fact check)",
+    }
     assert all(
-        json.loads(row["payload"])["provenance"] == "template (model not recorded)"
+        json.loads(row["payload"])["provenance"] in allowed
         for row in repo.rows("SELECT payload FROM drafts")
     )
     # Evaluate separately from extraction accuracy, and prove all 31 source-linked detections.
