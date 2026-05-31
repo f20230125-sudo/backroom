@@ -9,6 +9,7 @@ from uuid import uuid4
 import pytest
 
 from backroom import DATA
+from backroom.ask.tools import REGISTRY, Tools
 from backroom.db import connect, migrate
 from backroom.db.repo import Repo
 from backroom.extract.types import ExtractionResult, Issue
@@ -121,6 +122,18 @@ def test_full_pipeline_migrations_idempotency_incremental_rebuild_and_approvals(
         "not_run": 0,
         "false_alarms": 0,
     }
+    # Every Ask tool and gold query runs on this database too: PostgreSQL rejects an untyped
+    # "? IS NULL" that SQLite accepts, which once broke only the hosted load.
+    from backroom.ask.gold import definitions, sql_expected
+
+    tools = Tools(repo)
+    calls = [call for case in definitions() if case["in_scope"] for call in case["calls"]]
+    assert {call["tool"] for call in calls} == set(REGISTRY)
+    for call in calls:
+        tools.call(call["tool"], call["args"])
+        sql_expected(repo, call)
+    tools.call("exceptions", {})
+    tools.call("sales", {"outlet": "OUT-JBR", "date_from": "2026-07-01", "date_to": "2026-07-31"})
 
 
 def test_two_empty_to_full_runs_identical_including_fixed_clock_logs(tmp_path, oracle):
