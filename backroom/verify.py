@@ -4,6 +4,8 @@ import argparse
 import csv
 import hashlib
 import re
+import zlib
+from base64 import a85decode
 from collections import Counter, defaultdict
 from datetime import timedelta
 from decimal import Decimal
@@ -44,6 +46,35 @@ def csv_rows(path: Path) -> list[dict[str, str]]:
 def file_hashes(root: Path) -> dict[str, str]:
     return {
         path.relative_to(root).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(root.rglob("*"))
+        if path.is_file()
+    }
+
+
+def pdf_content(data: bytes) -> bytes:
+    """PDF bytes with streams decoded and the length/offset table dropped.
+
+    Deflate output depends on the zlib build (Python 3.14 on Windows ships zlib-ng, Linux CI
+    uses classic zlib), so committed PDFs are compared by what they contain, not how it packs.
+    """
+
+    def decoded(match):
+        try:
+            body = zlib.decompress(a85decode(match.group(2).strip(), adobe=True))
+        except ValueError:
+            return match.group(0)
+        return match.group(1) + body + match.group(3)
+
+    data = re.sub(rb"(stream\r?\n)(.*?)((?:\r?\n)?endstream)", decoded, data, flags=re.S)
+    data = re.sub(rb"/Length \d+", b"/Length", data)
+    return data.rsplit(b"\nxref", 1)[0]
+
+
+def content_hashes(root: Path) -> dict[str, str]:
+    return {
+        path.relative_to(root).as_posix(): hashlib.sha256(
+            pdf_content(path.read_bytes()) if path.suffix == ".pdf" else path.read_bytes()
+        ).hexdigest()
         for path in sorted(root.rglob("*"))
         if path.is_file()
     }
@@ -742,12 +773,22 @@ def m1(data_root: Path = DATA) -> bool:
             # Ignore unrelated data files; ground truth and generated/ are the generator's outputs.
             current = {
                 f"generated/{key}": value
-                for key, value in file_hashes(data_root / "generated").items()
+                for key, value in content_hashes(data_root / "generated").items()
             }
             current["ground_truth.json"] = hashlib.sha256(
                 (data_root / "ground_truth.json").read_bytes()
             ).hexdigest()
-            results.append(("populated data matches seeded generator", current == first_hashes, ""))
+            expected = content_hashes(first)
+            differ = sorted(
+                k for k in expected.keys() | current.keys() if expected.get(k) != current.get(k)
+            )
+            results.append(
+                (
+                    "populated data matches seeded generator",
+                    not differ,
+                    f"{len(differ)} differ, e.g. {', '.join(differ[:3])}" if differ else "",
+                )
+            )
             results.extend(check_dataset(data_root))
         else:
             results.extend(check_dataset(first))
