@@ -859,11 +859,24 @@ def m2(data_root: Path = DATA) -> bool:
     return previous and all(results)
 
 
+def m3(data_root: Path = DATA) -> bool:
+    """Cumulative gate with an explicitly labelled oracle engine test."""
+    from backroom.m3_gate import checks
+
+    previous = m2(data_root)
+    try:
+        checks(data_root)
+    except (ValueError, OSError, TypeError, KeyError) as exc:
+        print(f"FAIL m3: {exc}")
+        return False
+    return previous
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("milestone", choices=["m1", "m2"])
+    parser.add_argument("milestone", choices=["m1", "m2", "m3"])
     args = parser.parse_args()
-    raise SystemExit(0 if (m1() if args.milestone == "m1" else m2()) else 1)
+    raise SystemExit(0 if {"m1": m1, "m2": m2, "m3": m3}[args.milestone]() else 1)
 
 
 if __name__ == "__main__":
