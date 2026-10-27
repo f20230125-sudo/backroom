@@ -4,7 +4,7 @@ from collections import defaultdict
 
 from backroom.config import MONEY_TOLERANCE, SALES_TOLERANCE
 from backroom.models import ZERO, money
-from backroom.recon.types import ExceptionRecord, aed
+from backroom.recon.types import ExceptionRecord, aed, outlet_name
 
 
 def check_ledger(pos, ledger, invoices, matcher):
@@ -46,7 +46,7 @@ def check_ledger(pos, ledger, invoices, matcher):
                     date_or_week=day.isoformat(),
                     refs={"pos": f"{outlet}|{day}", "journal": f"SALES-{outlet}-{day}"},
                     amount=money(booked - net),
-                    message=f"{outlet} on {day} has POS net sales of {aed(net)}, "
+                    message=f"{outlet_name(outlet)} on {day} has POS net sales of {aed(net)}, "
                     f"compared with ledger sales of {aed(booked)}.",
                 )
             )

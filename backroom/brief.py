@@ -4,11 +4,10 @@ from decimal import Decimal
 
 from pydantic import BaseModel, ConfigDict
 
-from backroom.ask.agent import block
+from backroom.ask.agent import ask_llm, block
 from backroom.ask.numbers import matches, numbers
 from backroom.db.repo import dumps
 from backroom.drafts import TEMPLATE, valid_wording
-from backroom.inputs import offline_llm
 from backroom.models import money
 from backroom.settings import CacheMiss
 
@@ -18,34 +17,52 @@ class BriefWording(BaseModel):
     body: str
 
 
+KIND_LABELS = {
+    "COMMISSION_OVER_CONTRACT": "Commission above contract",
+    "PAYOUT_SHORT": "Payout short",
+    "REFUND_NOT_IN_POS": "Refund missing from POS",
+    "POS_LEDGER_MISMATCH": "POS and ledger disagree",
+    "LEDGER_BILL_MISSING": "Bill missing from ledger",
+    "DUPLICATE_INVOICE": "Duplicate invoice",
+    "VAT_WRONG": "VAT does not match the net amount",
+    "LINES_NOT_SUM": "Lines don't add up",
+}
+
+
 def generate_brief(repo, run_id, *, llm=None):
     exceptions = repo.rows("SELECT kind, outlet, amount, message FROM exceptions ORDER BY id")
     top = sorted(exceptions, key=lambda r: -abs(Decimal(r["amount"])))[:3]
     facts = {
         "exception_count": len(exceptions),
-        "review_count": repo.rows(
-            "SELECT COUNT(*) AS n FROM review_queue WHERE status = ?", ("open",)
+        # Documents a person must check are a different job from name matches waiting for a
+        # one-click approval, so the brief reports them separately.
+        "document_review_count": repo.rows(
+            "SELECT COUNT(*) AS n FROM review_queue WHERE status = ? AND document_id IS NOT NULL",
+            ("open",),
+        )[0]["n"],
+        "name_approval_count": repo.rows(
+            "SELECT COUNT(*) AS n FROM review_queue WHERE status = ? AND document_id IS NULL",
+            ("open",),
         )[0]["n"],
         "draft_count": repo.rows("SELECT COUNT(*) AS n FROM drafts")[0]["n"],
         "top_issues": top,
     }
     body = (
-        f"There are {facts['exception_count']} reconciliation exceptions and "
-        f"{facts['review_count']} open review items. {facts['draft_count']} drafts await review."
+        f"There are {facts['exception_count']} reconciliation exceptions. "
+        f"{facts['document_review_count']} documents need review and "
+        f"{facts['name_approval_count']} name matches await approval. "
+        f"{facts['draft_count']} drafts are ready to review (none are sent)."
     )
+    outlets = {r["id"]: r["name"] for r in repo.rows("SELECT id, name FROM outlets", ())}
     for issue in top:
+        where = f" at {outlets.get(issue['outlet'], issue['outlet'])}" if issue["outlet"] else ""
         body += (
-            " "
-            + issue["kind"].replace("_", " ").capitalize()
-            + " at "
-            + (issue["outlet"] or "unresolved outlet")
-            + ": AED "
-            + str(money(Decimal(issue["amount"])))
-            + "."
+            f" {KIND_LABELS.get(issue['kind'], issue['kind'])}{where}: "
+            f"AED {money(Decimal(issue['amount'])):,.2f}."
         )
     template = body
     owned = llm is None
-    llm = llm if llm is not None else offline_llm()
+    llm = llm if llm is not None else ask_llm()
     provenance = TEMPLATE
     try:
         response = llm.complete(
@@ -67,7 +84,12 @@ def generate_brief(repo, run_id, *, llm=None):
         # Require the summary counts to be present; omission is not a useful brief.
         counts_present = all(
             matches(Decimal(facts[key]), numbers(candidate))
-            for key in ("exception_count", "review_count", "draft_count")
+            for key in (
+                "exception_count",
+                "document_review_count",
+                "name_approval_count",
+                "draft_count",
+            )
         )
         issues_present = all(matches(Decimal(issue["amount"]), numbers(candidate)) for issue in top)
         if (

@@ -33,6 +33,14 @@ class Invoice:
         return "printed:" + name if name else None
 
 
+# Messages are read by people: show outlet names, keep the codes in refs and in the outlet field.
+OUTLET_NAMES = {"OUT-JBR": "JBR Walk", "OUT-DIFC": "DIFC", "OUT-AQK": "Central Kitchen (Al Quoz)"}
+
+
+def outlet_name(code: str | None) -> str:
+    return OUTLET_NAMES.get(code or "", code or "")
+
+
 def aed(value: Decimal) -> str:
     return f"AED {money(value):,.2f}"
 
