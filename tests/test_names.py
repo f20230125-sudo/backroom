@@ -72,11 +72,13 @@ def test_model_only_grey_recommends_but_cannot_approve():
     )
     fake = Fake()
     proposal = matcher.match("supplier", "Gulf Fresh", llm=fake, model_check=True)
-    assert proposal.decision == "review" and proposal.recommendation is True
+    # Fits both masters: a person decides; the model is not asked to pick one.
+    assert proposal.decision == "review" and proposal.recommendation is None
+    assert "Ambiguous" in proposal.reason and fake.calls == 0
     assert proposal.status == "proposed" and matcher.resolve("supplier", "Gulf Fresh") is None
     matcher.match("supplier", "Gulf Fresh Produce", llm=fake, model_check=True)
     matcher.match("outlet", "zzzzzz", llm=fake, model_check=True)
-    assert fake.calls == 1
+    assert fake.calls == 0
     missing = matcher.match("supplier", "Gulf Fresh", llm=Fake(True), model_check=True)
     assert missing.decision == "review" and missing.recommendation is None
 
@@ -244,7 +246,7 @@ def test_names_runner_defaults_to_readonly_offline_replay_and_keeps_suggestions(
         payload = json.loads(row["payload"])
         assert result["mode"] == "offline" and row["decision"] == "review"
         assert payload["suggested_id"] and payload["score"] > 0
-        assert payload["recommendation"] is None and "No recorded" in payload["reason"]
+        assert payload["recommendation"] is None and "Ambiguous" in payload["reason"]
 
 
 def test_semantic_names_need_a_recorded_selection_and_pair_check_and_never_auto_merge():

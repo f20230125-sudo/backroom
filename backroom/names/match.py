@@ -234,7 +234,11 @@ class Matcher:
             else "review"
         )
         recommendation, reason = None, None
-        if decision == "review" and model_check:
+        if decision == "review" and len(contained) > 1:
+            # "Gulf Fresh" fits Gulf Fresh Produce and Gulf Fresh Fish equally. Asking the model
+            # to confirm one of them invites a confident guess, so a person decides.
+            reason = "Ambiguous: the name fits more than one master; human review required"
+        elif decision == "review" and model_check:
             owned_llm = llm is None
             if llm is None:
                 from backroom.inputs import offline_llm

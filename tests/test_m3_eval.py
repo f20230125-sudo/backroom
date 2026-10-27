@@ -108,9 +108,10 @@ def test_review_suggestion_is_scored_separately_from_recorded_model_yes():
     no = name_metrics(source, llm=Fake("false"))
     yes = name_metrics(source, llm=Fake("true"))
     assert missing["review_items"] == no["review_items"] == yes["review_items"] == 1
-    assert missing["review_suggestion_correct"] == no["review_suggestion_correct"] == 1
-    assert missing["true_positives"] == no["true_positives"] == 0
-    assert yes["true_positives"] == yes["review_with_yes"] == 1
+    # "Harbour" fits both masters, so no model answer (missing, no or yes) can turn the
+    # suggestion into a positive prediction: it stays a human decision.
+    assert missing["true_positives"] == no["true_positives"] == yes["true_positives"] == 0
+    assert yes["review_with_yes"] == 0
     assert missing["documents"][0]["predicted"] is None
-    assert missing["documents"][0]["suggested_id"] == "B"
-    assert "No recorded" in missing["documents"][0]["model_check_reason"]
+    assert missing["documents"][0]["suggested_id"] in {"A", "B"}
+    assert "Ambiguous" in missing["documents"][0]["model_check_reason"]
