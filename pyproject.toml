@@ -25,5 +25,6 @@ ignore = ["S101"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 addopts = "-q --basetemp=.local/temp/pytest-run"
 cache_dir = ".local/temp/pytest-cache"
