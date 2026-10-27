@@ -11,6 +11,7 @@ from datetime import timedelta
 from decimal import Decimal
 from email import policy
 from email.parser import BytesParser
+from io import BytesIO
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -94,6 +95,45 @@ def content_hashes(root: Path) -> dict[str, str]:
         for path in sorted(root.rglob("*"))
         if path.is_file()
     }
+
+
+def embedded_fonts(data: bytes) -> set[bytes]:
+    """Subset-embedded fonts: the Arabic labels use whichever font the machine has installed."""
+    return set(re.findall(rb"/BaseFont /[A-Z]{6}\+([\w-]+)", data))
+
+
+def english_text(path: Path) -> str:
+    """Printed ASCII text of a PDF, or of an email's headers, body and attached PDFs."""
+
+    def pdf_text(data: bytes) -> str:
+        with pdfplumber.open(BytesIO(data)) as pdf:
+            return "\n".join(page.extract_text() or "" for page in pdf.pages)
+
+    data = path.read_bytes()
+    if path.suffix == ".pdf":
+        text = pdf_text(data)
+    else:
+        chunks = []
+        for part in BytesParser(policy=policy.default).parsebytes(data).walk():
+            chunks.append(str(part.items()))
+            if not part.is_multipart():
+                payload = part.get_payload(decode=True) or b""
+                is_pdf = part.get_content_type() == "application/pdf"
+                chunks.append(pdf_text(payload) if is_pdf else payload.decode("utf-8", "replace"))
+        text = "\n".join(chunks)
+    return " ".join(re.sub(r"[^\x20-\x7e]", " ", text).split())
+
+
+def font_dependent(path: Path) -> bool:
+    data = path.read_bytes()
+    if path.suffix == ".eml":
+        message = BytesParser(policy=policy.default).parsebytes(data)
+        data = b"".join(
+            part.get_payload(decode=True) or b""
+            for part in message.walk()
+            if part.get_content_type() == "application/pdf"
+        )
+    return bool(embedded_fonts(data))
 
 
 def inventory(root: Path, truth: GroundTruth) -> None:
@@ -798,11 +838,27 @@ def m1(data_root: Path = DATA) -> bool:
             differ = sorted(
                 k for k in expected.keys() | current.keys() if expected.get(k) != current.get(k)
             )
+            # A machine with a different (or no) Arabic font renders those labels differently;
+            # such files must still match in every English character.
+            by_text = [
+                key
+                for key in differ
+                if key in expected
+                and key in current
+                and font_dependent(data_root / key)
+                and english_text(data_root / key) == english_text(first / key)
+            ]
+            differ = [key for key in differ if key not in by_text]
+            note = (
+                f"{len(by_text)} files with Arabic labels compared by English text"
+                if by_text
+                else ""
+            )
             results.append(
                 (
                     "populated data matches seeded generator",
                     not differ,
-                    f"{len(differ)} differ, e.g. {', '.join(differ[:3])}" if differ else "",
+                    f"{len(differ)} differ, e.g. {', '.join(differ[:3])}" if differ else note,
                 )
             )
             results.extend(check_dataset(data_root))
