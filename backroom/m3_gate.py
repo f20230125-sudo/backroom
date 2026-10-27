@@ -8,7 +8,7 @@ from backroom.db import connect, migrate
 from backroom.extract.types import ExtractionResult, PayoutRecord
 from backroom.inputs import manifest
 from backroom.models import InvoiceRecord
-from backroom.names.match import Matcher, approve, approved_names, masters, propose
+from backroom.names.match import Entity, Matcher, approve, approved_names, masters, propose
 from backroom.pipeline import load_masters, run_pipeline
 from eval.m3 import evaluate_m3
 
@@ -37,7 +37,39 @@ def approve_oracle_names(repo, source):
         approve(repo, variant["entity_type"], variant["variant"], variant["canonical_id"])
 
 
+def identity_evidence_checks():
+    """Guard the identity policy with independent examples, without extraction truth."""
+    number = "123456789012303"
+    matcher = Matcher(
+        [
+            Entity("supplier", "P", ("Harbour Produce Trading LLC",), number),
+            Entity("supplier", "F", ("Harbour Fish Trading LLC",), number),
+            Entity("item", "T", ("Tomato Roma",)),
+            Entity("item", "B", ("Kraft Bowl",)),
+            Entity("item", "L", ("Kraft Bowl Lid",)),
+        ]
+    )
+    if matcher.supplier_identity("Harbour Produce", number) != "P" or (
+        matcher.supplier_identity("Harbour Fish", number) != "F"
+    ):
+        raise ValueError("Shared TRN must defer to distinct name identities")
+    if matcher.supplier_identity("Harbour", number) != "printed:harbour":
+        raise ValueError("Shared TRN cannot resolve an ambiguous name")
+    unique = Matcher([Entity("supplier", "P", ("Harbour Produce",), number)])
+    if unique.supplier_identity("Different trading name", number) != "P":
+        raise ValueError("Unique valid TRN must resolve a different printed supplier name")
+    if matcher.match("item", "ROMA TOMATOES (5kg crate) - CHILLED").decision != "auto_match":
+        raise ValueError("Item pack annotations should not hide exact identity")
+    review = matcher.match("supplier", "Harbour")
+    if review.decision != "review" or not review.suggested_id or review.score is None:
+        raise ValueError("Ambiguous reviews must carry a scored suggestion")
+    if matcher.match("item", "Kraft Bowl").canonical_id != "B":
+        raise ValueError("An item and its lid must remain distinct")
+    print("PASS m3.1 unique/shared TRN identities, item annotations and scored ambiguous reviews")
+
+
 def checks(data_root):
+    identity_evidence_checks()
     source = manifest(data_root)
     results = oracle_results(source)
     temp_root = Path(".local/temp")

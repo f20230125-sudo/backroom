@@ -53,14 +53,14 @@ def valid_emirate(value: str) -> bool:
 def check_invoices(invoices):
     findings = []
     originals = {
-        (i.supplier_id, i.record.invoice_number)
+        (i.supplier_key, i.record.invoice_number)
         for i in invoices
-        if i.supplier_id and not i.record.is_credit_note and i.record.invoice_number
+        if i.supplier_key and not i.record.is_credit_note and i.record.invoice_number
     }
     unresolved_originals = {
         i.record.invoice_number
         for i in invoices
-        if not i.supplier_id and not i.record.is_credit_note and i.record.invoice_number
+        if not i.supplier_key and not i.record.is_credit_note and i.record.invoice_number
     }
     trns = defaultdict(dict)
     for invoice in sorted(invoices, key=lambda i: i.doc_id):
@@ -85,7 +85,7 @@ def check_invoices(invoices):
         ]
         for index, line in enumerate(record.lines):
             missing.extend(
-                f"lines.{index}.{field}"
+                f"line {index + 1} {field}"
                 for field in (
                     "description",
                     "quantity",
@@ -97,36 +97,47 @@ def check_invoices(invoices):
                 if getattr(line, field) is None or getattr(line, field) == ""
             )
         if missing:
-            add("MISSING_FIELD", "mandatory fields are missing: " + ", ".join(missing))
+            add(
+                "MISSING_FIELD",
+                "mandatory fields are missing: "
+                + ", ".join(field.replace("_", " ") for field in missing),
+            )
         invalid_trns = []
         for field in ("supplier_trn", "buyer_trn"):
             value = getattr(record, field)
             if value and not valid_trn(value):
-                invalid_trns.append(f"{field} {value}")
+                invalid_trns.append(f"{field.replace('_trn', ' TRN')} {value}")
         if invalid_trns:
             add(
                 "IBR-132-AE",
-                "; ".join(invalid_trns) + " must have 15 digits starting with 1 and ending in 03",
+                " and ".join(invalid_trns)
+                + " must have 15 digits starting with 1 and ending in 03",
             )
         emirate = record.supplier_address_emirate
         if emirate and not valid_emirate(emirate):
             add("IBR-128-AE", f"emirate {emirate} must map to AUH, DXB, SHJ, UAQ, FUJ, AJM or RAK")
         if (
             record.is_credit_note
-            and invoice.supplier_id
+            and invoice.supplier_key
             and record.original_invoice_number not in unresolved_originals
         ):
             if (
                 not record.original_invoice_number
-                or (invoice.supplier_id, record.original_invoice_number) not in originals
+                or (invoice.supplier_key, record.original_invoice_number) not in originals
             ):
                 add(
                     "CREDIT_NOTE_UNLINKED",
-                    f"credit note {record.invoice_number} has no known original invoice "
-                    f"{record.original_invoice_number or '(missing)'}",
+                    (
+                        f"credit note {record.invoice_number} refers to invoice "
+                        f"{record.original_invoice_number}, which is absent from this supplier's "
+                        "received invoices"
+                        if record.original_invoice_number
+                        else f"credit note {record.invoice_number} "
+                        "does not identify an original invoice"
+                    ),
                 )
-        if invoice.supplier_id and record.supplier_trn and valid_trn(record.supplier_trn):
-            trns[record.supplier_trn].setdefault(invoice.supplier_id, invoice.doc_id)
+        if invoice.supplier_key and record.supplier_trn and valid_trn(record.supplier_trn):
+            trns[record.supplier_trn].setdefault(invoice.supplier_key, invoice.doc_id)
     for trn, identities in sorted(trns.items()):
         if len(identities) > 1:
             ids = sorted(identities.values())
@@ -164,7 +175,8 @@ def check_masters(suppliers):
                     record_id=supplier.id,
                     rule="MISSING_FIELD",
                     message=f"Supplier {supplier.id} would block an e-invoice "
-                    f"because mandatory fields are missing: {', '.join(missing)}.",
+                    "because mandatory fields are missing: "
+                    f"{', '.join(name.replace('_', ' ').replace('.', ' ') for name in missing)}.",
                 )
             )
         if not valid_trn(supplier.trn):

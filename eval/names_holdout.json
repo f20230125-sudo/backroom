@@ -1,0 +1,39 @@
+{
+  "note": "Written by hand by the reviewer after the matcher was built; never shown to the builder. Variants are new spellings of existing entities; traps are names that must NOT auto-merge with any master.",
+  "variants": [
+    ["outlet", "Saffron and Salt JBR", "OUT-JBR"],
+    ["outlet", "S & S - JBR Walk", "OUT-JBR"],
+    ["outlet", "SAFFRON & SALT DIFC", "OUT-DIFC"],
+    ["outlet", "Central Kitchen (Al Quoz)", "OUT-AQK"],
+    ["supplier", "Gulf Fresh Produce Trading LLC", "SUP-01"],
+    ["supplier", "GULF FRESH FISH TRADING L.L.C", "SUP-02"],
+    ["supplier", "Crescent Pasture Meats LLC", "SUP-07"],
+    ["supplier", "CRESCENT PASTURE MEATS TRDG", "SUP-07"],
+    ["supplier", "Coral Basket Seafood Trading", "SUP-08"],
+    ["supplier", "Amber Grain Provisions L.L.C.", "SUP-09"],
+    ["supplier", "Silver Ladle Packaging Trading LLC", "SUP-14"],
+    ["supplier", "SAFFRON CRATE SPICES TRDG", "SUP-15"],
+    ["supplier", "Palm Loom Linen LLC", "SUP-12"],
+    ["supplier", "Mirage Cup Beverages L.L.C", "SUP-17"],
+    ["item", "Chicken Breast Boneless", "ITM-011"],
+    ["item", "LAMB SHOULDER - CHILLED", "ITM-012"],
+    ["item", "Basmati Rice 5kg", "ITM-027"],
+    ["item", "OLIVE OIL EXTRA VIRGIN 1L", "ITM-031"],
+    ["item", "Prawns (2kg box)", "ITM-018"],
+    ["item", "WHOLE MILK 1L", "ITM-019"],
+    ["item", "Halloumi Cheese", "ITM-026"],
+    ["item", "Foil Trays", "ITM-051"],
+    ["item", "Paper Cups 8oz", "ITM-052"],
+    ["item", "Hand Soap Refill", "ITM-056"]
+  ],
+  "traps": [
+    ["supplier", "Gulf Fresh Bakery"],
+    ["supplier", "Coral Basket Laundry"],
+    ["supplier", "Dune Logistics"],
+    ["supplier", "Mirage Beverages"],
+    ["supplier", "Palm Linen"],
+    ["outlet", "Saffron & Salt, Dubai Marina"],
+    ["item", "Kraft Box"],
+    ["item", "Lamb Chops"]
+  ]
+}

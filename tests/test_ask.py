@@ -22,6 +22,27 @@ from backroom.synth.catalogue import ITEMS, OUTLETS, SUPPLIERS
 from eval.m4 import evaluate_ask, score_ask
 
 
+def test_supplier_queries_use_auto_identity_but_never_review_or_rejected_maps(repo):
+    from backroom.names.match import Proposal
+
+    args = {"date_from": "2026-07-01", "date_to": "2026-07-31"}
+    assert (
+        Tools(repo).call("supplier_spend", {**args, "supplier": "Dune Orchard"})["args"]["supplier"]
+        == "SUP-03"
+    )
+    propose(repo, Proposal("supplier", "legacy produce alias", "SUP-01", "auto_match"))
+    result = Tools(repo).call("supplier_spend", {**args, "supplier": "legacy produce alias"})
+    assert result["args"]["supplier"] == "SUP-01"
+    propose(
+        repo, Proposal("supplier", "pending produce alias", "SUP-01", "review", recommendation=True)
+    )
+    with pytest.raises(ValueError, match="Unknown or unapproved"):
+        Tools(repo).call("supplier_spend", {**args, "supplier": "pending produce alias"})
+    approve(repo, "supplier", "legacy produce alias", "SUP-01", approved=False)
+    with pytest.raises(ValueError, match="Unknown or unapproved"):
+        Tools(repo).call("supplier_spend", {**args, "supplier": "legacy produce alias"})
+
+
 class Fake:
     def __init__(self, *responses):
         self.responses = iter(responses)
@@ -214,7 +235,7 @@ def test_closed_registry_names_and_limits(repo):
         ("sql", {}),
         (
             "supplier_spend",
-            {"supplier": "Dune Orchard", "date_from": "2026-07-01", "date_to": "2026-09-30"},
+            {"supplier": "Dune", "date_from": "2026-07-01", "date_to": "2026-09-30"},
         ),
         ("payouts", {"outlet": "JBR", "platform": "D", "week": 34}),
         ("payouts", {"outlet": "JBR", "platform": "A", "week": 202634}),

@@ -25,6 +25,7 @@ from backroom.inputs import offline_llm, recorded_results
 from backroom.models import InvoiceRecord, PayoutStatement
 from eval.m3 import evaluate_m3
 from eval.m4 import evaluate_m4
+from eval.names_holdout import evaluate_names_holdout
 
 
 def equal(left, right):
@@ -288,6 +289,7 @@ def evaluate(
             },
         },
         "security": security,
+        "names_holdout": evaluate_names_holdout(manifest),
         **evaluate_m3(manifest, data_root, results=extracted, llm=llm),
         **(
             evaluate_m4(repo=repo, database=database)

@@ -14,7 +14,14 @@ from backroom.einvoice.rules import check_invoices, check_masters
 from backroom.extract.types import ExtractionResult, PayoutRecord
 from backroom.inputs import csv_payouts, feeds, load_results, manifest
 from backroom.models import InvoiceRecord, PayoutStatement, Supplier
-from backroom.names.match import Matcher, approved_names, masters, propose
+from backroom.names.match import (
+    Matcher,
+    approved_names,
+    automatic_names,
+    masters,
+    propose,
+    rejected_names,
+)
 from backroom.recon.engine import reconcile
 from backroom.recon.types import Invoice
 
@@ -34,11 +41,15 @@ def load_masters(repo, source):
 
 
 def invoice_inputs(results, matcher):
+    def supplier_id(record):
+        identity = matcher.supplier_identity(record.supplier_name, record.supplier_trn)
+        return identity if identity and not identity.startswith("printed:") else None
+
     return [
         Invoice(
             doc_id,
             result.record,
-            matcher.resolve("supplier", result.record.supplier_name),
+            supplier_id(result.record),
             matcher.resolve("outlet", result.record.deliver_to),
         )
         for doc_id, result in sorted(results.items())
@@ -134,7 +145,12 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
     end = min(final, start + timedelta(days=days - 1)) if days else final
     end = max(end, first - timedelta(days=1))
     load_masters(repo, source)
-    matcher = Matcher(masters(source), approved_names(repo))
+    matcher = Matcher(
+        masters(source),
+        approved_names(repo),
+        automatic=automatic_names(repo),
+        rejected=rejected_names(repo),
+    )
     # Revisit missing recordings even after the feed watermark reaches the end.
     docs = [d for d in source["documents"] if document_day(d, source["date_from"], final) <= end]
     loaded = {
@@ -259,14 +275,21 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
     for table in ("review_queue", "exceptions", "einvoice_findings"):
         repo.execute(f"DELETE FROM {table}")  # noqa: S608 -- fixed identifiers
     for kind, name in observed_names(loaded, pos, ledger, statements):
-        proposal = matcher.match(kind, name)
+        proposal = matcher.match(kind, name, model_check=True)
         propose(repo, proposal)
         if not matcher.resolve(kind, name):
             review(
                 repo,
                 ["name", kind, name],
                 f"Approve or reject {kind} name {name}",
-                payload={"entity_type": kind, "variant": name, "candidate": proposal.canonical_id},
+                payload={
+                    "entity_type": kind,
+                    "variant": name,
+                    "suggested_id": proposal.suggested_id,
+                    "score": proposal.score,
+                    "same_entity": proposal.recommendation,
+                    "reason": proposal.reason,
+                },
             )
     for doc_id, result in sorted(loaded.items()):
         if result.not_run or result.status == "review":

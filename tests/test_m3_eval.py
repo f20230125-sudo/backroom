@@ -81,3 +81,36 @@ def test_m3_gate_failure_is_reported(monkeypatch, capsys):
     monkeypatch.setattr("backroom.m3_gate.checks", fail)
     assert not verify.m3()
     assert "FAIL m3: corrupt engine" in capsys.readouterr().out
+
+
+def test_review_suggestion_is_scored_separately_from_recorded_model_yes():
+    from types import SimpleNamespace
+
+    from backroom.settings import CacheMiss
+
+    class Fake:
+        def __init__(self, answer):
+            self.answer = answer
+
+        def complete(self, *args, **kwargs):
+            if self.answer is None:
+                raise CacheMiss("unrecorded")
+            return SimpleNamespace(text='{"same_entity":' + self.answer + ',"reason":"recorded"}')
+
+    source = {
+        "suppliers": [
+            {"id": "A", "legal_name": "Harbour Produce", "trade_name": "Harbour Produce"},
+            {"id": "B", "legal_name": "Harbour Fish", "trade_name": "Harbour Fish"},
+        ],
+        "name_variants": [{"entity_type": "supplier", "variant": "Harbour", "canonical_id": "B"}],
+    }
+    missing = name_metrics(source, llm=Fake(None))
+    no = name_metrics(source, llm=Fake("false"))
+    yes = name_metrics(source, llm=Fake("true"))
+    assert missing["review_items"] == no["review_items"] == yes["review_items"] == 1
+    assert missing["review_suggestion_correct"] == no["review_suggestion_correct"] == 1
+    assert missing["true_positives"] == no["true_positives"] == 0
+    assert yes["true_positives"] == yes["review_with_yes"] == 1
+    assert missing["documents"][0]["predicted"] is None
+    assert missing["documents"][0]["suggested_id"] == "B"
+    assert "No recorded" in missing["documents"][0]["model_check_reason"]
