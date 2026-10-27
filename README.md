@@ -62,7 +62,7 @@ flowchart LR
 
 ## Engineering
 
-- **Python:** 270 tests (SQLite, plus PostgreSQL in CI), ruff, milestone gates (`python -m backroom.verify m1..m5`), and an evaluation that replays from the committed response cache with zero model calls.
+- **Python:** 272 tests (SQLite, plus PostgreSQL in CI), ruff, milestone gates (`python -m backroom.verify m1..m5`), and an evaluation that replays from the committed response cache with zero model calls.
 - **Web (React, TypeScript, Vite, shadcn/ui):** 13 unit tests and 76 Playwright tests. Every page is checked at desktop and phone width, in light and dark themes, with axe (WCAG 2.1 AA), no console errors and no page overflow.
 - **Security:**
   - Document text is treated as data, never instructions, and is tested with planted injection documents.
