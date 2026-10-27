@@ -1,0 +1,29 @@
+name: daily-run
+# The scheduled job a client would run: rebuild the hosted database from the source feeds and
+# documents, replaying recorded model responses (no key, no model calls), and log the run.
+on:
+  schedule:
+    - cron: "15 2 * * *"   # 06:15 Dubai
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: daily-run
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-lock.txt
+      - name: Migrate and run the pipeline against the hosted database
+        env:
+          DATABASE_URL: ${{ secrets.BACKROOM_DATABASE_URL }}
+        run: |
+          if [ -z "$DATABASE_URL" ]; then echo "BACKROOM_DATABASE_URL secret not set; skipping"; exit 0; fi
+          python -m backroom.db migrate
+          python -m backroom.pipeline run --offline --rebuild
+          python -m backroom.ask.run --offline

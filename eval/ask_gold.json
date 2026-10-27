@@ -1,8 +1,8 @@
 {
   "basis": "SQL over pipeline database; available extraction snapshot, not oracle truth",
   "coverage": {
-    "extractions_not_recorded": 138,
-    "invoice_facts": 96
+    "extractions_not_recorded": 0,
+    "invoice_facts": 147
   },
   "questions": [
     {
@@ -162,8 +162,10 @@
           "tool": "payouts"
         }
       ],
-      "expected_numbers": [],
-      "expected_state": "no rows",
+      "expected_numbers": [
+        "8892.26"
+      ],
+      "expected_state": "values",
       "id": "ask-08",
       "in_scope": true,
       "question": "How much did Platform C pay us for JBR in week 36?"
@@ -219,7 +221,6 @@
       ],
       "expected_numbers": [
         "0.00",
-        "434657.34",
         "0.00"
       ],
       "expected_state": "values",
@@ -239,9 +240,8 @@
         }
       ],
       "expected_numbers": [
-        "0.00",
-        "670193.37",
-        "0.00"
+        "3146.09",
+        "0.47"
       ],
       "expected_state": "values",
       "id": "ask-12",
@@ -260,8 +260,7 @@
         }
       ],
       "expected_numbers": [
-        "13791.55",
-        "0.00"
+        "23326.16"
       ],
       "expected_state": "values",
       "id": "ask-13",
@@ -280,9 +279,8 @@
         }
       ],
       "expected_numbers": [
-        "1540.80",
-        "526083.06",
-        "0.29"
+        "6213.97",
+        "1.18"
       ],
       "expected_state": "values",
       "id": "ask-14",
@@ -309,12 +307,10 @@
         }
       ],
       "expected_numbers": [
-        "0.00",
-        "518529.96",
-        "0.00",
-        "0.00",
-        "670193.37",
-        "0.00"
+        "4650.64",
+        "0.90",
+        "3146.09",
+        "0.47"
       ],
       "expected_state": "values",
       "id": "ask-15",
@@ -433,7 +429,7 @@
         }
       ],
       "expected_numbers": [
-        "1277.03"
+        "2095.15"
       ],
       "expected_state": "values",
       "id": "ask-21",
@@ -452,7 +448,7 @@
         }
       ],
       "expected_numbers": [
-        "1444.69"
+        "2454.03"
       ],
       "expected_state": "values",
       "id": "ask-22",
@@ -471,7 +467,7 @@
         }
       ],
       "expected_numbers": [
-        "668.54"
+        "2024.48"
       ],
       "expected_state": "values",
       "id": "ask-23",
@@ -509,7 +505,7 @@
         }
       ],
       "expected_numbers": [
-        "3201.05"
+        "6126.98"
       ],
       "expected_state": "values",
       "id": "ask-25",
@@ -546,8 +542,13 @@
           "tool": "top_items"
         }
       ],
-      "expected_numbers": [],
-      "expected_state": "no rows",
+      "expected_numbers": [
+        "972.75",
+        "962.10",
+        "687.20",
+        "524.04"
+      ],
+      "expected_state": "values",
       "id": "ask-27",
       "in_scope": true,
       "question": "What are our top 5 purchased items at DIFC in August, by net spend? Give each spend."
@@ -565,9 +566,9 @@
         }
       ],
       "expected_numbers": [
-        "1276.99",
-        "1230.24",
-        "1165.20"
+        "3052.44",
+        "1969.46",
+        "1600.38"
       ],
       "expected_state": "values",
       "id": "ask-28",
@@ -604,8 +605,12 @@
           "tool": "top_items"
         }
       ],
-      "expected_numbers": [],
-      "expected_state": "no rows",
+      "expected_numbers": [
+        "1438.24",
+        "864.90",
+        "809.25"
+      ],
+      "expected_state": "values",
       "id": "ask-30",
       "in_scope": true,
       "question": "What are our top 3 purchased items at DIFC in September, by net spend? Give each spend."

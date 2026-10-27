@@ -8,6 +8,8 @@ from pathlib import Path
 from backroom import ROOT
 
 TABLES = {
+    "document_sources": ("document_id", "text", "media_type", "error"),
+    "webhook_replays": ("signature_hash", "received_at"),
     "invoice_facts": (
         "document_id",
         "supplier",
@@ -175,6 +177,7 @@ class Repo:
             "extraction_issues",
             "review_queue",
             "extractions",
+            "document_sources",
             "documents",
             "payout_lines",
             "payout_statements",
@@ -204,7 +207,7 @@ class Repo:
         self.close()
 
 
-def connect(path=None, *, database_url=None):
+def connect(path=None, *, database_url=None, readonly=False):
     url = (
         database_url
         if database_url is not None
@@ -213,8 +216,16 @@ def connect(path=None, *, database_url=None):
     if url:
         import psycopg
 
-        return Repo(psycopg.connect(url), postgres=True)
+        connection = psycopg.connect(url, prepare_threshold=None)
+        if readonly:
+            # Transaction scoped: safe with Neon's transaction pooler.
+            connection.execute("SET TRANSACTION READ ONLY")
+        return Repo(connection, postgres=True)
     path = path if path is not None else ROOT / ".local/backroom.sqlite"
+    if readonly:
+        connection = sqlite3.connect(Path(path).resolve().as_uri() + "?mode=ro", uri=True)
+        connection.execute("PRAGMA query_only = ON")
+        return Repo(connection)
     if str(path) != ":memory:":
         Path(path).parent.mkdir(parents=True, exist_ok=True)
     connection = sqlite3.connect(str(path))

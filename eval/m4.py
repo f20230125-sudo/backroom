@@ -1,16 +1,18 @@
 """Ask correctness and transparent time estimates; cache misses never count as refusals."""
 
 import json
+import re
 import sqlite3
 from collections import Counter
 from decimal import Decimal
 
 from backroom import ROOT
-from backroom.ask.agent import Citation, ask
+from backroom.ask.agent import Citation, ask, ask_llm
 from backroom.ask.gold import build_gold
 from backroom.ask.numbers import check_answer, matches, numbers
 from backroom.db.repo import Repo
-from backroom.inputs import offline_llm
+
+NONE_WORDS = re.compile(r"\b(no|none|zero|nothing|not any)\b", re.IGNORECASE)
 
 
 def score_ask(case, result):
@@ -21,21 +23,25 @@ def score_ask(case, result):
     if result["refused"]:
         return "refused"
     citations = [Citation.model_validate(c) for c in result["numbers_used"]]
-    valid = check_answer(result["answer"], citations, result["tool_calls"])
+    valid = check_answer(
+        result["answer"], citations, result["tool_calls"], result.get("question", "")
+    )
     expected = [Decimal(n) for n in case["expected_numbers"]]
     displayed = numbers(result["answer"])
-    # All required SQL numbers must be displayed, not merely listed in citations.
-    # An empty payout/item answer key means data is unavailable, not vacuous correctness.
-    return (
-        "correct"
-        if expected and valid and all(matches(n, displayed) for n in expected)
-        else "wrong"
-    )
+    says_none = bool(NONE_WORDS.search(result["answer"]))
+    if not expected:
+        # "No rows" questions (no purchases recorded for that outlet): correct only when the
+        # answer says so and introduces no unsupported number.
+        return "correct" if valid and says_none else "wrong"
+    # All required SQL numbers must be displayed, not merely listed in citations; a zero may
+    # be stated in words ("no payout-short exceptions").
+    shown = all(matches(n, displayed) or (n == 0 and says_none) for n in expected)
+    return "correct" if valid and shown else "wrong"
 
 
 def evaluate_ask(repo, *, llm=None):
     owned = llm is None
-    llm = llm if llm is not None else offline_llm()
+    llm = llm if llm is not None else ask_llm()
     rows = []
     try:
         for case in build_gold(repo, output=None)["questions"]:

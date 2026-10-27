@@ -884,11 +884,24 @@ def m4(data_root: Path = DATA) -> bool:
     return previous
 
 
+def m5(data_root: Path = DATA) -> bool:
+    from backroom.m5_gate import checks
+
+    previous = m4(data_root)
+    try:
+        checks()
+    except (ValueError, OSError, TypeError, KeyError) as exc:
+        print(f"FAIL m5: {exc}")
+        return False
+    return previous
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("milestone", choices=["m1", "m2", "m3", "m4"])
+    parser.add_argument("milestone", choices=["m1", "m2", "m3", "m4", "m5"])
     args = parser.parse_args()
-    raise SystemExit(0 if {"m1": m1, "m2": m2, "m3": m3, "m4": m4}[args.milestone]() else 1)
+    gates = {"m1": m1, "m2": m2, "m3": m3, "m4": m4, "m5": m5}
+    raise SystemExit(0 if gates[args.milestone]() else 1)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,23 @@
+import { Badge, FilterSelect, LoadState, PageTitle, Table, TableCell, TableHead, TableRow } from '../components'
+import { Button } from '@/components/ui/button'
+import { useSearchParams } from 'react-router'
+import { useApi } from '../api'
+import { aed, day, display, label, weekLabel, weekNumber } from '../format'
+import type { ExceptionRow } from '../types'
+
+interface Payout { id: string; platform: string; outlet: string; week_start: string; week_end: string; net_payout: string; bank_paid: string | null }
+interface Recon { exceptions: ExceptionRow[]; payouts: Payout[]; outlets: { id: string; name: string }[] }
+
+export default function Reconciliation() {
+  const { data, error } = useApi<Recon>('/recon')
+  const [params, setParams] = useSearchParams()
+  const outlet = params.get('outlet') || '', week = params.get('week') || '', kind = params.get('kind') || ''
+  const matches = (row: ExceptionRow) => (!outlet || row.outlet === outlet) && (!week || (row.date_start && String(weekNumber(row.date_start)) === week)) && (!kind || row.kind === kind)
+  function drill(outlet: string, week: number) { setParams({ outlet, week: String(week) }) }
+  return <><PageTitle title="Reconciliation">POS, platform statements, bank receipts, and the ledger. Amounts link back to exception sentences.</PageTitle>{!data ? <LoadState error={error} /> : <>
+    <div className="mb-5 flex flex-wrap gap-3"><FilterSelect title="Outlet" value={outlet} empty="All outlets" options={data.outlets.map(o => [o.id, o.name])} onChange={v => { const next = new URLSearchParams(params); v ? next.set('outlet', v) : next.delete('outlet'); setParams(next) }} /><FilterSelect title="Week" value={week} empty="All weeks" options={[...new Set(data.payouts.map(p => weekNumber(p.week_start)))].sort((a,b) => a-b).map(w => [String(w), `Week ${w}`])} onChange={v => { const next = new URLSearchParams(params); v ? next.set('week', v) : next.delete('week'); setParams(next) }} /><FilterSelect title="Exception kind" value={kind} empty="All kinds" options={[...new Set(data.exceptions.map(e => e.kind))].map(k => [k, label(k)])} onChange={v => { const next = new URLSearchParams(params); v ? next.set('kind', v) : next.delete('kind'); setParams(next) }} /></div>
+    <h2>Outlet × week</h2><Table caption="Exception counts by outlet and week" headers={['Outlet', ...[...new Set(data.payouts.map(p => p.week_start))].sort().map(w => `W${weekNumber(w)}`)]}>{['OUT-JBR', 'OUT-DIFC'].map(outlet => <TableRow key={outlet}><TableHead scope="row">{outlet.slice(4)}</TableHead>{[...new Set(data.payouts.map(p => p.week_start))].sort().map(w => { const n = data.exceptions.filter(e => e.outlet === outlet && e.date_start && weekNumber(e.date_start) === weekNumber(w)).length; return <TableCell key={w}><Button variant="outline" className={n ? 'text-destructive' : ''} aria-label={`${outlet.slice(4)} week ${weekNumber(w)}: ${n} exceptions`} onClick={() => drill(outlet, weekNumber(w))}>{n}</Button></TableCell> })}</TableRow>)}</Table>
+    <div className="mt-5 flex flex-wrap items-center justify-between gap-3"><h2>Exception detail</h2><Button onClick={() => setParams({})}>Clear filters</Button></div><p className="text-xs text-muted-foreground">{outlet ? outlet.slice(4) : 'All outlets'} · {week ? `Week ${week}` : 'All weeks'}{kind && ` · ${label(kind)}`}</p><Table caption="Exception sentences" headers={['Kind', 'Period', 'Finding', 'Amount']}>{data.exceptions.filter(matches).map(row => <TableRow key={row.id}><TableHead scope="row" className="text-destructive">{label(row.kind)}</TableHead><TableCell>{display(row.date_or_week || 'Unresolved date')}</TableCell><TableCell>{display(row.message)}</TableCell><TableCell className="tabular-nums">{aed(row.amount)}</TableCell></TableRow>)}</Table>{!data.exceptions.some(matches) && <p>No exceptions for this selection.</p>}
+    <h2>Payouts by platform</h2><Table caption="Platform statement and bank payouts" headers={['Platform', 'Outlet', 'Week', 'Statement net', 'Bank paid', 'Status']}>{data.payouts.filter(p => (!outlet || p.outlet === outlet) && (!week || String(weekNumber(p.week_start)) === week)).map(p => <TableRow key={p.id}><TableHead scope="row">Platform {p.platform}</TableHead><TableCell>{p.outlet.slice(4)}</TableCell><TableCell>{weekLabel(p.week_start, p.week_end)}</TableCell><TableCell className="tabular-nums">{aed(p.net_payout)}</TableCell><TableCell className="tabular-nums">{aed(p.bank_paid)}</TableCell><TableCell><Badge value={p.bank_paid == null ? 'review' : aed(p.bank_paid) === aed(p.net_payout) ? 'reconciled' : 'exception'} /><span className="text-xs text-muted-foreground"> {day(p.week_end)}</span></TableCell></TableRow>)}</Table>
+  </>}</>
+}

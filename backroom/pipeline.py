@@ -12,6 +12,7 @@ from backroom.db import connect, migrate
 from backroom.db.repo import dumps
 from backroom.einvoice.rules import check_invoices, check_masters
 from backroom.extract.types import ExtractionResult, PayoutRecord
+from backroom.inbox import consume_inbox
 from backroom.inputs import csv_payouts, feeds, load_results, manifest
 from backroom.models import InvoiceRecord, PayoutStatement, Supplier
 from backroom.names.match import (
@@ -24,6 +25,7 @@ from backroom.names.match import (
 )
 from backroom.recon.engine import reconcile
 from backroom.recon.types import Invoice
+from backroom.sources import store_sources
 
 
 def stable_id(value):
@@ -202,6 +204,9 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
                     "payload": issue.model_dump_json(),
                 },
             )
+    store_sources(repo, docs, data_root)
+    inbox_results = consume_inbox(repo, end.isoformat(), llm=llm)
+    loaded.update(inbox_results)
     pos_all, ledger_all = feeds(data_root)
     pos = [row for row in pos_all if row.business_date <= end]
     ledger = [
@@ -360,7 +365,7 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
         "started": started.isoformat(),
         "finished": clock().isoformat(),
         "days": max(0, (end - start).days + 1),
-        "documents": len(pending),
+        "documents": len(pending) + len(inbox_results),
         "model_calls": sum(r.model_calls for r in fresh.values()) if replayed else 0,
         "cache_hits": sum(r.cache_hits for r in fresh.values()) if replayed else 0,
         "exceptions_by_kind": dumps(dict(sorted(Counter(e.kind for e in exceptions).items()))),

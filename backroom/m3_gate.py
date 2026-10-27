@@ -72,9 +72,9 @@ def checks(data_root):
     identity_evidence_checks()
     source = manifest(data_root)
     results = oracle_results(source)
-    temp_root = Path(".local/temp")
+    temp_root = Path(".local")
     temp_root.mkdir(parents=True, exist_ok=True)
-    with TemporaryDirectory(dir=temp_root, prefix="m3-") as directory:
+    with TemporaryDirectory(dir=temp_root, prefix="codex-m3-") as directory:
         snapshots = []
         for index in range(2):
             with connect(Path(directory) / f"run-{index}.sqlite") as repo:

@@ -53,8 +53,9 @@ class ReplayStore:
             self.db.close()
 
 
-def offline_llm():
-    return settings.build_llm(offline=True, store=ReplayStore())
+def offline_llm(model: str | None = None):
+    env = {"GEMINI_MODEL": model} if model else None
+    return settings.build_llm(env, offline=True, store=ReplayStore())
 
 
 def manifest(data_root):
