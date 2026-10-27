@@ -70,10 +70,23 @@ def pdf_content(data: bytes) -> bytes:
     return data.rsplit(b"\nxref", 1)[0]
 
 
+def eml_content(data: bytes) -> bytes:
+    """Every header and decoded part of an email, with PDF attachments compared by content."""
+    parts = []
+    for part in BytesParser(policy=policy.default).parsebytes(data).walk():
+        parts.append(str(part.items()).encode())
+        if not part.is_multipart():
+            payload = part.get_payload(decode=True) or b""
+            is_pdf = part.get_content_type() == "application/pdf"
+            parts.append(pdf_content(payload) if is_pdf else payload)
+    return b"\0".join(parts)
+
+
 def content_hashes(root: Path) -> dict[str, str]:
+    readers = {".pdf": pdf_content, ".eml": eml_content}
     return {
         path.relative_to(root).as_posix(): hashlib.sha256(
-            pdf_content(path.read_bytes()) if path.suffix == ".pdf" else path.read_bytes()
+            readers.get(path.suffix, bytes)(path.read_bytes())
         ).hexdigest()
         for path in sorted(root.rglob("*"))
         if path.is_file()
