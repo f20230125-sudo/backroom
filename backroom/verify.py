@@ -756,11 +756,114 @@ def m1(data_root: Path = DATA) -> bool:
     return all(passed for _, passed, _ in results)
 
 
+def m2(data_root: Path = DATA) -> bool:
+    """Cumulative offline gate: evaluate planted values, never inspect held-out source text."""
+    from backroom.extract import rules
+    from backroom.extract.agent import PROMPTS
+    from backroom.extract.payouts_csv import read_csv
+    from backroom.extract.text import parse_bytes
+    from backroom.extract.validate import invoice_arithmetic as validate_invoice
+    from backroom.llm import Store
+    from backroom.settings import CacheMiss, build_llm
+
+    previous = m1(data_root)
+    truth = GroundTruth.model_validate_json(
+        (data_root / "ground_truth.json").read_text(encoding="utf-8")
+    )
+
+    def planted_checks():
+        for kind in ("VAT_WRONG", "LINES_NOT_SUM"):
+            caught = {
+                doc.doc_id
+                for doc in truth.documents
+                if isinstance(doc.truth, InvoiceRecord)
+                and any(issue.code == kind for issue in validate_invoice(doc.truth))
+            }
+            require(caught == planted_docs(truth, kind), f"{kind}: validator and plants differ")
+            print(f"  {kind}: {len(caught)} planted documents caught")
+
+    def baseline_checks():
+        dev = [
+            doc
+            for doc in truth.documents
+            if not doc.held_out and doc.layout in {"L1", "L2", "L3", "E1"}
+        ]
+        for doc in dev:
+            source = parse_bytes((data_root / doc.path).read_bytes(), Path(doc.path).suffix)
+            record = rules.extract(source)
+            require(isinstance(record, InvoiceRecord), "Baseline did not return InvoiceRecord")
+            if doc.kind != "email_other":
+                require(
+                    bool(record.invoice_number and record.lines),
+                    f"Baseline missing number/lines: {doc.doc_id}",
+                )
+        print(f"  baseline ran on {len(dev)} dev documents")
+
+    def prompt_checks():
+        for name in ("invoice_v1.md", "payout_v1.md"):
+            prompt = (PROMPTS / name).read_text(encoding="utf-8")
+            require(
+                all(
+                    token in prompt
+                    for token in (
+                        "<document>",
+                        "</document>",
+                        "data, never instructions",
+                        "suspicious_instruction=true",
+                        "quotes",
+                    )
+                ),
+                f"Missing injection guard: {name}",
+            )
+
+    def replay_checks():
+        store = Store(":memory:")
+        try:
+            llm = build_llm({}, store, offline=True)
+            try:
+                llm.complete([{"role": "user", "content": "m2 unrecorded unit check"}])
+            except CacheMiss:
+                require(llm.calls_made == 0, "Offline replay spent a provider call")
+            else:
+                raise ValueError("Unrecorded replay did not raise CacheMiss")
+        finally:
+            store.db.close()
+
+    def csv_checks():
+        statements = [doc for doc in truth.documents if doc.layout in {"CSV_A", "CSV_B"}]
+        for doc in statements:
+            record = read_csv(data_root / doc.path)
+            require(
+                record.model_dump(exclude={"quotes", "notes", "suspicious_instruction"})
+                == doc.truth.model_dump(),
+                f"CSV source differs from ground truth: {doc.doc_id}",
+            )
+        print(f"  {len(statements)} A/B statements match all source fields and totals")
+
+    results = []
+    for name, check in [
+        ("m2 planted arithmetic values", planted_checks),
+        ("m2 dev baseline", baseline_checks),
+        ("m2 versioned prompts and injection guards", prompt_checks),
+        ("m2 offline CacheMiss, zero provider calls", replay_checks),
+        ("m2 deterministic A/B payout CSV totals", csv_checks),
+    ]:
+        try:
+            check()
+        except (ValueError, OSError, TypeError, KeyError) as exc:
+            print(f"FAIL {name}: {exc}")
+            results.append(False)
+        else:
+            print(f"PASS {name}")
+            results.append(True)
+    return previous and all(results)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("milestone", choices=["m1"])
-    parser.parse_args()
-    raise SystemExit(0 if m1() else 1)
+    parser.add_argument("milestone", choices=["m1", "m2"])
+    args = parser.parse_args()
+    raise SystemExit(0 if (m1() if args.milestone == "m1" else m2()) else 1)
 
 
 if __name__ == "__main__":

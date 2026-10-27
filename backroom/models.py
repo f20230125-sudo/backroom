@@ -95,14 +95,14 @@ class POSRow(Record):
 
 
 class PayoutLine(Record):
-    id: str
-    business_date: date
-    gross: Decimal
-    commission: Decimal
-    vat_on_commission: Decimal
-    refunds: Decimal
-    cofunded_promo: Decimal
-    adjustments: Decimal
+    id: str | None = None
+    business_date: date | None = None
+    gross: Decimal | None = None
+    commission: Decimal | None = None
+    vat_on_commission: Decimal | None = None
+    refunds: Decimal | None = None
+    cofunded_promo: Decimal | None = None
+    adjustments: Decimal | None = None
 
 
 class PayoutStatement(Record):
@@ -119,12 +119,12 @@ class PayoutStatement(Record):
 
 
 class InvoiceLine(Record):
-    description: str
-    quantity: Decimal
-    unit: str
-    unit_price: Decimal
-    vat_rate: Decimal
-    line_net: Decimal
+    description: str | None = None
+    quantity: Decimal | None = None
+    unit: str | None = None
+    unit_price: Decimal | None = None
+    vat_rate: Decimal | None = None
+    line_net: Decimal | None = None
 
 
 class InvoiceRecord(Record):
@@ -139,7 +139,7 @@ class InvoiceRecord(Record):
     due_date: date | None = None
     currency: str | None = None
     deliver_to: str | None = None
-    is_credit_note: bool = False
+    is_credit_note: bool | None = None
     original_invoice_number: str | None = None
     lines: list[InvoiceLine] = Field(default_factory=list)
     net: Decimal | None = None

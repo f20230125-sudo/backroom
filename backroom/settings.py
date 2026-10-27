@@ -70,7 +70,13 @@ def build_llm(
 ) -> LLM:
     """The model router. `offline=True` builds a cache-only router: any cache miss raises, so a
     replay (CI, the hosted pipeline, the evaluation) can never spend quota or need a key."""
-    e = load_env() if env is None else dict(env)
+    # Offline replay must not even open a secrets file. The model name may still be
+    # selected through the process environment so custom recordings can be replayed.
+    e = (
+        ({"GEMINI_MODEL": os.environ.get("GEMINI_MODEL", DEFAULT_MODEL)} if offline else load_env())
+        if env is None
+        else dict(env)
+    )
     store = store or Store()
     model = e.get("GEMINI_MODEL") or DEFAULT_MODEL
     if offline:
