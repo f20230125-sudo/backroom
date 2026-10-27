@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-15.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-018@backroom.example>
+Date: Wed, 23 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0105 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Saffron Crate Spices Trading L.L.C.
+Supplier TRN: 100000000001503
+Supplier address: Warehouse 45, Industrial Lane 15, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0105
+Issued: 2026-09-23
+Due: 2026-10-07
+Currency: AED
+Deliver to: Central Kitchen, Al Quoz
+Net: 2,384.65
+VAT: 119.23
+Total: 2,503.88
+Items:
+Olive Oil; quantity 10 BX; unit price 86.05; VAT 5%; line net 860.50
+Plain Flour; quantity 9 BX; unit price 77.36; VAT 5%; line net 696.24
+Sunflower Oil; quantity 9 BX; unit price 33.75; VAT 5%; line net 303.75
+Red Lentils; quantity 12 BX; unit price 43.68; VAT 5%; line net 524.16
+
+Regards, Supplier accounts desk

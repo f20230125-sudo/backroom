@@ -1,0 +1,5 @@
+business_date,outlet_code,channel,gross_sales,discounts,refunds,voids,net_sales,vat_included,covers_or_orders
+2026-07-22,OUT-JBR,DINE_IN,7486.85,74.87,74.87,14.97,7322.14,348.67,109
+2026-07-22,OUT-JBR,PLATFORM_A,1475.02,44.25,0.00,0,1430.77,68.13,21
+2026-07-22,OUT-JBR,PLATFORM_B,1253.77,25.08,0.00,0,1228.69,58.51,18
+2026-07-22,OUT-JBR,PLATFORM_C,958.76,28.76,0.00,0,930.00,44.29,14

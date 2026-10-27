@@ -105,7 +105,7 @@ class Gemini:
         return {"x-goog-api-key": self._key}
 
     def chat(self, model, messages, *, max_tokens, temperature, json_mode, schema=None):
-        system ="\n\n".join(m["content"] for m in messages if m["role"] == "system")
+        system = "\n\n".join(m["content"] for m in messages if m["role"] == "system")
         contents = [
             {
                 "role": "model" if m["role"] == "assistant" else "user",

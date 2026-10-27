@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-10.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-031@backroom.example>
+Date: Tue, 22 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0118 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Dune Spring Beverages Trading L.L.C.
+Supplier TRN: 100000000001003
+Supplier address: Warehouse 40, Industrial Lane 10, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0118
+Issued: 2026-09-22
+Due: 2026-10-22
+Currency: AED
+Deliver to: Al Quoz
+Net: 2,979.24
+VAT: 148.96
+Total: 3,128.20
+Items:
+Coffee Beans; quantity 18 CS; unit price 49.14; VAT 5%; line net 884.52
+Sparkling Water; quantity 14 CS; unit price 32.48; VAT 5%; line net 454.72
+Mango Juice; quantity 8 CS; unit price 53.08; VAT 5%; line net 424.64
+Orange Juice; quantity 16 CS; unit price 75.96; VAT 5%; line net 1,215.36
+
+Regards, Supplier accounts desk

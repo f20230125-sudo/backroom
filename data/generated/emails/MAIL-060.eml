@@ -1,0 +1,10 @@
+From: Accounts desk <accounts@supplier.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-060@backroom.example>
+Date: Tue, 29 Sep 2026 10:30:00 +0400
+Subject: Holiday receiving hours
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Please confirm central kitchen receiving hours for next month.

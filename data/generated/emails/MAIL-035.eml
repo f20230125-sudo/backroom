@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-14.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-035@backroom.example>
+Date: Mon, 20 Jul 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0122 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Silver Ladle Packaging Trading L.L.C.
+Supplier TRN: 100000000001403
+Supplier address: Warehouse 44, Industrial Lane 14, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0122
+Issued: 2026-07-20
+Due: 2026-09-03
+Currency: AED
+Deliver to: Al Quoz
+Net: 3,262.48
+VAT: 163.12
+Total: 3,425.60
+Items:
+Paper Bag; quantity 11 BX; unit price 38.54; VAT 5%; line net 423.94
+Kraft Bowl; quantity 20 BX; unit price 95.20; VAT 5%; line net 1,904.00
+Paper Cup; quantity 13 BX; unit price 55.58; VAT 5%; line net 722.54
+Delivery Seal; quantity 8 BX; unit price 26.50; VAT 5%; line net 212.00
+
+Regards, Supplier accounts desk

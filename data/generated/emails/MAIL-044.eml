@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-05.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-044@backroom.example>
+Date: Mon, 21 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0131 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Copper Dhow Dry Goods
+Supplier TRN: 100000000000503
+Supplier address: Warehouse 35, Industrial Lane 5, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0131
+Issued: 2026-09-21
+Due: 2026-11-05
+Currency: AED
+Deliver to: Saffron & Salt, JBR Walk
+Net: 3,250.15
+VAT: 162.51
+Total: 3,412.66
+Items:
+Plain Flour; quantity 11 BX; unit price 79.88; VAT 5%; line net 878.68
+Basmati Rice; quantity 17 BX; unit price 68.61; VAT 5%; line net 1,166.37
+Olive Oil; quantity 11 BX; unit price 66.25; VAT 5%; line net 728.75
+Sea Salt; quantity 7 BX; unit price 68.05; VAT 5%; line net 476.35
+
+Regards, Supplier accounts desk

@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-16.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-019@backroom.example>
+Date: Wed, 30 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0106 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Salt Crate Seasonings Trading L.L.C.
+Supplier TRN: 100000000001603
+Supplier address: Warehouse 46, Industrial Lane 16, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0106
+Issued: 2026-09-30
+Due: 2026-10-30
+Currency: AED
+Deliver to: S&S DIFC
+Net: 3,381.72
+VAT: 169.09
+Total: 3,550.81
+Items:
+Sunflower Oil; quantity 17 BX; unit price 69.78; VAT 5%; line net 1,186.26
+Olive Oil; quantity 17 BX; unit price 65.71; VAT 5%; line net 1,117.07
+Chickpeas; quantity 11 BX; unit price 75.59; VAT 5%; line net 831.49
+Plain Flour; quantity 5 BX; unit price 49.38; VAT 5%; line net 246.90
+
+Regards, Supplier accounts desk

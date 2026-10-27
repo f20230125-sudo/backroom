@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-02.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-023@backroom.example>
+Date: Tue, 28 Jul 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0110 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Gulf Fresh Fish
+Supplier TRN: 100000000000203
+Supplier address: Warehouse 32, Industrial Lane 2, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0110
+Issued: 2026-07-28
+Due: 2026-09-11
+Currency: AED
+Deliver to: Al Quoz
+Net: 1,293.08
+VAT: 64.65
+Total: 1,357.73
+Items:
+Beef Mince; quantity 8 KGM; unit price 59.11; VAT 5%; line net 472.88
+Lamb Shoulder; quantity 9 KGM; unit price 26.70; VAT 5%; line net 240.30
+Prawns; quantity 5 KGM; unit price 18.75; VAT 5%; line net 93.75
+Beef Striploin; quantity 15 KGM; unit price 32.41; VAT 5%; line net 486.15
+
+Regards, Supplier accounts desk

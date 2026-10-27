@@ -1,0 +1,32 @@
+From: Accounts desk <accounts@sup-13.example>
+To: payables@saffron-salt.example
+Message-ID: <mail-016@backroom.example>
+Date: Wed, 09 Sep 2026 10:30:00 +0400
+Subject: Tax Invoice INV-0103 - details below
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+
+Dear accounts team,
+Tax Invoice
+Supplier: Palm Bloom Cleaning Trading L.L.C.
+Supplier TRN: 100000000001303
+Supplier address: Warehouse 43, Industrial Lane 13, Dubai
+Supplier emirate: DU
+Buyer: Saffron & Salt Group L.L.C.
+Buyer TRN: 100000900000003
+Invoice: INV-0103
+Issued: 2026-09-09
+Due: 2026-10-09
+Currency: AED
+Deliver to: Al Quoz
+Net: 1,537.87
+VAT: 76.89
+Total: 1,614.76
+Items:
+Degreaser; quantity 13 LTR; unit price 25.96; VAT 5%; line net 337.48
+Rinse Aid; quantity 15 LTR; unit price 14.02; VAT 5%; line net 210.30
+Surface Sanitiser; quantity 17 LTR; unit price 37.71; VAT 5%; line net 641.07
+Floor Cleaner; quantity 9 LTR; unit price 38.78; VAT 5%; line net 349.02
+
+Regards, Supplier accounts desk
