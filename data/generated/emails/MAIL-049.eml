@@ -1,32 +1,38 @@
-From: Accounts desk <accounts@sup-10.example>
+From: Accounts desk <accounts@dune-spring-beverages.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-049@backroom.example>
 Date: Sun, 26 Jul 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0136 - details below
+Subject: Tax Invoice DSB-10728/26 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Dune Spring Beverages Trading L.L.C.
-Supplier TRN: 100000000001003
-Supplier address: Warehouse 40, Industrial Lane 10, Dubai
+Supplier TRN: 102768582129903
+Supplier address: Plot 598-1770, Dubai Investments Park 2, Dubai, PO Box 8426=
+49
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0136
+Buyer TRN: 105219675843603
+Invoice: DSB-10728/26
 Issued: 2026-07-26
 Due: 2026-08-25
 Currency: AED
 Deliver to: S&S DIFC
-Net: 2,694.55
-VAT: 134.73
-Total: 2,829.28
+Net: 2,213.11
+VAT: 110.66
+Total: 2,323.77
 Items:
-Sparkling Water; quantity 10 CS; unit price 29.31; VAT 5%; line net 293.10
-Apple Juice; quantity 11 CS; unit price 78.60; VAT 5%; line net 864.60
-Lemon Drink; quantity 7 CS; unit price 76.99; VAT 5%; line net 538.93
-Orange Juice; quantity 16 CS; unit price 62.37; VAT 5%; line net 997.92
+BLACK TEA - 100 TEA BAGS; quantity 8 CS; unit price 32.75; VAT 5%; line net 2=
+62.00
+APPLE JUICE - 12 X 1L; quantity 13 CS; unit price 66.57; VAT 5%; line net 865=
+.41
+ORANGE JUICE - 12 X 1L; quantity 9 CS; unit price 57.54; VAT 5%; line net 517=
+.86
+LEMON DRINK - 12 X 1L; quantity 12 CS; unit price 47.32; VAT 5%; line net 567=
+.84
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 5930 | Email: accounts@dune-spring-beverages.example

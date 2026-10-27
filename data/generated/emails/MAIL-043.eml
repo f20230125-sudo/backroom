@@ -1,32 +1,36 @@
-From: Accounts desk <accounts@sup-04.example>
+From: Accounts desk <accounts@pearl-meadow-dairy.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-043@backroom.example>
 Date: Mon, 14 Sep 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0130 - details below
+Subject: Tax Invoice PMD-2609-0644 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Pearl Meadow Dairy
-Supplier TRN: 100000000000403
-Supplier address: Warehouse 34, Industrial Lane 4, Dubai
+Supplier TRN: 152122762110303
+Supplier address: Warehouse 70, Al Quoz Industrial Area 3, Dubai
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0130
+Buyer TRN: 105219675843603
+Invoice: PMD-2609-0644
 Issued: 2026-09-14
 Due: 2026-10-14
 Currency: AED
 Deliver to: Central Kitchen
-Net: 593.20
-VAT: 29.66
-Total: 622.86
+Net: 658.11
+VAT: 32.91
+Total: 691.02
 Items:
-Butter Portions; quantity 12 LTR; unit price 15.05; VAT 5%; line net 180.60
-Cooking Cream; quantity 17 LTR; unit price 16.73; VAT 5%; line net 284.41
-Halloumi; quantity 6 LTR; unit price 8.33; VAT 5%; line net 49.98
-Feta; quantity 11 LTR; unit price 7.11; VAT 5%; line net 78.21
+WHOLE MILK - 1L X 12; quantity 8.5 LTR; unit price 13.25; VAT 5%; line net 11=
+2.63
+PLAIN YOGHURT - 1KG TUB; quantity 19.125 KGM; unit price 12.41; VAT 5%; line =
+net 237.34
+SOFT CHEESE - 2KG TUB; quantity 20.5 KGM; unit price 8.15; VAT 5%; line net 1=
+67.08
+COOKING CREAM - 1L X 12; quantity 9.25 LTR; unit price 15.25; VAT 5%; line ne=
+t 141.06
 
 Regards, Supplier accounts desk

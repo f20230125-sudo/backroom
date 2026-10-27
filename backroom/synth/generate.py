@@ -29,6 +29,7 @@ def generate(output: Path = DATA, *, seed: int = SEED) -> GroundTruth:
     generated.mkdir(parents=True)
     scenario = build(seed)
     truth = scenario.truth
+    suppliers = {supplier.id: supplier for supplier in truth.suppliers}
 
     def write(path: str, content: bytes) -> None:
         target = output / path
@@ -40,11 +41,11 @@ def generate(output: Path = DATA, *, seed: int = SEED) -> GroundTruth:
     write("generated/ledger/ledger.csv", records_csv(scenario.ledger))
     for doc in truth.documents:
         if doc.kind.startswith("email_"):
-            content = email_bytes(doc)
+            content = email_bytes(doc, suppliers.get(doc.supplier_id))
         elif doc.kind == "payout_statement":
             content = payout_pdf(doc.truth) if doc.layout == "PDF_C" else payout_csv(doc.truth)
         else:
-            content = invoice_pdf(doc)
+            content = invoice_pdf(doc, suppliers[doc.supplier_id])
         write(doc.path, content)
     (output / "ground_truth.json").write_text(
         truth.model_dump_json(indent=2) + "\n", encoding="utf-8", newline="\n"

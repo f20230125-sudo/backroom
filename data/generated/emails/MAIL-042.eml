@@ -1,34 +1,42 @@
-From: Accounts desk <accounts@sup-03.example>
+From: Accounts desk <accounts@dune-orchard-produce.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-042@backroom.example>
 Date: Mon, 07 Sep 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0129 - details below
+Subject: Tax Invoice TI 24848 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Dune Orchard Produce
-Supplier TRN: 100000000000303
-Supplier address: Warehouse 33, Industrial Lane 3, Dubai
+Supplier TRN: 163693699346103
+Supplier address: Unit 72, Dubai Wholesale City, Dubai, PO Box 264485
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0129
+Buyer TRN: 105219675843603
+Invoice: TI 24848
 Issued: 2026-09-07
 Due: 2026-09-21
 Currency: AED
 Deliver to: Al Quoz
-Net: 830.20
-VAT: 41.51
-Total: 871.71
+Net: 617.07
+VAT: 30.85
+Total: 647.92
 Items:
-TOMATO-ROMA 5KG; quantity 20 KGM; unit price 12.01; VAT 5%; line net 240.20
-Cucumber fresh; quantity 3 KGM; unit price 6.88; VAT 5%; line net 20.64
-RED ONIONS; quantity 4 KGM; unit price 9.97; VAT 5%; line net 39.88
-LEMON FRESH; quantity 7 KGM; unit price 11.84; VAT 5%; line net 82.88
-BABY SPINACH LEAF; quantity 20 KGM; unit price 13.46; VAT 5%; line net 269.20
-AUBERGINE FRESH; quantity 20 KGM; unit price 8.87; VAT 5%; line net 177.40
+TOMATO-ROMA 5KG (5kg crate); quantity 4 KGM; unit price 5.58; VAT 5%; line ne=
+t 22.32
+Cucumber fresh (5kg crate); quantity 11.125 KGM; unit price 8.99; VAT 5%; lin=
+e net 100.01
+RED ONIONS (5kg crate); quantity 15.125 KGM; unit price 13.65; VAT 5%; line n=
+et 206.46
+LEMON FRESH (5kg crate); quantity 19.75 KGM; unit price 7.34; VAT 5%; line ne=
+t 144.97
+BABY SPINACH LEAF (5kg crate); quantity 4.125 KGM; unit price 4.10; VAT 5%; l=
+ine net 16.91
+AUBERGINE FRESH (5kg crate); quantity 16 KGM; unit price 7.90; VAT 5%; line n=
+et 126.40
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 4681 | Email: accounts@dune-orchard-produce.example
+Bank: Pearl Quay Bank | IBAN: AE198585666516547888011

@@ -1,34 +1,41 @@
-From: Accounts desk <accounts@sup-01.example>
+From: Accounts desk <accounts@gulf-fresh-produce.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-040@backroom.example>
 Date: Mon, 24 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0127 - details below
+Subject: Tax Invoice GFP/26/26372 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: GULF FRESH PRODUCE TRDG LLC
-Supplier TRN: 100000000000103
-Supplier address: Warehouse 31, Industrial Lane 1, Dubai
+Supplier TRN: 119246921016603
+Supplier address: Shed 29, Ras Al Khor Industrial Area 2, Dubai
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0127
+Buyer TRN: 105219675843603
+Invoice: GFP/26/26372
 Issued: 2026-08-24
 Due: 2026-09-23
 Currency: AED
 Deliver to: Central Kitchen
-Net: 683.53
-VAT: 34.18
-Total: 717.71
+Net: 848.84
+VAT: 42.44
+Total: 891.28
 Items:
-Roma Tomatoes; quantity 20 KGM; unit price 8.07; VAT 5%; line net 161.40
-CUCUMBER; quantity 14 KGM; unit price 14.97; VAT 5%; line net 209.58
-Onion red; quantity 13 KGM; unit price 14.58; VAT 5%; line net 189.54
-Lemons; quantity 8 KGM; unit price 6.49; VAT 5%; line net 51.92
-Spinach baby; quantity 4 KGM; unit price 8.20; VAT 5%; line net 32.80
-Eggplant; quantity 7 KGM; unit price 5.47; VAT 5%; line net 38.29
+Roma Tomatoes - 5KG CRATE; quantity 3.25 KGM; unit price 14.69; VAT 5%; line =
+net 47.74
+CUCUMBER - 5KG CRATE; quantity 15.75 KGM; unit price 13.47; VAT 5%; line net =
+212.15
+Onion red - 5KG CRATE; quantity 20.25 KGM; unit price 9.97; VAT 5%; line net =
+201.89
+Lemons - 5KG CRATE; quantity 15.75 KGM; unit price 5.52; VAT 5%; line net 86.=
+94
+Spinach baby - 5KG CRATE; quantity 13 KGM; unit price 12.71; VAT 5%; line net=
+ 165.23
+Eggplant - 5KG CRATE; quantity 10.25 KGM; unit price 13.16; VAT 5%; line net =
+134.89
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 6349 | Email: accounts@gulf-fresh-produce.example

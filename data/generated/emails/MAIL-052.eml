@@ -1,32 +1,36 @@
-From: Accounts desk <accounts@sup-13.example>
+From: Accounts desk <accounts@palm-bloom-cleaning.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-052@backroom.example>
 Date: Sun, 16 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0139 - details below
+Subject: Tax Invoice PBC 044747 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Palm Bloom Cleaning Trading L.L.C.
-Supplier TRN: 100000000001303
-Supplier address: Warehouse 43, Industrial Lane 13, Dubai
+Supplier TRN: 117307040527803
+Supplier address: Unit 80, Dubai Wholesale City, Dubai, PO Box 964421
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0139
+Buyer TRN: 105219675843603
+Invoice: PBC 044747
 Issued: 2026-08-16
 Due: 2026-09-15
 Currency: AED
 Deliver to: Central Kitchen, Al Quoz
-Net: 678.84
-VAT: 33.94
-Total: 712.78
+Net: 1,194.39
+VAT: 59.72
+Total: 1,254.11
 Items:
-Surface Sanitiser; quantity 5 LTR; unit price 35.87; VAT 5%; line net 179.35
-Rinse Aid; quantity 4 LTR; unit price 32.60; VAT 5%; line net 130.40
-Hand Soap; quantity 5 LTR; unit price 19.44; VAT 5%; line net 97.20
-Floor Cleaner; quantity 19 LTR; unit price 14.31; VAT 5%; line net 271.89
+RINSE AID - 5L CAN; quantity 14.75 LTR; unit price 24.32; VAT 5%; line net 35=
+8.72
+FLOOR CLEANER - 5L CAN; quantity 18 LTR; unit price 22.65; VAT 5%; line net 4=
+07.70
+SURFACE SANITISER - 5L CAN; quantity 11.75 LTR; unit price 30.53; VAT 5%; lin=
+e net 358.73
+DEGREASER - 5L CAN; quantity 3 LTR; unit price 23.08; VAT 5%; line net 69.24
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 4266 | Email: accounts@palm-bloom-cleaning.example

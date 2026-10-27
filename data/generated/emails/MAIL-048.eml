@@ -1,32 +1,38 @@
-From: Accounts desk <accounts@sup-09.example>
+From: Accounts desk <accounts@amber-grain-provisions.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-048@backroom.example>
 Date: Sun, 19 Jul 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0135 - details below
+Subject: Tax Invoice AGP/2026/3057 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Amber Grain Provisions Trading L.L.C.
-Supplier TRN: 100000000000903
-Supplier address: Warehouse 39, Industrial Lane 9, Dubai
+Supplier TRN: 186694723303603
+Supplier address: Shed 60, Ras Al Khor Industrial Area 2, Dubai
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0135
+Buyer TRN: 105219675843603
+Invoice: AGP/2026/3057
 Issued: 2026-07-19
 Due: 2026-08-02
 Currency: AED
 Deliver to: Central Kitchen, Al Quoz
-Net: 2,372.60
-VAT: 118.63
-Total: 2,491.23
+Net: 2,079.81
+VAT: 103.99
+Total: 2,183.80
 Items:
-Olive Oil; quantity 19 BX; unit price 31.58; VAT 5%; line net 600.02
-Black Pepper; quantity 7 BX; unit price 42.94; VAT 5%; line net 300.58
-Cumin; quantity 4 BX; unit price 55.94; VAT 5%; line net 223.76
-Plain Flour; quantity 14 BX; unit price 89.16; VAT 5%; line net 1,248.24
+Sugar (catering pack); quantity 4 BX; unit price 56.66; VAT 5%; line net 226.=
+64
+Sea Salt (catering pack); quantity 4 BX; unit price 24.10; VAT 5%; line net 9=
+6.40
+Chickpeas (catering pack); quantity 15 BX; unit price 71.93; VAT 5%; line net=
+ 1,078.95
+Black Pepper (catering pack); quantity 11 BX; unit price 61.62; VAT 5%; line =
+net 677.82
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 9082 | Email: accounts@amber-grain-provisions.example
+Bank: Pearl Quay Bank | IBAN: AE913072020379623025515

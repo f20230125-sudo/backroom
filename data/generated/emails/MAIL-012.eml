@@ -1,32 +1,38 @@
-From: Accounts desk <accounts@sup-09.example>
+From: Accounts desk <accounts@amber-grain-provisions.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-012@backroom.example>
 Date: Wed, 12 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0099 - details below
+Subject: Tax Invoice AGP/2026/3059 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Amber Grain Provisions Trading L.L.C.
-Supplier TRN: 100000000000903
-Supplier address: Warehouse 39, Industrial Lane 9, Dubai
+Supplier TRN: 186694723303603
+Supplier address: Shed 60, Ras Al Khor Industrial Area 2, Dubai
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0099
+Buyer TRN: 105219675843603
+Invoice: AGP/2026/3059
 Issued: 2026-08-12
 Due: 2026-08-26
 Currency: AED
 Deliver to: Al Quoz
-Net: 1,810.82
-VAT: 90.54
-Total: 1,901.36
+Net: 1,784.40
+VAT: 89.22
+Total: 1,873.62
 Items:
-Cumin; quantity 10 BX; unit price 70.65; VAT 5%; line net 706.50
-Basmati Rice; quantity 14 BX; unit price 37.12; VAT 5%; line net 519.68
-Sea Salt; quantity 6 BX; unit price 52.47; VAT 5%; line net 314.82
-Olive Oil; quantity 3 BX; unit price 89.94; VAT 5%; line net 269.82
+Sea Salt (catering pack); quantity 8 BX; unit price 38.54; VAT 5%; line net 3=
+08.32
+Red Lentils (catering pack); quantity 5 BX; unit price 88.73; VAT 5%; line ne=
+t 443.65
+Sunflower Oil (5l can); quantity 4.5 LTR; unit price 79.49; VAT 5%; line net =
+357.71
+Basmati Rice (catering pack); quantity 16 BX; unit price 42.17; VAT 5%; line =
+net 674.72
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 9082 | Email: accounts@amber-grain-provisions.example
+Bank: Pearl Quay Bank | IBAN: AE913072020379623025515

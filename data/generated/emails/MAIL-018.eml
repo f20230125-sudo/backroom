@@ -1,32 +1,38 @@
-From: Accounts desk <accounts@sup-15.example>
+From: Accounts desk <accounts@saffron-crate-spices.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-018@backroom.example>
 Date: Wed, 23 Sep 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0105 - details below
+Subject: Tax Invoice SCS/02066/26 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Saffron Crate Spices Trading L.L.C.
-Supplier TRN: 100000000001503
-Supplier address: Warehouse 45, Industrial Lane 15, Dubai
-Supplier emirate: DU
+Supplier TRN: 118937812429703
+Supplier address: Unit 24, Sharjah Industrial Area 6, Sharjah, PO Box 357622
+Supplier emirate: SH
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0105
+Buyer TRN: 105219675843603
+Invoice: SCS/02066/26
 Issued: 2026-09-23
 Due: 2026-10-07
 Currency: AED
 Deliver to: Central Kitchen, Al Quoz
-Net: 2,384.65
-VAT: 119.23
-Total: 2,503.88
+Net: 2,129.24
+VAT: 106.46
+Total: 2,235.70
 Items:
-Olive Oil; quantity 10 BX; unit price 86.05; VAT 5%; line net 860.50
-Plain Flour; quantity 9 BX; unit price 77.36; VAT 5%; line net 696.24
-Sunflower Oil; quantity 9 BX; unit price 33.75; VAT 5%; line net 303.75
-Red Lentils; quantity 12 BX; unit price 43.68; VAT 5%; line net 524.16
+Chickpeas (catering pack); quantity 11 BX; unit price 80.21; VAT 5%; line net=
+ 882.31
+Sunflower Oil (5l can); quantity 4.75 LTR; unit price 89.96; VAT 5%; line net=
+ 427.31
+Sea Salt (catering pack); quantity 13 BX; unit price 37.06; VAT 5%; line net =
+481.78
+Plain Flour (catering pack); quantity 8 BX; unit price 42.23; VAT 5%; line ne=
+t 337.84
 
 Regards, Supplier accounts desk
+Tel: +971 6 555 8401 | Email: accounts@saffron-crate-spices.example
+Bank: Copper Palm Bank | IBAN: AE050894084935317437262

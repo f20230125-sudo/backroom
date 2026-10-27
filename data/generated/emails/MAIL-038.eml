@@ -1,8 +1,8 @@
-From: Accounts desk <accounts@sup-17.example>
+From: Accounts desk <accounts@mirage-cup-beverages.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-038@backroom.example>
 Date: Mon, 10 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0125 - details below
+Subject: Tax Invoice MCB/2608/0317 - details below
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 MIME-Version: 1.0
@@ -10,23 +10,25 @@ MIME-Version: 1.0
 Dear accounts team,
 Tax Invoice
 Supplier: Mirage Cup Beverages Trading L.L.C.
-Supplier TRN: 100000000001703
-Supplier address: Warehouse 47, Industrial Lane 17, Dubai
+Supplier TRN: 154077129259203
+Supplier address: Warehouse 19, Al Quoz Industrial Area 3, Dubai
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0125
+Buyer TRN: 105219675843603
+Invoice: MCB/2608/0317
 Issued: 2026-08-10
 Due: 2026-09-24
 Currency: AED
 Deliver to: Al Quoz
-Net: 2,914.64
-VAT: 145.73
-Total: 3,060.37
+Net: 2,575.94
+VAT: 128.80
+Total: 2,704.74
 Items:
-Mango Juice; quantity 10 CS; unit price 75.28; VAT 5%; line net 752.80
-Apple Juice; quantity 16 CS; unit price 45.94; VAT 5%; line net 735.04
-Orange Juice; quantity 18 CS; unit price 68.20; VAT 5%; line net 1,227.60
-Sparkling Water; quantity 5 CS; unit price 39.84; VAT 5%; line net 199.20
+Apple Juice; quantity 13 CS; unit price 46.14; VAT 5%; line net 599.82
+Coffee Beans; quantity 19.125 KGM; unit price 46.59; VAT 5%; line net 891.03
+Orange Juice; quantity 18 CS; unit price 28.67; VAT 5%; line net 516.06
+Lemon Drink; quantity 11 CS; unit price 51.73; VAT 5%; line net 569.03
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 1558 | Email: accounts@mirage-cup-beverages.example
+Bank: Copper Palm Bank | IBAN: AE409677232033463852095

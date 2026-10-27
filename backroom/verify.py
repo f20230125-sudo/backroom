@@ -24,6 +24,7 @@ from backroom.models import (
     POSRow,
     money,
 )
+from backroom.synth.catalogue import VARIANTS, item_code, item_description
 from backroom.synth.generate import generate
 from backroom.synth.scenario import END, PROBLEM_COUNTS, SEED, START
 
@@ -146,12 +147,21 @@ def planted_docs(truth: GroundTruth, kind: str) -> set[str]:
 
 def tax_identifiers(truth: GroundTruth) -> None:
     require(all(TRN.fullmatch(s.trn) for s in truth.suppliers), "Invalid master supplier TRN")
+    suppliers = {supplier.id: supplier for supplier in truth.suppliers}
+    buyers = set()
     invalid = set()
     for doc in truth.documents:
         if isinstance(doc.truth, InvoiceRecord):
             record = doc.truth
+            if record.buyer_trn:
+                buyers.add(record.buyer_trn)
             if not record.supplier_trn or not TRN.fullmatch(record.supplier_trn):
                 invalid.add(doc.doc_id)
+            else:
+                require(
+                    record.supplier_trn == suppliers[doc.supplier_id].trn,
+                    "Invoice TRN differs from supplier master",
+                )
             require(
                 record.buyer_trn is None or bool(TRN.fullmatch(record.buyer_trn)),
                 "Invalid buyer TRN",
@@ -162,6 +172,10 @@ def tax_identifiers(truth: GroundTruth) -> None:
                     "Unplanted missing buyer TRN",
                 )
     require(invalid == planted_docs(truth, "TRN_INVALID"), "Invalid TRNs do not match plants")
+    require(
+        len(buyers) == 1 and buyers.isdisjoint(s.trn for s in truth.suppliers),
+        "Buyer must have one distinct legal-entity TRN",
+    )
     shared: dict[str, set[str]] = defaultdict(set)
     for supplier in truth.suppliers:
         shared[supplier.trn].add(supplier.id)
@@ -386,6 +400,12 @@ def invoice_arithmetic(truth: GroundTruth) -> None:
                 require(original.truth.issue_date <= record.issue_date, "Credit precedes original")
     for kind in ("VAT_WRONG", "LINES_NOT_SUM", "MISSING_FIELD", "CREDIT_NOTE_UNLINKED"):
         require(found[kind] == planted_docs(truth, kind), f"{kind} plants differ from facts")
+    invoice_numbering(truth)
+
+
+def invoice_numbering(truth: GroundTruth) -> None:
+    """Only planted re-sends can reuse a supplier's document number."""
+    records = [doc for doc in truth.documents if isinstance(doc.truth, InvoiceRecord)]
     identities: dict[tuple[str, str], list[str]] = defaultdict(list)
     for doc in records:
         identities[(doc.supplier_id, doc.truth.invoice_number)].append(doc.doc_id)
@@ -396,6 +416,68 @@ def invoice_arithmetic(truth: GroundTruth) -> None:
         if p.kind == "DUPLICATE_INVOICE"
     }
     require(duplicate_groups == expected, "Duplicate plants differ from facts")
+    for supplier in truth.suppliers:
+        counters = {
+            False: supplier.stationery.invoice_sequence_start,
+            True: supplier.stationery.credit_note_sequence_start,
+        }
+        originals = sorted(
+            (
+                doc
+                for doc in records
+                if doc.supplier_id == supplier.id and not doc.attachment_doc_id
+            ),
+            key=lambda doc: (doc.truth.issue_date, doc.doc_id),
+        )
+        for doc in originals:
+            record = doc.truth
+            credit = record.is_credit_note
+            template = (
+                supplier.stationery.credit_note_format
+                if credit
+                else supplier.stationery.invoice_format
+            )
+            expected_number = template.format(
+                seq=counters[credit],
+                year=record.issue_date.year,
+                yy=record.issue_date.year % 100,
+                month=record.issue_date.month,
+            )
+            require(
+                record.invoice_number == expected_number,
+                f"Supplier invoice sequence/format: {doc.doc_id}",
+            )
+            counters[credit] += 1
+
+
+def invoice_categories(truth: GroundTruth) -> None:
+    """Canonical item provenance makes category checks independent of messy printed aliases."""
+    items = {item.id: item for item in truth.items}
+    suppliers = {supplier.id: supplier for supplier in truth.suppliers}
+    for doc in truth.documents:
+        if not isinstance(doc.truth, InvoiceRecord):
+            continue
+        require(doc.supplier_id in suppliers, f"Unknown invoice supplier: {doc.doc_id}")
+        require(
+            len(doc.line_item_ids) == len(doc.truth.lines),
+            f"Missing line item provenance: {doc.doc_id}",
+        )
+        supplier = suppliers[doc.supplier_id]
+        for item_id, line in zip(doc.line_item_ids, doc.truth.lines, strict=True):
+            require(item_id in items, f"Unknown line item: {doc.doc_id}")
+            item = items[item_id]
+            require(
+                item.category == supplier.category,
+                f"Line item category differs from supplier category: {doc.doc_id} {item_id}",
+            )
+            descriptions = {
+                item_description(supplier, item, variant)
+                for variant in [item.name, *VARIANTS.get(item.id, [])]
+            }
+            require(
+                line.description in descriptions and line.unit == item.unit,
+                f"Line description/unit differs from catalogue item: {doc.doc_id} {item_id}",
+            )
 
 
 def ledger_reconciliation(root: Path, truth: GroundTruth) -> None:
@@ -499,6 +581,7 @@ def names(truth: GroundTruth) -> None:
 def document_sources(root: Path, truth: GroundTruth) -> None:
     """Read development text; held-out outputs remain sealed except byte comparison."""
     plants = {plant.doc_id: plant for plant in truth.security_plants}
+    suppliers = {supplier.id: supplier for supplier in truth.suppliers}
     require(len(plants) == 2, "Expected two security plants")
     flagged = {
         doc.doc_id
@@ -534,6 +617,23 @@ def document_sources(root: Path, truth: GroundTruth) -> None:
                 require(
                     " ".join(quote.split()) in normal,
                     f"Quote absent from source: {doc.doc_id} {key}",
+                )
+            supplier = suppliers[doc.supplier_id]
+            if supplier.stationery.show_contact:
+                require(
+                    supplier.stationery.phone in text and supplier.stationery.email in text,
+                    f"Supplier contact clutter absent: {doc.doc_id}",
+                )
+            if supplier.stationery.show_bank:
+                require(
+                    supplier.stationery.iban in text and supplier.stationery.bank_name in text,
+                    f"Supplier bank clutter absent: {doc.doc_id}",
+                )
+            if supplier.stationery.show_item_codes and doc.layout in ("L1", "L2"):
+                require(
+                    "Item code" in text
+                    and all(item_code(supplier, item_id) in text for item_id in doc.line_item_ids),
+                    f"Supplier item code column absent: {doc.doc_id}",
                 )
         elif isinstance(doc.truth, PayoutStatement):
             statement = doc.truth
@@ -589,6 +689,11 @@ def check_dataset(root: Path) -> list[tuple[str, bool, str]]:
             lambda: payout_arithmetic(root, truth),
         ),
         ("invoice arithmetic and document problem facts", lambda: invoice_arithmetic(truth)),
+        (
+            "supplier invoice sequences, unique except planted duplicates",
+            lambda: invoice_numbering(truth),
+        ),
+        ("every invoice line matches its supplier category", lambda: invoice_categories(truth)),
         (
             "ledger receipts, bills and sales discrepancies",
             lambda: ledger_reconciliation(root, truth),

@@ -1,8 +1,8 @@
-From: Accounts desk <accounts@sup-05.example>
+From: Accounts desk <accounts@copper-dhow-dry-goods.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-044@backroom.example>
 Date: Mon, 21 Sep 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0131 - details below
+Subject: Tax Invoice CD-2609-6960 - details below
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: 7bit
 MIME-Version: 1.0
@@ -10,23 +10,25 @@ MIME-Version: 1.0
 Dear accounts team,
 Tax Invoice
 Supplier: Copper Dhow Dry Goods
-Supplier TRN: 100000000000503
-Supplier address: Warehouse 35, Industrial Lane 5, Dubai
+Supplier TRN: 174099721181003
+Supplier address: Warehouse 35, Umm Ramool, Dubai
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0131
+Buyer TRN: 105219675843603
+Invoice: CD-2609-6960
 Issued: 2026-09-21
 Due: 2026-11-05
 Currency: AED
 Deliver to: Saffron & Salt, JBR Walk
-Net: 3,250.15
-VAT: 162.51
-Total: 3,412.66
+Net: 3,832.73
+VAT: 191.64
+Total: 4,024.37
 Items:
-Plain Flour; quantity 11 BX; unit price 79.88; VAT 5%; line net 878.68
-Basmati Rice; quantity 17 BX; unit price 68.61; VAT 5%; line net 1,166.37
-Olive Oil; quantity 11 BX; unit price 66.25; VAT 5%; line net 728.75
-Sea Salt; quantity 7 BX; unit price 68.05; VAT 5%; line net 476.35
+Cumin; quantity 5 BX; unit price 51.89; VAT 5%; line net 259.45
+Basmati Rice; quantity 17 BX; unit price 83.69; VAT 5%; line net 1,422.73
+Olive Oil; quantity 12.75 LTR; unit price 46.60; VAT 5%; line net 594.15
+Sea Salt; quantity 20 BX; unit price 77.82; VAT 5%; line net 1,556.40
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 4724 | Email: accounts@copper-dhow-dry-goods.example
+Bank: Copper Palm Bank | IBAN: AE035512678902195610528

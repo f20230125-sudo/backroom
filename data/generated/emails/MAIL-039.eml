@@ -1,32 +1,39 @@
-From: Accounts desk <accounts@sup-18.example>
+From: Accounts desk <accounts@mirage-cap-supplies.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-039@backroom.example>
 Date: Mon, 17 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0126 - details below
+Subject: Tax Invoice MCS-INV-24190 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Mirage Cap Supplies Trading L.L.C.
-Supplier TRN: 100000000001703
-Supplier address: Warehouse 48, Industrial Lane 18, Sharjah
-Supplier emirate: SH
+Supplier TRN: 154077129259203
+Supplier address: Store 34, Al Aweer Fruit and Vegetable Market, Dubai, PO Bo=
+x 593940
+Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0126
+Buyer TRN: 105219675843603
+Invoice: MCS-INV-24190
 Issued: 2026-08-17
 Due: 2026-08-31
 Currency: AED
 Deliver to: DIFC
-Net: 4,406.38
-VAT: 220.32
-Total: 4,626.70
+Net: 3,547.97
+VAT: 177.40
+Total: 3,725.37
 Items:
-Kraft Bowl Lid; quantity 18 BX; unit price 81.35; VAT 5%; line net 1,464.30
-Paper Bag; quantity 6 BX; unit price 86.39; VAT 5%; line net 518.34
-Delivery Seal; quantity 18 BX; unit price 40.23; VAT 5%; line net 724.14
-Cutlery Set; quantity 20 BX; unit price 84.98; VAT 5%; line net 1,699.60
+Paper Bag (box 500 pcs); quantity 13 BX; unit price 35.76; VAT 5%; line net 4=
+64.88
+Foil Tray (box 500 pcs); quantity 19 BX; unit price 51.00; VAT 5%; line net 9=
+69.00
+Kraft Bowl Lid (box 500 pcs); quantity 17 BX; unit price 97.92; VAT 5%; line =
+net 1,664.64
+Paper Cup (box 500 pcs); quantity 5 BX; unit price 89.89; VAT 5%; line net 44=
+9.45
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 2338 | Email: accounts@mirage-cap-supplies.example
+Bank: Copper Palm Bank | IBAN: AE416803678502498401888

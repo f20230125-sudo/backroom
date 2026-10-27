@@ -1,32 +1,37 @@
-From: Accounts desk <accounts@sup-16.example>
+From: Accounts desk <accounts@salt-crate-seasonings.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-037@backroom.example>
 Date: Mon, 03 Aug 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0124 - details below
+Subject: Tax Invoice SCT-028840 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Salt Crate Seasonings Trading L.L.C.
-Supplier TRN: 100000000001603
-Supplier address: Warehouse 46, Industrial Lane 16, Dubai
-Supplier emirate: DU
+Supplier TRN: 186484934482603
+Supplier address: Warehouse 21, Sharjah Industrial Area 15, Sharjah, PO Box 9=
+75843
+Supplier emirate: SH
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0124
+Buyer TRN: 105219675843603
+Invoice: SCT-028840
 Issued: 2026-08-03
 Due: 2026-09-02
 Currency: AED
 Deliver to: Central Kitchen, Al Quoz
-Net: 2,415.62
-VAT: 120.78
-Total: 2,536.40
+Net: 1,335.29
+VAT: 66.76
+Total: 1,402.05
 Items:
-Basmati Rice; quantity 10 BX; unit price 73.14; VAT 5%; line net 731.40
-Red Lentils; quantity 4 BX; unit price 71.39; VAT 5%; line net 285.56
-Olive Oil; quantity 8 BX; unit price 62.87; VAT 5%; line net 502.96
-Black Pepper; quantity 13 BX; unit price 68.90; VAT 5%; line net 895.70
+SUGAR - CATERING PACK; quantity 5 BX; unit price 59.62; VAT 5%; line net 298.=
+10
+CHICKPEAS - CATERING PACK; quantity 20 BX; unit price 28.50; VAT 5%; line net=
+ 570.00
+BASMATI RICE - CATERING PACK; quantity 3 BX; unit price 36.93; VAT 5%; line n=
+et 110.79
+PLAIN FLOUR - CATERING PACK; quantity 11 BX; unit price 32.40; VAT 5%; line n=
+et 356.40
 
 Regards, Supplier accounts desk

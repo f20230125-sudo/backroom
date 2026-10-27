@@ -1,32 +1,35 @@
-From: Accounts desk <accounts@sup-14.example>
+From: Accounts desk <accounts@silver-ladle-packaging.example>
 To: payables@saffron-salt.example
 Message-ID: <mail-017@backroom.example>
 Date: Wed, 16 Sep 2026 10:30:00 +0400
-Subject: Tax Invoice INV-0104 - details below
+Subject: Tax Invoice SLP-26-70431 - details below
 Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
 
 Dear accounts team,
 Tax Invoice
 Supplier: Silver Ladle Packaging Trading L.L.C.
-Supplier TRN: 100000000001403
-Supplier address: Warehouse 44, Industrial Lane 14, Dubai
+Supplier TRN: 174531088631603
+Supplier address: Plot 598-1795, Dubai Investments Park 2, Dubai, PO Box 9458=
+53
 Supplier emirate: DU
 Buyer: Saffron & Salt Group L.L.C.
-Buyer TRN: 100000900000003
-Invoice: INV-0104
+Buyer TRN: 105219675843603
+Invoice: SLP-26-70431
 Issued: 2026-09-16
 Due: 2026-10-31
 Currency: AED
 Deliver to: Central Kitchen
-Net: 3,005.05
-VAT: 150.25
-Total: 3,155.30
+Net: 2,161.28
+VAT: 108.06
+Total: 2,269.34
 Items:
-Cutlery Set; quantity 15 BX; unit price 99.79; VAT 5%; line net 1,496.85
-Kraft Bowl Lid; quantity 11 BX; unit price 62.04; VAT 5%; line net 682.44
-Foil Tray; quantity 6 BX; unit price 67.16; VAT 5%; line net 402.96
-Napkin; quantity 5 BX; unit price 84.56; VAT 5%; line net 422.80
+Cutlery Set; quantity 7 BX; unit price 83.20; VAT 5%; line net 582.40
+Kraft Bowl; quantity 6 BX; unit price 36.84; VAT 5%; line net 221.04
+Kraft Bowl Lid; quantity 20 BX; unit price 52.27; VAT 5%; line net 1,045.40
+Paper Bag; quantity 4 BX; unit price 78.11; VAT 5%; line net 312.44
 
 Regards, Supplier accounts desk
+Tel: +971 4 555 4673 | Email: accounts@silver-ladle-packaging.example
+Bank: Dune Ledger Bank | IBAN: AE440158388461968765673

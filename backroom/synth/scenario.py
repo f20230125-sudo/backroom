@@ -27,12 +27,12 @@ from backroom.models import (
 from backroom.synth.catalogue import (
     ACCOUNTS,
     BUYER_NAME,
-    BUYER_TRN,
     ITEMS,
     OUTLETS,
     PLATFORMS,
-    SUPPLIERS,
     VARIANTS,
+    item_description,
+    masters,
 )
 
 SEED = 20261027
@@ -71,12 +71,13 @@ def pos_path(row: POSRow) -> str:
 def build(seed: int = SEED) -> Scenario:
     # Synthetic sampling only, never security material; renderers make no random decisions.
     rng = random.Random(seed)  # noqa: S311
-    suppliers = [s.model_copy(deep=True) for s in SUPPLIERS]
+    suppliers, buyer_trn = masters(seed)
     suppliers[17].trn = suppliers[16].trn
     documents: list[Document] = []
     problems: list[Problem] = []
     security: list[SecurityPlant] = []
     uses: dict[str, int] = defaultdict(int)
+    invoice_items: dict[str, list[str]] = {}
 
     def alias(entity_id: str, fallback: str) -> str:
         variants = VARIANTS.get(entity_id, [fallback])
@@ -237,11 +238,14 @@ def build(seed: int = SEED) -> Scenario:
         )
         lines = []
         for item in chosen:
-            quantity = Decimal(rng.randint(3, 20)) * (-1 if credit else 1)
+            quantity = Decimal(rng.randint(3, 20))
+            if item.unit in ("KGM", "LTR"):
+                quantity += Decimal(rng.choice([0, 125, 250, 500, 750])) / 1000
+            quantity *= -1 if credit else 1
             price = Decimal(rng.randint(int(item.price_min * 100), int(item.price_max * 100))) / 100
             lines.append(
                 InvoiceLine(
-                    description=alias(item.id, item.name),
+                    description=item_description(supplier, item, alias(item.id, item.name)),
                     quantity=quantity,
                     unit=item.unit,
                     unit_price=price,
@@ -256,7 +260,7 @@ def build(seed: int = SEED) -> Scenario:
             supplier_address=supplier.address.street,
             supplier_address_emirate=supplier.address.emirate,
             buyer_name=BUYER_NAME,
-            buyer_trn=BUYER_TRN,
+            buyer_trn=buyer_trn,
             invoice_number=f"{'CN' if credit else 'INV'}-{index + 1:04}",
             issue_date=day,
             due_date=day + timedelta(days=supplier.payment_terms_days),
@@ -265,13 +269,14 @@ def build(seed: int = SEED) -> Scenario:
                 "OUT-AQK" if index % 5 else OUTLETS[index % 2].id, "Central Kitchen, Al Quoz"
             ),
             is_credit_note=credit,
-            original_invoice_number="INV-0006" if credit else None,
+            original_invoice_number=None,
             lines=lines,
             net=net,
             vat=money(net * Decimal("0.05")),
             total=ZERO,
         )
         record.total = record.net + record.vat
+        invoice_items[record.invoice_number] = [item.id for item in chosen]
         return record, supplier.id
 
     invoice_docs: list[Document] = []
@@ -287,6 +292,7 @@ def build(seed: int = SEED) -> Scenario:
             layout=layout,
             held_out=layout == "L4",
             supplier_id=supplier_id,
+            line_item_ids=invoice_items[record.invoice_number],
             truth=record,
         )
         invoice_docs.append(doc)
@@ -365,6 +371,9 @@ def build(seed: int = SEED) -> Scenario:
                 held_out=False,
                 supplier_id=supplier_id,
                 attachment_doc_id=invoice_docs[index].doc_id if index < 3 else None,
+                line_item_ids=original.line_item_ids
+                if index < 3
+                else invoice_items[record.invoice_number],
                 truth=record,
             )
             if index < 3:
@@ -384,6 +393,7 @@ def build(seed: int = SEED) -> Scenario:
                 layout=layout,
                 held_out=layout == "E2",
                 supplier_id=supplier_id,
+                line_item_ids=invoice_items[record.invoice_number],
                 truth=record,
             )
             if index == 10:
@@ -417,6 +427,42 @@ def build(seed: int = SEED) -> Scenario:
         documents.append(doc)
         if isinstance(doc.truth, InvoiceRecord) and index >= 3:
             invoice_docs.append(doc)
+
+    # Number by issue date, using a supplier's own independent invoice and credit sequences.
+    # Temporary identities above keep valid credit links and re-sent copies intact on renumbering.
+    numbers: dict[tuple[str, str], str] = {}
+    for supplier in suppliers:
+        counters = {
+            False: supplier.stationery.invoice_sequence_start,
+            True: supplier.stationery.credit_note_sequence_start,
+        }
+        for doc in sorted(
+            (doc for doc in invoice_docs if doc.supplier_id == supplier.id),
+            key=lambda doc: (doc.truth.issue_date, doc.doc_id),
+        ):
+            record = doc.truth
+            credit = record.is_credit_note
+            template = (
+                supplier.stationery.credit_note_format
+                if credit
+                else supplier.stationery.invoice_format
+            )
+            numbers[(supplier.id, record.invoice_number)] = template.format(
+                seq=counters[credit],
+                year=record.issue_date.year,
+                yy=record.issue_date.year % 100,
+                month=record.issue_date.month,
+            )
+            counters[credit] += 1
+    for doc in documents:
+        if isinstance(doc.truth, InvoiceRecord):
+            record = doc.truth
+            if record.original_invoice_number:
+                record.original_invoice_number = numbers.get(
+                    (doc.supplier_id, record.original_invoice_number),
+                    record.original_invoice_number,
+                )
+            record.invoice_number = numbers[(doc.supplier_id, record.invoice_number)]
 
     ledger: list[LedgerLine] = []
     ledger_path = "generated/ledger/ledger.csv"
@@ -500,7 +546,14 @@ def build(seed: int = SEED) -> Scenario:
     for canonical_id, spellings in VARIANTS.items():
         entity_type = {"OUT": "outlet", "SUP": "supplier", "ITM": "item"}[canonical_id[:3]]
         for spelling in spellings:
-            first = next((doc.doc_id for doc in documents if spelling in _names(doc)), None)
+            first = next(
+                (
+                    doc.doc_id
+                    for doc in documents
+                    if any(spelling in value for value in _names(doc))
+                ),
+                None,
+            )
             if first is None:
                 raise ValueError(f"Unused name variant: {canonical_id} {spelling}")
             variants.append(

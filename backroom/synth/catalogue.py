@@ -1,11 +1,12 @@
 """Invented Dubai trading partners and AED wholesale price bands, never real businesses."""
 
+import random
 from decimal import Decimal
 
-from backroom.models import Account, Address, Item, Outlet, Platform, Supplier
+from backroom.models import Account, Address, Item, Outlet, Platform, Supplier, SupplierStationery
 
+SEED = 20261027
 BUYER_NAME = "Saffron & Salt Group L.L.C."
-BUYER_TRN = "100000900000003"
 OUTLETS = [
     Outlet(
         id="OUT-JBR",
@@ -28,13 +29,13 @@ OUTLETS = [
 ]
 _SUPPLIERS = [
     ("Gulf Fresh Produce", "produce"),
-    ("Gulf Fresh Fish", "meat"),
+    ("Gulf Fresh Fish", "seafood"),
     ("Dune Orchard Produce", "produce"),
     ("Pearl Meadow Dairy", "dairy"),
     ("Copper Dhow Dry Goods", "dry"),
     ("Al Quoz Pantry", "dry"),
     ("Crescent Pasture Meats", "meat"),
-    ("Coral Basket Seafood", "meat"),
+    ("Coral Basket Seafood", "seafood"),
     ("Amber Grain Provisions", "dry"),
     ("Dune Spring Beverages", "beverages"),
     ("Dune Springs Packaging", "packaging"),
@@ -46,22 +47,134 @@ _SUPPLIERS = [
     ("Mirage Cup Beverages", "beverages"),
     ("Mirage Cap Supplies", "packaging"),
 ]
-SUPPLIERS = [
-    Supplier(
-        id=f"SUP-{i:02}",
-        legal_name=f"{name} Trading L.L.C.",
-        trade_name=name,
-        address=Address(
-            street=f"Warehouse {i + 30}, Industrial Lane {i}, "
-            + ("Sharjah" if i % 6 == 0 else "Dubai"),
-            emirate="SH" if i % 6 == 0 else "DU",
-        ),
-        trn=f"1{i:012}03",
-        payment_terms_days=(14, 30, 45)[i % 3],
-        category=category,
-    )
-    for i, (name, category) in enumerate(_SUPPLIERS, 1)
+_ADDRESSES = [
+    ("Warehouse {n}, Al Quoz Industrial Area 3, Dubai", "DU"),
+    ("Plot 598-{plot}, Dubai Investments Park 2, Dubai", "DU"),
+    ("Shed {n}, Ras Al Khor Industrial Area 2, Dubai", "DU"),
+    ("Unit {n}, Dubai Wholesale City, Dubai", "DU"),
+    ("Store {n}, Al Aweer Fruit and Vegetable Market, Dubai", "DU"),
+    ("Warehouse {n}, Umm Ramool, Dubai", "DU"),
+    ("Unit {n}, Sharjah Industrial Area 6, Sharjah", "SH"),
+    ("Warehouse {n}, Sharjah Industrial Area 15, Sharjah", "SH"),
+    ("Shed {n}, Sharjah Industrial Area 10, Sharjah", "SH"),
 ]
+# Each trader has its own stationery, including independent invoice/credit counters.
+_NUMBER_FORMATS = [
+    "GFP/{yy}/{seq:05}",
+    "GFF-{year}-{seq:05}",
+    "TI {seq:05}",
+    "PMD-{yy}{month:02}-{seq:04}",
+    "CD-{yy}{month:02}-{seq:04}",
+    "AQP/INV/{seq:06}",
+    "CPM {yy}/{seq:05}",
+    "CBS-{seq:06}",
+    "AGP/{year}/{seq:04}",
+    "DSB-{seq:05}/{yy}",
+    "DSP/INV-{seq:05}",
+    "PLL-{year}/{seq:04}",
+    "PBC {seq:06}",
+    "SLP-{yy}-{seq:05}",
+    "SCS/{seq:05}/{yy}",
+    "SCT-{seq:06}",
+    "MCB/{yy}{month:02}/{seq:04}",
+    "MCS-INV-{seq:05}",
+]
+
+
+def masters(seed: int = SEED) -> tuple[list[Supplier], str]:
+    """Keep master sampling independent of sales and guarantee legal-entity TRN uniqueness."""
+    rng = random.Random(seed)  # noqa: S311 -- synthetic stationery, never credentials.
+    used: set[str] = set()
+
+    def trn() -> str:
+        while True:
+            value = f"1{rng.randrange(10**12):012}03"
+            if value not in used:
+                used.add(value)
+                return value
+
+    buyer_trn = trn()
+    # Fifteen Dubai suppliers plus three in Sharjah, shuffled rather than cycling locations.
+    addresses = _ADDRESSES[:6] * 2 + _ADDRESSES[:3] + _ADDRESSES[6:]
+    rng.shuffle(addresses)
+    suppliers = []
+    for i, ((name, category), (template, emirate), number_format) in enumerate(
+        zip(_SUPPLIERS, addresses, _NUMBER_FORMATS, strict=True), 1
+    ):
+        street = template.format(n=rng.randint(3, 86), plot=rng.randint(1000, 1999))
+        if rng.choice([True, False]):
+            street += f", PO Box {rng.randint(10000, 999999)}"
+        prefix = "".join(word[0] for word in name.split())
+        suppliers.append(
+            Supplier(
+                id=f"SUP-{i:02}",
+                legal_name=f"{name} Trading L.L.C.",
+                trade_name=name,
+                address=Address(street=street, emirate=emirate),
+                trn=trn(),
+                payment_terms_days=(14, 30, 45)[i % 3],
+                category=category,
+                stationery=SupplierStationery(
+                    invoice_format=number_format,
+                    credit_note_format=f"CN-{prefix}/{{yy}}/{{seq:04}}",
+                    invoice_sequence_start=rng.randint(
+                        73, 9200 if "seq:04" in number_format else 78000
+                    ),
+                    credit_note_sequence_start=rng.randint(8, 900),
+                    description_style=("sku", "plain", "pack")[(i - 1) % 3],
+                    item_code_prefix=prefix,
+                    show_item_codes=i % 3 != 0,
+                    phone=f"+971 {6 if emirate == 'SH' else 4} 555 {rng.randint(1000, 9999)}",
+                    email=f"accounts@{name.lower().replace(' ', '-')}.example",
+                    bank_name=rng.choice(
+                        ["Dune Ledger Bank", "Pearl Quay Bank", "Copper Palm Bank"]
+                    ),
+                    iban="AE" + "".join(str(rng.randrange(10)) for _ in range(21)),
+                    show_contact=i % 4 != 0,
+                    show_bank=i % 3 != 1,
+                ),
+            )
+        )
+    return suppliers, buyer_trn
+
+
+def item_code(supplier: Supplier, item_id: str) -> str:
+    return f"{supplier.stationery.item_code_prefix}-{item_id[4:]}"
+
+
+def item_description(supplier: Supplier, item: Item, variant: str) -> str:
+    """Variants stay verbatim on plain stationery; SKU stationery adds trade pack detail."""
+    pack = {
+        "produce": "5KG CRATE",
+        "meat": "CHILLED / KG",
+        "seafood": "FROZEN / KG",
+        "dairy": "1L X 12",
+        "dry": "CATERING PACK",
+        "beverages": "12 X 1L",
+        "packaging": "BOX 500 PCS",
+        "cleaning": "5L CAN",
+        "linen": "1 PC",
+    }[item.category]
+    pack = {
+        "Butter Portions": "100 X 10G",
+        "Soft Cheese": "2KG TUB",
+        "Feta": "4KG TIN",
+        "Halloumi": "1KG PACK",
+        "Plain Yoghurt": "1KG TUB",
+        "Olive Oil": "5L TIN",
+        "Sunflower Oil": "5L CAN",
+        "Black Tea": "100 TEA BAGS",
+        "Coffee Beans": "1KG BAG",
+    }.get(item.name, pack)
+    if supplier.stationery.description_style == "sku":
+        label = variant if item.id in VARIANTS else variant.upper()
+        return f"{label} - {pack}"
+    if supplier.stationery.description_style == "pack":
+        return f"{variant} ({pack.lower()})"
+    return variant
+
+
+SUPPLIERS, BUYER_TRN = masters()
 PLATFORMS = [
     Platform(id=p, name=f"Platform {p}", commission_rate=Decimal(rate))
     for p, rate in (("A", "0.25"), ("B", "0.22"), ("C", "0.28"))
@@ -104,13 +217,12 @@ _BASKETS = {
             "Chicken Breast",
             "Lamb Shoulder",
             "Beef Mince",
-            "White Fish Fillet",
-            "Prawns",
             "Chicken Thigh",
             "Lamb Mince",
             "Beef Striploin",
         ],
     ),
+    "seafood": ("KGM", "18", "65", ["White Fish Fillet", "Prawns"]),
     "dairy": (
         "LTR",
         "6",
@@ -193,7 +305,16 @@ ITEMS = [
         id=f"ITM-{i:03}",
         name=name,
         category=category,
-        unit=unit,
+        unit={
+            "Butter Portions": "BX",
+            "Soft Cheese": "KGM",
+            "Feta": "KGM",
+            "Halloumi": "KGM",
+            "Plain Yoghurt": "KGM",
+            "Olive Oil": "LTR",
+            "Sunflower Oil": "LTR",
+            "Coffee Beans": "KGM",
+        }.get(name, unit),
         price_min=Decimal(low),
         price_max=Decimal(high),
     )
