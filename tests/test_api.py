@@ -399,6 +399,17 @@ def test_ask_prefers_stored_answer_over_eval_snapshot(app, client):
     assert len(client.get("/api/ask/recorded").json["items"]) == 35
 
 
+def test_ask_stored_answer_matching_evaluation_keeps_its_score(app, client):
+    scored = client.get("/api/ask/recorded").json["evaluation"]["questions"][0]
+    with connect(app.config["DATABASE"]) as repo:
+        payload = {**scored["result"], "question": scored["question"]}
+        repo.upsert("ask_log", {"id": scored["id"], "payload": dumps(payload)})
+        repo.commit()
+    row = client.get("/api/ask/recorded").json["items"][0]
+    assert row["answer_source"] == "ask_log"
+    assert row["state"] == row["evaluation_state"] == scored["state"]
+
+
 def test_shell_deep_links_static_assets_and_json_404(app, tmp_path):
     public = tmp_path / "public"
     public.mkdir()

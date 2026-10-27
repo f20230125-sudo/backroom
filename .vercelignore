@@ -1,0 +1,15 @@
+.local
+.venv
+.codex-runs
+.agents
+.claude
+skills-lock.json
+.env
+.env.*
+!.env.example
+**/node_modules
+**/__pycache__
+.pytest_cache
+.ruff_cache
+web/test-results
+web/playwright-report

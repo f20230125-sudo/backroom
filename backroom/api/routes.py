@@ -225,7 +225,9 @@ def recorded():
     for case in gold["questions"]:
         scored = evaluated.get(case["id"], {})
         result = stored.get(case["id"]) or scored.get("result")
-        same_snapshot = result == scored.get("result")
+        # Stored rows also carry their own id and question; the evaluated answer does not.
+        answer = {k: v for k, v in (result or {}).items() if k not in {"id", "question"}}
+        same_snapshot = answer == scored.get("result")
         state = scored.get("state", "not run")
         if result and not same_snapshot:
             state = (
