@@ -24,6 +24,7 @@ from backroom.extract.validate import (
 from backroom.inputs import offline_llm, recorded_results
 from backroom.models import InvoiceRecord, PayoutStatement
 from eval.m3 import evaluate_m3
+from eval.m4 import evaluate_m4
 
 
 def equal(left, right):
@@ -153,6 +154,8 @@ def evaluate(
     output: Path = ROOT / "eval/results.json",
     llm=None,
     include_held_out: bool = True,
+    repo=None,
+    database: Path = ROOT / ".local/backroom.sqlite",
 ) -> dict:
     owned = llm is None
     llm = llm if llm is not None else offline_llm()
@@ -286,6 +289,14 @@ def evaluate(
         },
         "security": security,
         **evaluate_m3(manifest, data_root, results=extracted, llm=llm),
+        **(
+            evaluate_m4(repo=repo, database=database)
+            if manifest.get("outlets")
+            else {
+                "ask": {"state": "not run", "reason": "No pipeline masters"},
+                "hours_saved": {"state": "not run", "reason": "No pipeline run"},
+            }
+        ),
     }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
@@ -300,13 +311,14 @@ def evaluate(
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--offline", action="store_true", help="Offline is always the default")
+    parser.add_argument("--database", type=Path, default=ROOT / ".local/backroom.sqlite")
     parser.add_argument(
         "--exclude-held-out",
         action="store_true",
         help="Development safeguard: do not open any L4/E2 sources",
     )
     args = parser.parse_args()
-    evaluate(include_held_out=not args.exclude_held_out)
+    evaluate(include_held_out=not args.exclude_held_out, database=args.database)
 
 
 if __name__ == "__main__":

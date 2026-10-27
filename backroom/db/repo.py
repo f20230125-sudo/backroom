@@ -8,6 +8,26 @@ from pathlib import Path
 from backroom import ROOT
 
 TABLES = {
+    "invoice_facts": (
+        "document_id",
+        "supplier",
+        "outlet",
+        "issue_date",
+        "invoice_number",
+        "supplier_name",
+        "total_cents",
+        "duplicate_of",
+    ),
+    "invoice_lines": (
+        "document_id",
+        "line_no",
+        "description",
+        "item_id",
+        "category",
+        "unit",
+        "quantity",
+        "net_cents",
+    ),
     "outlets": ("id", "name", "payload"),
     "suppliers": ("id", "legal_name", "trade_name", "trn", "payload"),
     "items": ("id", "name", "payload"),
@@ -39,6 +59,9 @@ TABLES = {
         "gross_sales",
         "net_sales",
         "refunds",
+        "net_cents",
+        "gross_cents",
+        "orders",
         "payload",
     ),
     "payout_statements": (
@@ -49,11 +72,34 @@ TABLES = {
         "week_end",
         "paid_date",
         "net_payout",
+        "net_cents",
         "payload",
     ),
     "payout_lines": ("statement_id", "line_no", "business_date", "payload"),
-    "ledger_lines": ("id", "date", "source", "contact", "reference", "debit", "credit", "payload"),
-    "exceptions": ("id", "kind", "outlet", "date_or_week", "refs", "amount", "message", "payload"),
+    "ledger_lines": (
+        "id",
+        "date",
+        "source",
+        "contact",
+        "reference",
+        "debit",
+        "credit",
+        "payload",
+        "receipt_cents",
+    ),
+    "exceptions": (
+        "id",
+        "kind",
+        "outlet",
+        "date_or_week",
+        "refs",
+        "amount",
+        "message",
+        "payload",
+        "date_start",
+        "date_end",
+        "amount_cents",
+    ),
     "einvoice_findings": ("id", "record_type", "record_id", "rule", "message", "payload"),
     "drafts": ("id", "payload"),
     "briefs": ("id", "payload"),
@@ -124,6 +170,8 @@ class Repo:
     def clear_loaded(self):
         # Name approvals and audit history survive rebuilds.
         for table in (
+            "invoice_lines",
+            "invoice_facts",
             "extraction_issues",
             "review_queue",
             "extractions",
@@ -135,7 +183,6 @@ class Repo:
             "exceptions",
             "einvoice_findings",
             "drafts",
-            "briefs",
         ):
             self.execute(f"DELETE FROM {table}")  # noqa: S608 -- static allowlist
 

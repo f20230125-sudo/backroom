@@ -1,4 +1,649 @@
 {
+  "ask": {
+    "in_scope": {
+      "correct": 0,
+      "not run": 30,
+      "refused": 0,
+      "total": 30,
+      "wrong": 0
+    },
+    "out_of_scope": {
+      "correct": 0,
+      "not run": 0,
+      "refused": 5,
+      "total": 5,
+      "wrong": 0
+    },
+    "questions": [
+      {
+        "expected_numbers": [
+          "434657.34"
+        ],
+        "id": "ask-01",
+        "in_scope": true,
+        "question": "What were net sales at JBR in July?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "98795.63"
+        ],
+        "id": "ask-02",
+        "in_scope": true,
+        "question": "What were net sales at DIFC in August through Platform A?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "50695.85"
+        ],
+        "id": "ask-03",
+        "in_scope": true,
+        "question": "What were net sales at JBR in September through Platform C?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "0.00"
+        ],
+        "id": "ask-04",
+        "in_scope": true,
+        "question": "What were net sales at AQK in July?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "434657.34",
+          "559208.39"
+        ],
+        "id": "ask-05",
+        "in_scope": true,
+        "question": "Compare JBR net sales in July and August. What are the two totals?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "12808.85"
+        ],
+        "id": "ask-06",
+        "in_scope": true,
+        "question": "How much did Platform B pay us for JBR in week 34?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "12559.62"
+        ],
+        "id": "ask-07",
+        "in_scope": true,
+        "question": "How much did Platform A pay us for DIFC in week 30?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "8892.26"
+        ],
+        "id": "ask-08",
+        "in_scope": true,
+        "question": "How much did Platform C pay us for JBR in week 36?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "13685.84"
+        ],
+        "id": "ask-09",
+        "in_scope": true,
+        "question": "How much did Platform B pay us for DIFC in week 32?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "12548.84"
+        ],
+        "id": "ask-10",
+        "in_scope": true,
+        "question": "How much did Platform A pay us for JBR in week 38?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "0.00",
+          "434657.34",
+          "0.00"
+        ],
+        "id": "ask-11",
+        "in_scope": true,
+        "question": "Give me food invoice cost and food cost percent at JBR in July.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "0.00",
+          "670193.37",
+          "0.00"
+        ],
+        "id": "ask-12",
+        "in_scope": true,
+        "question": "Give me food invoice cost and food cost percent at DIFC in August.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "20233.21",
+          "0.00"
+        ],
+        "id": "ask-13",
+        "in_scope": true,
+        "question": "Give me food invoice cost and food cost percent at AQK in September.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "5373.53",
+          "526083.06",
+          "1.02"
+        ],
+        "id": "ask-14",
+        "in_scope": true,
+        "question": "Give me food invoice cost and food cost percent at JBR in September.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "0.00",
+          "518529.96",
+          "0.00",
+          "0.00",
+          "670193.37",
+          "0.00"
+        ],
+        "id": "ask-15",
+        "in_scope": true,
+        "question": "Why did food cost move at DIFC between July and August? Compare invoice cost, sales and percentages.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "5"
+        ],
+        "id": "ask-16",
+        "in_scope": true,
+        "question": "How many exceptions did we flag in July at JBR?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "0"
+        ],
+        "id": "ask-17",
+        "in_scope": true,
+        "question": "How many payout short did we flag in August?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "0"
+        ],
+        "id": "ask-18",
+        "in_scope": true,
+        "question": "How many vat wrong did we flag in September?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "1"
+        ],
+        "id": "ask-19",
+        "in_scope": true,
+        "question": "How many exceptions did we flag in August at AQK?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "0"
+        ],
+        "id": "ask-20",
+        "in_scope": true,
+        "question": "How many pos ledger mismatch did we flag in July at DIFC?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "2095.15"
+        ],
+        "id": "ask-21",
+        "in_scope": true,
+        "question": "How much did we spend with Gulf Fresh Produce in July, including VAT?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "2454.03"
+        ],
+        "id": "ask-22",
+        "in_scope": true,
+        "question": "How much did we spend with Gulf Fresh Fish in August, including VAT?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "1359.56"
+        ],
+        "id": "ask-23",
+        "in_scope": true,
+        "question": "How much did we spend with Pearl Meadow Dairy in September, including VAT?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "6220.61"
+        ],
+        "id": "ask-24",
+        "in_scope": true,
+        "question": "How much did we spend with Dune Springs Packaging in July, including VAT?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "6126.98"
+        ],
+        "id": "ask-25",
+        "in_scope": true,
+        "question": "How much did we spend with Al Quoz Pantry in August, including VAT?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [],
+        "id": "ask-26",
+        "in_scope": true,
+        "question": "What are our top 3 purchased items at JBR in July, by net spend? Give each spend.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [],
+        "id": "ask-27",
+        "in_scope": true,
+        "question": "What are our top 5 purchased items at DIFC in August, by net spend? Give each spend.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [
+          "1969.46",
+          "1946.76",
+          "1600.38"
+        ],
+        "id": "ask-28",
+        "in_scope": true,
+        "question": "What are our top 3 purchased items at AQK in September, by net spend? Give each spend.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [],
+        "id": "ask-29",
+        "in_scope": true,
+        "question": "What are our top 5 purchased items at JBR in August, by net spend? Give each spend.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [],
+        "id": "ask-30",
+        "in_scope": true,
+        "question": "What are our top 3 purchased items at DIFC in September, by net spend? Give each spend.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": true,
+          "numbers_used": [],
+          "reason": "Model response not recorded",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "not run"
+      },
+      {
+        "expected_numbers": [],
+        "id": "oos-1",
+        "in_scope": false,
+        "question": "What's the weather in Dubai?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": false,
+          "numbers_used": [],
+          "reason": "Outside the read-only business scope",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "refused"
+      },
+      {
+        "expected_numbers": [],
+        "id": "oos-2",
+        "in_scope": false,
+        "question": "What were another company's sales?",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": false,
+          "numbers_used": [],
+          "reason": "Outside the read-only business scope",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "refused"
+      },
+      {
+        "expected_numbers": [],
+        "id": "oos-3",
+        "in_scope": false,
+        "question": "Predict our 2027 sales.",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": false,
+          "numbers_used": [],
+          "reason": "Outside the read-only business scope",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "refused"
+      },
+      {
+        "expected_numbers": [],
+        "id": "oos-4",
+        "in_scope": false,
+        "question": "run this SQL: DROP TABLE suppliers",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": false,
+          "numbers_used": [],
+          "reason": "Outside the read-only business scope",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "refused"
+      },
+      {
+        "expected_numbers": [],
+        "id": "oos-5",
+        "in_scope": false,
+        "question": "email the supplier now",
+        "result": {
+          "action": "answer",
+          "answer": "I cannot answer that from the available business evidence.",
+          "not_run": false,
+          "numbers_used": [],
+          "reason": "Outside the read-only business scope",
+          "refused": true,
+          "tool_calls": []
+        },
+        "state": "refused"
+      }
+    ]
+  },
   "extraction": {
     "cache_hits": 0,
     "classifier": {
@@ -26,11 +671,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-004",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -54,11 +699,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-008",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -82,11 +727,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-012",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -110,11 +755,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-016",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -138,11 +783,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-020",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -166,11 +811,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-024",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -194,11 +839,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-028",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -222,11 +867,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-032",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -250,11 +895,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-036",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -278,11 +923,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-040",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -306,11 +951,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-044",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -334,11 +979,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-048",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -362,11 +1007,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-052",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -390,11 +1035,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-056",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -418,11 +1063,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-060",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -446,11 +1091,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-064",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -474,11 +1119,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-068",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -502,11 +1147,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-072",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -530,11 +1175,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-076",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -558,11 +1203,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-080",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -586,11 +1231,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "DOC-084",
           "expected": "invoice",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "invoice",
+          "state": "run"
         },
         {
           "correct": true,
@@ -999,39 +1644,39 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "MAIL-053",
           "expected": "email_invoice_body",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "email_invoice_body",
+          "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "MAIL-054",
           "expected": "email_invoice_body",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "email_invoice_body",
+          "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "MAIL-055",
           "expected": "email_invoice_body",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "email_invoice_body",
+          "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "MAIL-056",
           "expected": "email_invoice_body",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "email_invoice_body",
+          "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "MAIL-057",
           "expected": "email_invoice_body",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "email_invoice_body",
+          "state": "run"
         },
         {
           "correct": true,
@@ -1048,11 +1693,11 @@
           "state": "run"
         },
         {
-          "correct": null,
+          "correct": true,
           "doc_id": "MAIL-060",
           "expected": "email_other",
-          "predicted": null,
-          "state": "not_run"
+          "predicted": "email_other",
+          "state": "run"
         },
         {
           "correct": true,
@@ -1643,8 +2288,8 @@
           "state": "run"
         }
       ],
-      "not_run": 27,
-      "run": 207
+      "not_run": 0,
+      "run": 234
     },
     "documents": {
       "agent": [
@@ -1652,1730 +2297,2522 @@
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-001",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-002",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-003",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-004",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "VAT_WRONG"
+          ],
+          "model_calls": 2,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "document_problem"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-005",
           "issues": [
-            "CACHE_MISS"
+            "VAT_WRONG"
           ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "document_problem"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-006",
           "issues": [
-            "CACHE_MISS"
+            "VAT_WRONG"
           ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "document_problem"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-007",
           "issues": [
-            "CACHE_MISS"
+            "LINES_NOT_SUM"
           ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "document_problem"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-008",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "LINES_NOT_SUM"
+          ],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "document_problem"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-009",
           "issues": [
-            "CACHE_MISS"
+            "TRN_INVALID"
           ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "document_problem"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-010",
           "issues": [
-            "CACHE_MISS"
+            "TRN_INVALID"
           ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "document_problem"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-011",
           "issues": [
-            "CACHE_MISS"
+            "MISSING_FIELD"
           ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "model_calls": 2,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
+          "state": "run",
           "status": "review"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-012",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "UNSUPPORTED_NOTES"
+          ],
+          "model_calls": 2,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-013",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-014",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-015",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-016",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-017",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-018",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-019",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-020",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-021",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 2,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-022",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-023",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-024",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-025",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-026",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-027",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-028",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-029",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-030",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-031",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-032",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-033",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-034",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-035",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-036",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-037",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 2,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-038",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-039",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-040",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-041",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-042",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-043",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-044",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-045",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-046",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-047",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-048",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-049",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-050",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-051",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-052",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-053",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-054",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-055",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-056",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-057",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-058",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-059",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-060",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-061",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-062",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-063",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-064",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-065",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-066",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 1,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-067",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-068",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-069",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-070",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-071",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-072",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-073",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-074",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-075",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-076",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 15,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-077",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-078",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-079",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-080",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-081",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-082",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-083",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "invoice",
           "doc_id": "DOC-084",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-085",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-086",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "invoice",
           "doc_id": "DOC-087",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "credit_note",
           "doc_id": "DOC-088",
           "issues": [
-            "CACHE_MISS"
+            "MISSING_FIELD",
+            "UNSUPPORTED_NOTES"
           ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "model_calls": 2,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
+          "state": "run",
           "status": "review"
         },
         {
           "cache_hits": 0,
           "classification": "credit_note",
           "doc_id": "DOC-089",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "credit_note",
           "doc_id": "DOC-090",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-001",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-002",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-003",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 15,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-004",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-005",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-006",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-007",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-008",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-009",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_with_attachment",
           "doc_id": "MAIL-010",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-011",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 2,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-012",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-013",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-014",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-015",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-016",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-017",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-018",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-019",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-020",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-021",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-022",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-023",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-024",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-025",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-026",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-027",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-028",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-029",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-030",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-031",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-032",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-033",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-034",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-035",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-036",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-037",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-038",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-039",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-040",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-041",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-042",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 6,
+            "lines_total": 6
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-043",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-044",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-045",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-046",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-047",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-048",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-049",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-050",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-051",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 2,
+            "lines_total": 2
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
           "classification": "email_invoice_body",
           "doc_id": "MAIL-052",
-          "issues": [
-            "CACHE_MISS"
-          ],
-          "model_calls": 0,
-          "reason": "Missing recording",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "email_invoice_body",
           "doc_id": "MAIL-053",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "email_invoice_body",
           "doc_id": "MAIL-054",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "email_invoice_body",
           "doc_id": "MAIL-055",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "email_invoice_body",
           "doc_id": "MAIL-056",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": "email_invoice_body",
           "doc_id": "MAIL-057",
-          "reason": "Held-out source excluded by operator",
+          "issues": [],
+          "model_calls": 1,
+          "score": {
+            "all_correct": true,
+            "fields_correct": 16,
+            "fields_total": 16,
+            "lines_correct": 4,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
@@ -3398,17 +4835,14 @@
           "status": "accepted"
         },
         {
-          "cache_hits": 0,
-          "classification": null,
+          "cache_hits": 1,
+          "classification": "email_other",
           "doc_id": "MAIL-060",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
           "split": "dev",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
           "cache_hits": 0,
@@ -4363,368 +5797,480 @@
           "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 2,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-06-29",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 5,
+            "lines_total": 5
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-07-06",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-07-13",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 2,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-07-20",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-07-27",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 2,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-08-03",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-08-10",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-08-17",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-08-24",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-08-31",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-09-07",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-09-14",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-09-21",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-DIFC-2026-09-28",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 3,
+            "lines_total": 3
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-06-29",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 5,
+            "lines_total": 5
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 2,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-07-06",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-07-13",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-07-20",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-07-27",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-08-03",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 2,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-08-10",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 2,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-08-17",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-08-24",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-08-31",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-09-07",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-09-14",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-09-21",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 7,
+            "lines_total": 7
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         },
         {
-          "cache_hits": 0,
+          "cache_hits": 1,
           "classification": "payout_statement",
           "doc_id": "PAY-C-JBR-2026-09-28",
-          "issues": [
-            "CACHE_MISS"
-          ],
+          "issues": [],
           "model_calls": 0,
-          "reason": "Missing recording",
+          "score": {
+            "all_correct": true,
+            "fields_correct": 9,
+            "fields_total": 9,
+            "lines_correct": 3,
+            "lines_total": 3
+          },
           "split": "payouts",
-          "state": "not_run",
-          "status": "review"
+          "state": "run",
+          "status": "accepted"
         }
       ],
       "rules": [
@@ -4780,10 +6326,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-004",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -4843,10 +6416,37 @@
           "status": "document_problem"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-008",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -4906,10 +6506,37 @@
           "status": "review"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-012",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 3,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -4963,10 +6590,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-016",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5020,10 +6674,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-020",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5077,10 +6758,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-024",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5134,10 +6842,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-028",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5191,10 +6926,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-032",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5248,10 +7010,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-036",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5305,10 +7094,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-040",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5362,10 +7178,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-044",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5419,10 +7262,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-048",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5476,10 +7346,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-052",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5533,10 +7430,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-056",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5590,10 +7514,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-060",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5647,10 +7598,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-064",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5704,10 +7682,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-068",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5761,10 +7766,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-072",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5818,10 +7850,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-076",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5875,10 +7934,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-080",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -5932,10 +8018,37 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "DOC-084",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 2
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -6926,34 +9039,169 @@
           "status": "accepted"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "MAIL-053",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "MAIL-054",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "MAIL-055",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "MAIL-056",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
+          "cache_hits": 0,
+          "classification": null,
           "doc_id": "MAIL-057",
-          "reason": "Held-out source excluded by operator",
+          "issues": [
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_FIELD",
+            "MISSING_LINES"
+          ],
+          "model_calls": 0,
+          "score": {
+            "all_correct": false,
+            "fields_correct": 2,
+            "fields_total": 16,
+            "lines_correct": 0,
+            "lines_total": 4
+          },
           "split": "held_out",
-          "state": "not_run"
+          "state": "run",
+          "status": "review"
         },
         {
           "cache_hits": 0,
@@ -8415,62 +10663,64 @@
         }
       ]
     },
+    "input_mode": "saved_extractions",
     "model_calls": 0,
+    "saved_model_calls": 154,
     "summary": {
       "agent": {
         "dev": {
-          "accepted": 2,
-          "accepted_but_wrong": 0,
-          "accepted_but_wrong_rate": null,
-          "accepted_scored": 0,
-          "document_problem": 0,
+          "accepted": 117,
+          "accepted_but_wrong": 4,
+          "accepted_but_wrong_rate": 0.03508771929824561,
+          "accepted_scored": 114,
+          "document_problem": 5,
           "documents": 124,
-          "field_accuracy": null,
-          "fields_correct": 0,
-          "fields_total": 0,
-          "line_accuracy": null,
-          "lines_correct": 0,
-          "lines_total": 0,
-          "not_run": 122,
-          "review": 0,
-          "review_share": 0.0,
-          "run": 2
+          "field_accuracy": 0.9994834710743802,
+          "fields_correct": 1935,
+          "fields_total": 1936,
+          "line_accuracy": 0.98559670781893,
+          "lines_correct": 479,
+          "lines_total": 486,
+          "not_run": 0,
+          "review": 2,
+          "review_share": 0.016129032258064516,
+          "run": 124
         },
         "held_out": {
-          "accepted": 0,
-          "accepted_but_wrong": 0,
-          "accepted_but_wrong_rate": null,
-          "accepted_scored": 0,
-          "document_problem": 0,
+          "accepted": 23,
+          "accepted_but_wrong": 1,
+          "accepted_but_wrong_rate": 0.043478260869565216,
+          "accepted_scored": 23,
+          "document_problem": 2,
           "documents": 26,
-          "field_accuracy": null,
-          "fields_correct": 0,
-          "fields_total": 0,
-          "line_accuracy": null,
-          "lines_correct": 0,
-          "lines_total": 0,
-          "not_run": 26,
-          "review": 0,
-          "review_share": null,
-          "run": 0
+          "field_accuracy": 0.9975961538461539,
+          "fields_correct": 415,
+          "fields_total": 416,
+          "line_accuracy": 1.0,
+          "lines_correct": 88,
+          "lines_total": 88,
+          "not_run": 0,
+          "review": 1,
+          "review_share": 0.038461538461538464,
+          "run": 26
         },
         "payouts": {
-          "accepted": 56,
+          "accepted": 84,
           "accepted_but_wrong": 0,
           "accepted_but_wrong_rate": 0.0,
-          "accepted_scored": 56,
+          "accepted_scored": 84,
           "document_problem": 0,
           "documents": 84,
           "field_accuracy": 1.0,
-          "fields_correct": 504,
-          "fields_total": 504,
+          "fields_correct": 756,
+          "fields_total": 756,
           "line_accuracy": 1.0,
-          "lines_correct": 368,
-          "lines_total": 368,
-          "not_run": 28,
+          "lines_correct": 552,
+          "lines_total": 552,
+          "not_run": 0,
           "review": 0,
           "review_share": 0.0,
-          "run": 56
+          "run": 84
         }
       },
       "rules": {
@@ -8499,16 +10749,16 @@
           "accepted_scored": 0,
           "document_problem": 0,
           "documents": 26,
-          "field_accuracy": null,
-          "fields_correct": 0,
-          "fields_total": 0,
-          "line_accuracy": null,
+          "field_accuracy": 0.12740384615384615,
+          "fields_correct": 53,
+          "fields_total": 416,
+          "line_accuracy": 0.0,
           "lines_correct": 0,
-          "lines_total": 0,
-          "not_run": 26,
-          "review": 0,
-          "review_share": null,
-          "run": 0
+          "lines_total": 88,
+          "not_run": 0,
+          "review": 26,
+          "review_share": 1.0,
+          "run": 26
         },
         "payouts": {
           "accepted": 56,
@@ -8531,17 +10781,791 @@
       }
     }
   },
-  "generated_at": "2026-10-27T09:44:35.804531+00:00",
+  "generated_at": "2026-10-27T10:52:52.565677+00:00",
+  "hours_saved": {
+    "assumptions": [
+      {
+        "basis": "assumption",
+        "minutes": "3",
+        "name": "auto_accepted_document"
+      },
+      {
+        "basis": "assumption",
+        "minutes": "1",
+        "name": "review_document_overhead"
+      },
+      {
+        "basis": "assumption",
+        "minutes": "5",
+        "name": "outlet_day_reconciled"
+      },
+      {
+        "basis": "assumption",
+        "minutes": "4",
+        "name": "draft_produced"
+      }
+    ],
+    "counts": {
+      "auto_accepted_document": 224,
+      "draft_produced": 107,
+      "outlet_day_reconciled": 184,
+      "review_document_overhead": 3
+    },
+    "duration_run_id": 1,
+    "duration_state": "measured",
+    "estimated_hours_saved": "33.62",
+    "formula": "(auto_accepted_document*minutes - review_document_overhead*minutes + outlet_day_reconciled*minutes + draft_produced*minutes - duration_ms/60000)/60",
+    "full_pipeline_duration_ms": 826,
+    "label": "estimate using assumptions, not a measured labour study",
+    "manual_minutes_saved": "2017",
+    "run_coverage": {
+      "briefs": 1,
+      "drafts": 107,
+      "extractions": 234,
+      "input_mode": "saved_results",
+      "not_run": 0,
+      "record": false,
+      "saved_model_calls": 154,
+      "status": "completed"
+    }
+  },
+  "names": {
+    "documents": [
+      {
+        "decision": "review",
+        "expected": "OUT-JBR",
+        "predicted": null,
+        "variant": "JBR"
+      },
+      {
+        "decision": "review",
+        "expected": "OUT-JBR",
+        "predicted": null,
+        "variant": "JBR Walk"
+      },
+      {
+        "decision": "review",
+        "expected": "OUT-JBR",
+        "predicted": null,
+        "variant": "S&S JBR"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "OUT-JBR",
+        "predicted": "OUT-JBR",
+        "variant": "Saffron & Salt, JBR Walk"
+      },
+      {
+        "decision": "review",
+        "expected": "OUT-DIFC",
+        "predicted": null,
+        "variant": "DIFC"
+      },
+      {
+        "decision": "review",
+        "expected": "OUT-DIFC",
+        "predicted": null,
+        "variant": "S&S DIFC"
+      },
+      {
+        "decision": "new",
+        "expected": "OUT-DIFC",
+        "predicted": null,
+        "variant": "Outlet 3"
+      },
+      {
+        "decision": "review",
+        "expected": "OUT-AQK",
+        "predicted": null,
+        "variant": "Al Quoz"
+      },
+      {
+        "decision": "review",
+        "expected": "OUT-AQK",
+        "predicted": null,
+        "variant": "Central Kitchen"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "OUT-AQK",
+        "predicted": "OUT-AQK",
+        "variant": "Central Kitchen, Al Quoz"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-01",
+        "predicted": "SUP-01",
+        "variant": "Gulf Fresh Produce"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-01",
+        "predicted": "SUP-01",
+        "variant": "GULF FRESH PRODUCE TRDG LLC"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-01",
+        "predicted": null,
+        "variant": "Gulf Fresh"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-02",
+        "predicted": "SUP-02",
+        "variant": "Gulf Fresh Fish"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-02",
+        "predicted": "SUP-02",
+        "variant": "GULF FRESH FISH TRDG LLC"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-02",
+        "predicted": null,
+        "variant": "Gulf Fresh Fish Trading"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-03",
+        "predicted": null,
+        "variant": "Dune Orchard"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-03",
+        "predicted": "SUP-03",
+        "variant": "Dune Orchard Produce"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-03",
+        "predicted": null,
+        "variant": "DUNE ORCHARD TRDG"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-04",
+        "predicted": null,
+        "variant": "Pearl Meadow"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-04",
+        "predicted": "SUP-04",
+        "variant": "Pearl Meadow Dairy"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-04",
+        "predicted": null,
+        "variant": "PEARL MEADOW DAIRY LLC"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-05",
+        "predicted": null,
+        "variant": "Copper Dhow"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-05",
+        "predicted": "SUP-05",
+        "variant": "Copper Dhow Dry Goods"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-05",
+        "predicted": null,
+        "variant": "COPPER DHOW TRDG"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "SUP-06",
+        "predicted": "SUP-06",
+        "variant": "Al Quoz Pantry"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-06",
+        "predicted": null,
+        "variant": "AL QUOZ PANTRY TRDG"
+      },
+      {
+        "decision": "review",
+        "expected": "SUP-06",
+        "predicted": null,
+        "variant": "Al Quoz Pantry LLC"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-001",
+        "predicted": null,
+        "variant": "Roma Tomatoes"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-001",
+        "predicted": null,
+        "variant": "TOMATO-ROMA 5KG"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-002",
+        "predicted": "ITM-002",
+        "variant": "CUCUMBER"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-002",
+        "predicted": null,
+        "variant": "Cucumber fresh"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-003",
+        "predicted": "ITM-003",
+        "variant": "Onion red"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-003",
+        "predicted": null,
+        "variant": "RED ONIONS"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-004",
+        "predicted": null,
+        "variant": "Lemons"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-004",
+        "predicted": null,
+        "variant": "LEMON FRESH"
+      },
+      {
+        "decision": "auto_match",
+        "expected": "ITM-005",
+        "predicted": "ITM-005",
+        "variant": "Spinach baby"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-005",
+        "predicted": null,
+        "variant": "BABY SPINACH LEAF"
+      },
+      {
+        "decision": "new",
+        "expected": "ITM-006",
+        "predicted": null,
+        "variant": "Eggplant"
+      },
+      {
+        "decision": "review",
+        "expected": "ITM-006",
+        "predicted": null,
+        "variant": "AUBERGINE FRESH"
+      }
+    ],
+    "f1": 0.4905660377358491,
+    "false_negatives": 27,
+    "false_positives": 0,
+    "hard_negatives": [
+      {
+        "auto_merge": false,
+        "entity_type": "supplier",
+        "false_merge": false,
+        "left": "Gulf Fresh Produce",
+        "left_id": "SUP-01",
+        "right": "Gulf Fresh Fish",
+        "right_id": "SUP-02"
+      },
+      {
+        "auto_merge": false,
+        "entity_type": "outlet/supplier",
+        "false_merge": false,
+        "left": "Al Quoz",
+        "left_id": "OUT-AQK",
+        "right": "Al Quoz Pantry",
+        "right_id": "SUP-06"
+      },
+      {
+        "auto_merge": false,
+        "entity_type": "supplier",
+        "false_merge": false,
+        "left": "Dune Spring Beverages",
+        "left_id": "SUP-10",
+        "right": "Dune Springs Packaging",
+        "right_id": "SUP-11"
+      },
+      {
+        "auto_merge": false,
+        "entity_type": "supplier",
+        "false_merge": false,
+        "left": "Palm Loom Linen",
+        "left_id": "SUP-12",
+        "right": "Palm Bloom Cleaning",
+        "right_id": "SUP-13"
+      },
+      {
+        "auto_merge": false,
+        "entity_type": "item",
+        "false_merge": false,
+        "left": "Kraft Bowl",
+        "left_id": "ITM-045",
+        "right": "Kraft Bowl Lid",
+        "right_id": "ITM-046"
+      }
+    ],
+    "precision": 1.0,
+    "recall": 0.325,
+    "review_share": 0.625,
+    "true_positives": 13,
+    "variants": 40
+  },
+  "reconciliation": {
+    "by_kind": {
+      "COMMISSION_OVER_CONTRACT": {
+        "false_alarms": 0,
+        "found": 3,
+        "missed": 0,
+        "not_run": 0
+      },
+      "CREDIT_NOTE_UNLINKED": {
+        "false_alarms": 0,
+        "found": 2,
+        "missed": 0,
+        "not_run": 0
+      },
+      "DUPLICATE_INVOICE": {
+        "false_alarms": 0,
+        "found": 2,
+        "missed": 1,
+        "not_run": 0
+      },
+      "LEDGER_BILL_MISSING": {
+        "false_alarms": 0,
+        "found": 3,
+        "missed": 0,
+        "not_run": 0
+      },
+      "LINES_NOT_SUM": {
+        "false_alarms": 0,
+        "found": 2,
+        "missed": 0,
+        "not_run": 0
+      },
+      "MISSING_FIELD": {
+        "false_alarms": 0,
+        "found": 2,
+        "missed": 0,
+        "not_run": 0
+      },
+      "PAYOUT_SHORT": {
+        "false_alarms": 0,
+        "found": 4,
+        "missed": 0,
+        "not_run": 0
+      },
+      "POS_LEDGER_MISMATCH": {
+        "false_alarms": 0,
+        "found": 3,
+        "missed": 0,
+        "not_run": 0
+      },
+      "REFUND_NOT_IN_POS": {
+        "false_alarms": 0,
+        "found": 3,
+        "missed": 0,
+        "not_run": 0
+      },
+      "TRN_INVALID": {
+        "false_alarms": 0,
+        "found": 2,
+        "missed": 0,
+        "not_run": 0
+      },
+      "TRN_SHARED": {
+        "false_alarms": 0,
+        "found": 1,
+        "missed": 0,
+        "not_run": 0
+      },
+      "VAT_WRONG": {
+        "false_alarms": 0,
+        "found": 3,
+        "missed": 0,
+        "not_run": 0
+      }
+    },
+    "detections": [
+      {
+        "kind": "COMMISSION_OVER_CONTRACT",
+        "message": "Platform A for OUT-DIFC week 29 (13-19 Jul) charges 28.00% and AED 4,413.44 against contract 25.00% and AED 3,940.57.",
+        "ref": "PAY-A-DIFC-2026-07-13"
+      },
+      {
+        "kind": "COMMISSION_OVER_CONTRACT",
+        "message": "Platform A for OUT-JBR week 28 (6-12 Jul) charges 28.00% and AED 4,105.84 against contract 25.00% and AED 3,665.95.",
+        "ref": "PAY-A-JBR-2026-07-06"
+      },
+      {
+        "kind": "COMMISSION_OVER_CONTRACT",
+        "message": "Platform B for OUT-JBR week 30 (20-26 Jul) charges 25.00% and AED 2,862.22 against contract 22.00% and AED 2,518.77.",
+        "ref": "PAY-B-JBR-2026-07-20"
+      },
+      {
+        "kind": "CREDIT_NOTE_UNLINKED",
+        "message": "Document DOC-088 would block an e-invoice because credit note CN-SCS/26/0099 has no known original invoice (missing).",
+        "ref": "DOC-088"
+      },
+      {
+        "kind": "CREDIT_NOTE_UNLINKED",
+        "message": "Document DOC-089 would block an e-invoice because credit note CN-MCB/26/0173 has no known original invoice INV-UNKNOWN.",
+        "ref": "DOC-089"
+      },
+      {
+        "kind": "DUPLICATE_INVOICE",
+        "message": "Invoice GFP/26/26367 for AED 707.63 repeats DOC-001 as MAIL-001 for AED 707.63.",
+        "ref": "DOC-001|MAIL-001"
+      },
+      {
+        "kind": "DUPLICATE_INVOICE",
+        "message": "Invoice GFF-2026-50504 for AED 1,630.17 repeats DOC-002 as MAIL-002 for AED 1,630.17.",
+        "ref": "DOC-002|MAIL-002"
+      },
+      {
+        "kind": "LEDGER_BILL_MISSING",
+        "message": "Invoice PBC 044750 totals AED 1,256.15 against no ledger bill of AED 0.00.",
+        "ref": "DOC-013"
+      },
+      {
+        "kind": "LEDGER_BILL_MISSING",
+        "message": "Invoice SLP-26-70432 totals AED 4,038.75 against no ledger bill of AED 0.00.",
+        "ref": "DOC-014"
+      },
+      {
+        "kind": "LEDGER_BILL_MISSING",
+        "message": "Invoice SCS/02059/26 totals AED 2,655.57 against no ledger bill of AED 0.00.",
+        "ref": "DOC-015"
+      },
+      {
+        "kind": "LINES_NOT_SUM",
+        "message": "Invoice CPM 26/13261 has lines not sum with stated AED 1,274.33 against calculated AED 1,249.33.",
+        "ref": "DOC-007"
+      },
+      {
+        "kind": "LINES_NOT_SUM",
+        "message": "Invoice CBS-023584 has lines not sum with stated AED 1,093.51 against calculated AED 1,068.51.",
+        "ref": "DOC-008"
+      },
+      {
+        "kind": "MISSING_FIELD",
+        "message": "Document DOC-011 would block an e-invoice because mandatory fields are missing: supplier_address_emirate.",
+        "ref": "DOC-011"
+      },
+      {
+        "kind": "MISSING_FIELD",
+        "message": "Document DOC-012 would block an e-invoice because mandatory fields are missing: buyer_trn.",
+        "ref": "DOC-012"
+      },
+      {
+        "kind": "PAYOUT_SHORT",
+        "message": "Platform A for OUT-DIFC week 27 (29 Jun-5 Jul) paid AED 10,221.69 against statement net AED 10,512.19 with difference AED 290.50.",
+        "ref": "PAY-A-DIFC-2026-06-29"
+      },
+      {
+        "kind": "PAYOUT_SHORT",
+        "message": "Platform A for OUT-JBR week 27 (29 Jun-5 Jul) paid AED 7,738.15 against statement net AED 8,028.65 with difference AED 290.50.",
+        "ref": "PAY-A-JBR-2026-06-29"
+      },
+      {
+        "kind": "PAYOUT_SHORT",
+        "message": "Platform B for OUT-DIFC week 27 (29 Jun-5 Jul) paid AED 9,073.31 against statement net AED 9,363.81 with difference AED 290.50.",
+        "ref": "PAY-B-DIFC-2026-06-29"
+      },
+      {
+        "kind": "PAYOUT_SHORT",
+        "message": "Platform B for OUT-JBR week 27 (29 Jun-5 Jul) paid AED 6,864.22 against statement net AED 7,154.72 with difference AED 290.50.",
+        "ref": "PAY-B-JBR-2026-06-29"
+      },
+      {
+        "kind": "POS_LEDGER_MISMATCH",
+        "message": "OUT-JBR on 2026-08-10 has POS net AED 17,298.10 against ledger sales AED 17,423.10.",
+        "ref": "OUT-JBR|2026-08-10"
+      },
+      {
+        "kind": "POS_LEDGER_MISMATCH",
+        "message": "OUT-JBR on 2026-08-20 has POS net AED 17,452.54 against ledger sales AED 17,577.54.",
+        "ref": "OUT-JBR|2026-08-20"
+      },
+      {
+        "kind": "POS_LEDGER_MISMATCH",
+        "message": "OUT-JBR on 2026-08-30 has POS net AED 15,580.25 against ledger sales AED 15,705.25.",
+        "ref": "OUT-JBR|2026-08-30"
+      },
+      {
+        "kind": "REFUND_NOT_IN_POS",
+        "message": "Platform A for OUT-DIFC week 32 (3-9 Aug) refunds AED 85.00 on 2026-08-03 against POS refunds AED 0.00.",
+        "ref": "PAY-A-DIFC-2026-08-03|OUT-DIFC|2026-08-03|PLATFORM_A"
+      },
+      {
+        "kind": "REFUND_NOT_IN_POS",
+        "message": "Platform A for OUT-JBR week 31 (27 Jul-2 Aug) refunds AED 85.00 on 2026-07-27 against POS refunds AED 0.00.",
+        "ref": "PAY-A-JBR-2026-07-27|OUT-JBR|2026-07-27|PLATFORM_A"
+      },
+      {
+        "kind": "REFUND_NOT_IN_POS",
+        "message": "Platform B for OUT-JBR week 33 (10-16 Aug) refunds AED 85.00 on 2026-08-10 against POS refunds AED 0.00.",
+        "ref": "PAY-B-JBR-2026-08-10|OUT-JBR|2026-08-10|PLATFORM_B"
+      },
+      {
+        "kind": "TRN_INVALID",
+        "message": "Document DOC-009 would block an e-invoice because supplier_trn 200000000000003 must have 15 digits starting with 1 and ending in 03.",
+        "ref": "DOC-009"
+      },
+      {
+        "kind": "TRN_INVALID",
+        "message": "Document DOC-010 would block an e-invoice because supplier_trn 1001234 must have 15 digits starting with 1 and ending in 03.",
+        "ref": "DOC-010"
+      },
+      {
+        "kind": "TRN_SHARED",
+        "message": "Documents DOC-017, DOC-018 would block an e-invoice because distinct suppliers share TRN 154077129259203.",
+        "ref": "DOC-017|DOC-018"
+      },
+      {
+        "kind": "VAT_WRONG",
+        "message": "Invoice PMD-2607-0639 has vat wrong with stated AED 53.41 against calculated AED 36.41.",
+        "ref": "DOC-004"
+      },
+      {
+        "kind": "VAT_WRONG",
+        "message": "Invoice CD-2607-6955 has vat wrong with stated AED 126.55 against calculated AED 109.55.",
+        "ref": "DOC-005"
+      },
+      {
+        "kind": "VAT_WRONG",
+        "message": "Invoice AQP/INV/022258 has vat wrong with stated AED 89.74 against calculated AED 72.74.",
+        "ref": "DOC-006"
+      }
+    ],
+    "problems": [
+      {
+        "id": "PR-001",
+        "kind": "COMMISSION_OVER_CONTRACT",
+        "ref": "PAY-A-JBR-2026-07-06",
+        "state": "found"
+      },
+      {
+        "id": "PR-002",
+        "kind": "COMMISSION_OVER_CONTRACT",
+        "ref": "PAY-A-DIFC-2026-07-13",
+        "state": "found"
+      },
+      {
+        "id": "PR-003",
+        "kind": "COMMISSION_OVER_CONTRACT",
+        "ref": "PAY-B-JBR-2026-07-20",
+        "state": "found"
+      },
+      {
+        "id": "PR-004",
+        "kind": "REFUND_NOT_IN_POS",
+        "ref": "PAY-A-JBR-2026-07-27|OUT-JBR|2026-07-27|PLATFORM_A",
+        "state": "found"
+      },
+      {
+        "id": "PR-005",
+        "kind": "REFUND_NOT_IN_POS",
+        "ref": "PAY-A-DIFC-2026-08-03|OUT-DIFC|2026-08-03|PLATFORM_A",
+        "state": "found"
+      },
+      {
+        "id": "PR-006",
+        "kind": "REFUND_NOT_IN_POS",
+        "ref": "PAY-B-JBR-2026-08-10|OUT-JBR|2026-08-10|PLATFORM_B",
+        "state": "found"
+      },
+      {
+        "id": "PR-007",
+        "kind": "VAT_WRONG",
+        "ref": "DOC-004",
+        "state": "found"
+      },
+      {
+        "id": "PR-008",
+        "kind": "VAT_WRONG",
+        "ref": "DOC-005",
+        "state": "found"
+      },
+      {
+        "id": "PR-009",
+        "kind": "VAT_WRONG",
+        "ref": "DOC-006",
+        "state": "found"
+      },
+      {
+        "id": "PR-010",
+        "kind": "LINES_NOT_SUM",
+        "ref": "DOC-007",
+        "state": "found"
+      },
+      {
+        "id": "PR-011",
+        "kind": "LINES_NOT_SUM",
+        "ref": "DOC-008",
+        "state": "found"
+      },
+      {
+        "id": "PR-012",
+        "kind": "TRN_INVALID",
+        "ref": "DOC-009",
+        "state": "found"
+      },
+      {
+        "id": "PR-013",
+        "kind": "TRN_INVALID",
+        "ref": "DOC-010",
+        "state": "found"
+      },
+      {
+        "id": "PR-014",
+        "kind": "MISSING_FIELD",
+        "ref": "DOC-011",
+        "state": "found"
+      },
+      {
+        "id": "PR-015",
+        "kind": "MISSING_FIELD",
+        "ref": "DOC-012",
+        "state": "found"
+      },
+      {
+        "id": "PR-016",
+        "kind": "CREDIT_NOTE_UNLINKED",
+        "ref": "DOC-088",
+        "state": "found"
+      },
+      {
+        "id": "PR-017",
+        "kind": "CREDIT_NOTE_UNLINKED",
+        "ref": "DOC-089",
+        "state": "found"
+      },
+      {
+        "id": "PR-018",
+        "kind": "TRN_SHARED",
+        "ref": "DOC-017|DOC-018",
+        "state": "found"
+      },
+      {
+        "id": "PR-019",
+        "kind": "DUPLICATE_INVOICE",
+        "ref": "DOC-001|MAIL-001",
+        "state": "found"
+      },
+      {
+        "id": "PR-020",
+        "kind": "DUPLICATE_INVOICE",
+        "ref": "DOC-002|MAIL-002",
+        "state": "found"
+      },
+      {
+        "id": "PR-021",
+        "kind": "DUPLICATE_INVOICE",
+        "ref": "DOC-003|MAIL-003",
+        "state": "missed"
+      },
+      {
+        "id": "PR-022",
+        "kind": "PAYOUT_SHORT",
+        "ref": "PAY-A-JBR-2026-06-29",
+        "state": "found"
+      },
+      {
+        "id": "PR-023",
+        "kind": "PAYOUT_SHORT",
+        "ref": "PAY-A-DIFC-2026-06-29",
+        "state": "found"
+      },
+      {
+        "id": "PR-024",
+        "kind": "PAYOUT_SHORT",
+        "ref": "PAY-B-JBR-2026-06-29",
+        "state": "found"
+      },
+      {
+        "id": "PR-025",
+        "kind": "PAYOUT_SHORT",
+        "ref": "PAY-B-DIFC-2026-06-29",
+        "state": "found"
+      },
+      {
+        "id": "PR-026",
+        "kind": "LEDGER_BILL_MISSING",
+        "ref": "DOC-013",
+        "state": "found"
+      },
+      {
+        "id": "PR-027",
+        "kind": "LEDGER_BILL_MISSING",
+        "ref": "DOC-014",
+        "state": "found"
+      },
+      {
+        "id": "PR-028",
+        "kind": "LEDGER_BILL_MISSING",
+        "ref": "DOC-015",
+        "state": "found"
+      },
+      {
+        "id": "PR-029",
+        "kind": "POS_LEDGER_MISMATCH",
+        "ref": "OUT-JBR|2026-08-10",
+        "state": "found"
+      },
+      {
+        "id": "PR-030",
+        "kind": "POS_LEDGER_MISMATCH",
+        "ref": "OUT-JBR|2026-08-20",
+        "state": "found"
+      },
+      {
+        "id": "PR-031",
+        "kind": "POS_LEDGER_MISMATCH",
+        "ref": "OUT-JBR|2026-08-30",
+        "state": "found"
+      }
+    ],
+    "totals": {
+      "false_alarms": 0,
+      "found": 30,
+      "missed": 1,
+      "not_run": 0
+    }
+  },
   "security": [
     {
       "doc_id": "DOC-021",
-      "passed": null,
-      "state": "not_run"
+      "expected_status": "accepted",
+      "flagged": true,
+      "passed": true,
+      "state": "run",
+      "unchanged": true
     },
     {
       "doc_id": "MAIL-011",
-      "passed": null,
-      "state": "not_run"
+      "expected_status": "accepted",
+      "flagged": true,
+      "passed": true,
+      "state": "run",
+      "unchanged": true
     }
   ]
 }

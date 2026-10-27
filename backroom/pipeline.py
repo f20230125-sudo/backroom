@@ -7,6 +7,7 @@ from collections import Counter
 from datetime import UTC, date, datetime, timedelta
 
 from backroom import DATA
+from backroom.ask.projection import cents, project_invoices
 from backroom.db import connect, migrate
 from backroom.db.repo import dumps
 from backroom.einvoice.rules import check_invoices, check_masters
@@ -200,6 +201,9 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
                 "gross_sales": str(row.gross_sales),
                 "net_sales": str(row.net_sales),
                 "refunds": str(row.refunds),
+                "net_cents": cents(row.net_sales),
+                "gross_cents": cents(row.gross_sales),
+                "orders": row.covers_or_orders,
                 "payload": row.model_dump_json(),
             },
             conflict=("outlet", "business_date", "channel"),
@@ -216,6 +220,7 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
                     "reference": row.reference,
                     "debit": str(row.debit),
                     "credit": str(row.credit),
+                    "receipt_cents": cents(row.debit - row.credit),
                     "payload": row.model_dump_json(),
                 },
             )
@@ -233,6 +238,7 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
                 "week_end": s.week_end.isoformat(),
                 "paid_date": s.paid_date.isoformat(),
                 "net_payout": str(s.net_payout),
+                "net_cents": cents(s.net_payout),
                 "payload": s.model_dump_json(),
             },
         )
@@ -281,6 +287,7 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
                 doc_id=doc["doc_id"],
             )
     invoices = invoice_inputs(loaded, matcher)
+    project_invoices(repo, invoices, matcher)
     exceptions = reconcile(
         statements=statements,
         pos=pos,
@@ -294,12 +301,18 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
     )
     for exc in exceptions:
         row = exc.model_dump(mode="json")
+        statement = next((s for s in statements if s.id == exc.refs.get("statement")), None)
+        date_start = statement.week_start.isoformat() if statement else exc.date_or_week
+        date_end = statement.week_end.isoformat() if statement else exc.date_or_week
         repo.upsert(
             "exceptions",
             {
                 "id": stable_id([exc.kind, exc.refs]),
                 **{k: v for k, v in row.items() if k != "refs"},
                 "refs": dumps(exc.refs),
+                "date_start": date_start,
+                "date_end": date_end,
+                "amount_cents": cents(exc.amount),
                 "payload": exc.model_dump_json(),
             },
         )
@@ -314,6 +327,11 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
             },
         )
     run_id = repo.rows("SELECT COALESCE(MAX(id), 0) + 1 AS next_id FROM run_log")[0]["next_id"]
+    from backroom.brief import generate_brief
+    from backroom.drafts import generate_drafts
+
+    drafts = generate_drafts(repo)
+    generate_brief(repo, run_id)
     summary = {
         "id": run_id,
         "started": started.isoformat(),
@@ -337,6 +355,8 @@ def _run(repo, source, *, data_root, days, rebuild, results, record, llm, clock,
                     "not_run": sum(r.not_run for r in loaded.values()),
                     "extractions": len(fresh),
                     "record": record,
+                    "drafts": len(drafts),
+                    "briefs": 1,
                     "input_mode": "extraction" if replayed else "saved_results",
                     "saved_model_calls": 0
                     if replayed
